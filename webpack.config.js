@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HTMLWebpackPlugin = require(`html-webpack-plugin`);
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: `development`,
@@ -20,8 +21,9 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: `./src/index.html`
+            template: `./src/view/index.html`,
         }),
+        new CleanWebpackPlugin()
     ],
     module: {
         rules: [
@@ -35,6 +37,26 @@ module.exports = {
                     }
                 }
             },
+            {
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|svg|webp)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: 'images/[contenthash].[ext]'
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: 'fonts/[contenthash].[ext]'
+                }
+            }
         ]
     }
 }
