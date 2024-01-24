@@ -1,0 +1,286 @@
+@import '../global.scss';
+
+.intro {
+    background: $gray;
+
+    padding-top: 8rem;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .text {
+            padding: 9.5rem 0;
+
+            &__headline {
+                margin-bottom: 4.8rem;
+
+                h1 {
+                    @include headlineMerriweather-32px;
+                }
+                
+                .underline {
+                    width: 8.5rem;
+                    height: .15rem;
+
+                    stroke-width: 2px;
+                    background: $black;
+                }
+            }
+
+            h2 {
+                @include headlineMerriweather-38px;
+                max-width: 85%;
+
+                margin-bottom: 3.2rem;
+            }
+
+            h3 {
+                @include textGeorgia-20px;
+                max-width: 93%;
+
+                margin-bottom: 7.2rem;
+            }
+
+            button {
+                @include button;
+            }
+        }
+    }    
+}
+
+.digits {
+    background: $gray;
+
+    .container {
+
+        .headline {
+            display: flex;
+            justify-content: center;
+
+            @include headlineMerriweather-38px;
+
+            margin-bottom: 4.8rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__card {
+                width: 32rem;
+                height: 32rem;
+                
+                padding: 3.2rem;
+                border-radius: 16px;
+                background: $card-bg;
+
+                box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h4 {
+                    @include headlineMerriweather-38px;
+                    margin-bottom: 1.6rem;
+                }
+
+                p {
+                    @include textGeorgia-18px;
+                }
+            }
+        }
+    }
+}
+
+.education {
+    background: $gray;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            @include headlineMerriweather-38px;
+            margin-bottom: 4.8rem;
+        }
+    
+        .text {
+            display: flex;
+            column-gap: 2.4rem;
+
+            padding: 3.2rem 8.8rem;
+            border-radius: 1.6rem;
+
+            background: $card-bg;
+            box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
+
+            .main {
+                display: flex;
+                flex-direction: column;
+
+                span:first-child {
+                    @include headlineMerriweather-28px;
+                    margin-bottom: .4rem;
+                }
+
+                span:last-child {
+                    @include textGeorgia-20px;
+                }
+            }
+        }
+    }
+}
+
+.quote {
+    height: 40rem;
+    position: relative;
+
+    padding: 0;
+    
+    .img {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), lightgray -2px -296.793px / 100.162% 204.36% no-repeat;
+        background-image: url('../../images/about-me/quote-bg.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 20;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 14.5rem 24rem;
+
+        row-gap: 3.8rem;
+
+        h4 {
+            @include headlineMerriweather-38px;
+            font-weight: 400;
+            color: $white;
+
+            text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
+        }
+
+        h5 {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+
+            @include textGeorgia-24px;
+            color: $white;
+        }
+    }
+}
+
+.system {
+    background: $gray;
+
+    padding-top: 7.2rem;    
+
+    .container {
+        display: flex;
+        column-gap: 8.6rem;
+        justify-content: space-between;
+    
+        h3 {
+            margin-top: 11rem;
+            @include headlineMerriweather-38px;
+            font-weight: 400;
+        }
+
+        .quotes {
+            p {
+                padding: 1.6rem 0;
+
+                border-bottom: .2rem solid $black;
+
+                @include textGeorgia-18px;
+
+                .highlight {
+                    color: $orange;
+                    font-weight: 700;
+                }
+            
+            }
+
+            p:last-child {
+                span:last-child {
+                    display: block;
+                    max-width: 85%;
+                }
+            }
+        }
+    }
+}
+
+.approach {
+    background: $gray;
+
+    h3 {
+        @include headlineMerriweather-38px;
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 5.5rem;
+    }
+
+    .main {
+        display: flex;
+        column-gap: 8.4rem;
+        justify-content: space-between;
+
+        &__plan {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .item {
+                display: flex;
+                align-items: flex-start;
+                column-gap: 3.2rem;
+
+                padding: 1.6rem 0;
+                border-bottom: .2rem solid $black;
+
+                span {
+                    @include headlineMerriweather-38px;
+                    color: $orange;
+
+                    position: relative;
+                    bottom: 0.5rem;
+                }
+
+                p {
+                    @include textGeorgia-18px;
+                    color: $black;
+                }
+            }
+        }
+    }
+}

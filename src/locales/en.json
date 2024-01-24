@@ -4,7 +4,7 @@
 
     "About me": "About me",
     "Trainings": "Trainings",
-    "Articles and Case Studies": "Articles and Case Studies",
+    "Articles & Case Studies": "Articles & Case Studies",
     "Contacts": "Contacts",
 
     "Aleg Chanov": "Aleg Chanov",
@@ -13,11 +13,11 @@
 
     "In numbers": "In numbers",
     "Since 2005": "Since 2005",
-    "consulting business": "consulting business",
+    "in consulting business": "consulting business",
     "years": "years",
     "in a large automobile holding Volkswagen from an employee to a marketing director": "in a large automobile holding Volkswagen from an employee to a marketing director",
     "of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc.": "of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc.",
-    "strategic sessions held": "strategic sessions held",
+    "strategic sessions held": "of strategic sessions held",
 
     "Education": "Education",
     "Europa-Universität Viadrina Frankfurt": "Europa-Universität Viadrina Frankfurt",
@@ -25,14 +25,16 @@
     "The best way to predict the future is to create it...": "The best way to predict the future is to create it...",
     "Peter Drucker": "Peter Drucker",
 
-    "It's better to have any system than no system at all": "<q>It's better to have any system than no system at all</q>",
+    "It's better to have any system than no system at all": "It's better to have any system than no system at all",
     "I believe that ideas move the world. If you look around, you can easily see this": "I believe that ideas move the world. If you look around, you can easily see this",
     "I love and know how to help companies and owners build healthy, successful businesses and do something useful for people": "I love and know how to help companies and owners build healthy, successful businesses and do something useful for people",
-    "If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need a system for moving towards your goals and dreams": "If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need <span class=`highlight`>a system for moving<span> towards your goals and dreams",
+    "If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need": "If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need",
+    "a system for moving": " a system for moving ",
+    "towards your goals and dreams": "towards your goals and dreams.",
     "My job is to help the company create a strategy and strategic management system": "My job is to help the company create a strategy and strategic management system",
     "I structure my work in such a way as to take into account the nuances of the company, the specifics of the business and relationships in the team. After all, there are no identical people and identical companies": "I structure my work in such a way as to take into account the nuances of the company, the specifics of the business and relationships in the team. After all, there are no identical people and identical companies",
     
-    "An approach": "An approach",
+    "Approach": "Approach",
     "First, it is determined what competencies the company has and what experience it has in strategic planning and management": "First, it is determined what competencies the company has and what experience it has in strategic planning and management",
     "An introduction to the company and diagnostics are carried out": "An introduction to the company and diagnostics are carried out",
     "Depending on the team’s competencies, it is determined and the strategy development format most suitable for the company is selected": "Depending on the team’s competencies, it is determined and the strategy development format most suitable for the company is selected",
