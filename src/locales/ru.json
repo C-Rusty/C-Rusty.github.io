@@ -4,7 +4,7 @@
 
     "About me": "Обо мне",
     "Trainings": "Тренинги",
-    "Articles and Case Studies": "Статьи и кейсы",
+    "Articles & Case Studies": "Статьи и кейсы",
     "Contacts": "Контакты",
 
     "Aleg Chanov": "Олег Чанов",
@@ -13,10 +13,10 @@
 
     "In numbers": "В цифрах",
     "Since 2005": "с 2005 года",
-    "consulting business": "в консалтинговом бизнесе",
+    "in consulting business": "в консалтинговом бизнесе",
     "years": "лет",
     "in a large automobile holding Volkswagen from an employee to a marketing director": "в крупном автомобильном холдинге от рядового сотрудника до директора по маркетингу Volkswagen",
-    "of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc.": "стратегий и маркетинговых стратегий в различных секторах экономики: дорожное строительство, ритейл, банковский сектор, автомобильный бизнес, легкая промышленность, машиностроение, производственный сектор и т.д.",
+    "of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc": "стратегий и маркетинговых стратегий в различных секторах экономики: дорожное строительство, ритейл, банковский сектор, автомобильный бизнес, легкая промышленность, машиностроение, производственный сектор и т.д.",
     "strategic sessions held": "проведённых стратегических сессий",
 
     "Education": "Образование",
@@ -25,21 +25,23 @@
     "The best way to predict the future is to create it...": "Лучший способ предсказать будущее – создать его...",
     "Peter Drucker": "Питер Друкер",
 
-    "It's better to have any system than no system at all": "<q>Лучше иметь любую систему, чем совсем никакой</q>",
+    "It's better to have any system than no system at all": "Лучше иметь любую систему, чем совсем никакой",
     "I believe that ideas move the world. If you look around, you can easily see this": "Я считаю, что идеи движут миром. Если посмотреть вокруг, то в этом легко убедиться.",
     "I love and know how to help companies and owners build healthy, successful businesses and do something useful for people": "Я люблю и умею помогать компаниям и собственникам строить здоровый успешный бизнес, делать что-то полезное для людей.",
-    "If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need a system for moving towards your goals and dreams": "Если у вас есть идея построить большой успешный бизнес, то, помимо видения каким он должен быть, необходимой для этого энергии, целеустремленности и хорошей бизнес-модели, нужна <span class=`highlight`>система движения<span> к намеченным целям и мечтам.",
+    "If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need": "Если у вас есть идея построить большой успешный бизнес, то, помимо видения каким он должен быть, необходимой для этого энергии, целеустремленности и хорошей бизнес-модели, нужна",
+    "a system for moving": " система движения ",
+    "towards your goals and dreams": "к намеченным целям и мечтам.",
     "My job is to help the company create a strategy and strategic management system": "Моя работа - помочь компании создать стратегию и систему стратегического управления.",
     "I structure my work in such a way as to take into account the nuances of the company, the specifics of the business and relationships in the team. After all, there are no identical people and identical companies": "Я строю работу так, чтобы учесть нюансы компании, специфику бизнеса и взаимоотношений в команде. Ведь не бывает одинаковых людей и не бывает одинаковых компаний.",
 
-    "An approach": "Подход",
+    "Approach": "Подход",
     "First, it is determined what competencies the company has and what experience it has in strategic planning and management": "Вначале определяется, какими компетенциями обладает компания и какой у нее есть опыт стратегического планирования и управления.",
     "An introduction to the company and diagnostics are carried out": "Проводится знакомство с компанией и диагностика.",
     "Depending on the team’s competencies, it is determined and the strategy development format most suitable for the company is selected": "В зависимости от компетенций команды определяется и подбирается формат разработки стратегии, наиболее подходящий для компании.",
     "If necessary, the team is trained at the stage of preparation for developing a strategy": "Если необходимо, то проводится обучение команды на шаге подготовки к разработке стратегии.",
     "A work scenario is created during the strategic session and after it in order for the strategy to be implemented": "Создается сценарий работы на стратегической сессии и после нее для того, чтобы стратегия была реализована",
     "A strategy is being developed": "Разрабатывается стратегия.",
-    "Стратегия успешно реализуется.": "The strategy is being successfully implemented.",
+    "The strategy is being successfully implemented": "Стратегия успешно реализуется.",
     
     "My credo": "Моё кредо",
     "Understand how it works, and then apply it to yourself": "<q>Пойми, как это работает, а потом примени у себя</q>",

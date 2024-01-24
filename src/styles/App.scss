@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+
+    @font-face {
+        font-family: 'PT Sans';
+        src: url(../fonts/ptSans/PTSans-Regular.ttf);
+    }
+    @font-face {
+        font-family: 'Merriweather';
+        src: url(../fonts/merriweather/Merriweather-Regular.ttf);
+    }
+    @font-face {
+        font-family: 'Georgia';
+        src: url(../fonts/georgia/georgia.ttf);
+    }
+
+    .container {
+        padding: 0 5.5rem;
+    }
+
+    section {
+        padding-bottom: 7.2rem;
+    }
+}

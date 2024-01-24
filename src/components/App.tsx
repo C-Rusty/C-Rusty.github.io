@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import { initReactI18next} from 'react-i18next';
 import LangEn from '../locales/en.json';
 import LangRu from '../locales/ru.json';
-import LangSwitcher from "./LangSwitcher";
-import './App.scss';
-import TextComp from "./TextComp";
+import '../styles/App.scss';
+import Header from "./header/Header";
+import i18next from "i18next";
+import Content from "./body/Content";
+import { BrowserRouter } from "react-router-dom";
 
 const resources  = {
     en: {
@@ -19,23 +21,25 @@ const resources  = {
 
 i18n.use(initReactI18next).init({
     resources,
-    lng: `en`,
-    fallbackLng: `en`,
+    lng: `ru`,
+    fallbackLng: `ru`,
     interpolation: {
         escapeValue: false
     }
+});
+
+i18next.on('languageChanged', (lng) => {
+    document.documentElement.setAttribute('lang', lng);
 });
 
 const App = () => {
     const { t } = useTranslation();
     
     return (
-        <div id="root">
-            <LangSwitcher/>
-            <h1>Hi</h1>
-            <h2>{t (`Welcome to the website`)}</h2>
-            <TextComp/>
-        </div>    
+        <BrowserRouter>
+            <Header/>
+            <Content/>
+        </BrowserRouter>
     );
 };
 
