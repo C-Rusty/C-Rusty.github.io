@@ -1,0 +1,188 @@
+@import '../global.scss';
+
+@mixin margin-bottom {
+    margin-bottom: 8rem;
+}
+
+.container-page {
+    background: $gray;
+    padding: 8rem 5.6rem;
+
+    .mba-trainings {
+        padding-top: 8rem;
+
+        background: $gray-additional;
+        border-radius: 4rem;
+
+        &__description {
+            @include margin-bottom;
+
+            .container {
+                display: flex;
+                justify-content: space-between;
+                column-gap: 4rem;
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    max-width: 55%;
+
+                    h2 {
+                        @include headlineMerriweather-38px;
+                        margin-bottom: 3.2rem;
+                    }
+
+                    .aim-text {
+                        @include textGeorgia-24px;
+                        margin-bottom: 4rem;
+                    }
+
+                    .info-col {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        row-gap: 3.2rem;
+
+                        margin-bottom: 5.5rem;
+
+                        p {
+                            @include textGeorgia-20px;
+                            font-weight: 700;
+                        }
+
+                        p:first-child {
+                            max-width: 55%;
+                        }
+                        p:nth-child(2) {
+                            max-width: 80%;
+                        }
+                    }
+
+                    button {
+                        @include button;
+                        max-width: 21.5rem;
+                    }
+                }
+
+                .img-container {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        &__when-needed {
+            @include margin-bottom;
+
+            .container {
+                display: flex;
+                justify-content: space-between;
+                column-gap: 3rem;
+                
+                .card {
+                    display: flex;
+                    align-items: center;
+
+                    max-width: 39rem;
+                    max-height: 24rem;
+
+                    padding: 6rem 3.2rem;
+                    border-radius: 1.6rem;
+
+                    background: $gray-additional;
+                    box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
+
+                    text-align: center;
+
+                    p {
+                        @include textGeorgia-18px
+                    }
+                }
+            }
+        }
+
+        &__clients {
+            @include margin-bottom;
+
+            .container {
+                .headline {
+                    text-align: center;
+                    margin-bottom: 5.6rem;
+
+                    h3 {
+                        @include headlineMerriweather-32px;
+                        font-weight: 700;
+                        margin-bottom: 1rem;
+                    }
+
+                    h4 {
+                        @include textGeorgia-24px;
+                    }
+                }
+
+                .client-items {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    justify-content: space-between;
+
+                    row-gap: 4.6rem;
+
+                    &__item {
+                        text-align: center;
+
+                        h5, .country {
+                            max-width: 65%;
+                        }
+                        
+                        h5 {
+                            @include textGeorgia-24px;
+                            font-weight: 700;
+
+                            margin-bottom: .8rem;
+                        }
+
+                        .country {
+                            display: block;
+                            @include textGeorgia-18px;
+                        }
+                    }
+
+                    &__item:nth-child(2), &__item:nth-child(5) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    
+                    &__item:nth-child(3) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                    }
+                }
+            }
+        }
+
+        &__result {
+            @include margin-bottom;
+            position: relative;
+
+            .img-container {
+                position: absolute;
+                z-index: 1;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .container {
+                position: relative;
+                z-index: 20;
+            }
+        }
+    }
+}

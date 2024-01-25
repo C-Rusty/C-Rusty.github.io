@@ -76,7 +76,7 @@
                 
                 padding: 3.2rem;
                 border-radius: 16px;
-                background: $card-bg;
+                background: $gray-additional;
 
                 box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
@@ -118,7 +118,7 @@
             padding: 3.2rem 8.8rem;
             border-radius: 1.6rem;
 
-            background: $card-bg;
+            background: $gray-additional;
             box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
             .main {
@@ -201,7 +201,7 @@
 .system {
     background: $gray;
 
-    padding-top: 7.2rem;    
+    @include padding-top;    
 
     .container {
         display: flex;
@@ -223,7 +223,7 @@
                 @include textGeorgia-18px;
 
                 .highlight {
-                    color: $orange;
+                    @include highlight-class;
                     font-weight: 700;
                 }
             
@@ -281,6 +281,258 @@
                     color: $black;
                 }
             }
+        }
+    }
+}
+
+.credo {
+    height: 40rem;
+    position: relative;
+
+    padding: 0;
+    
+    .img {
+        background: lightgray 0.21px -113.105px / 100% 212.664% no-repeat;;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 20;
+
+        height: 100%;
+        width: 100%;
+
+        padding: 14.5rem 24rem;
+
+
+        h4 {
+            @include textGeorgia-24px;
+            margin-bottom: 2.4rem;
+        }
+
+        h5 {
+            @include headlineMerriweather-38px;
+            font-weight: 400;
+
+        }
+
+        h4, h5 {
+            color: $white;
+            text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+.benefits {
+    background: $gray;
+    @include padding-top;
+
+    .container {
+        h3 {
+            display: flex;
+            justify-content: center;
+
+            @include headlineMerriweather-38px;
+
+            margin-bottom: 4.8rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 3rem;
+
+            &__card {
+                display: flex;
+                align-items: center;
+
+                width: 32rem;
+                height: 24rem;
+
+                padding: 3.2rem;
+                border-radius: 1.6rem;
+
+                background: $gray-additional;
+                box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
+
+                @include textGeorgia-18px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.bring-benefits {
+    height: 40rem;
+    position: relative;
+
+    padding: 0;
+    
+    .img {
+        background: lightgray 0.21px -113.105px / 100% 212.664% no-repeat;;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 20;
+
+        height: 100%;
+        width: 100%;
+
+        padding: 7.2rem 24rem;
+
+
+        h3 {
+            display: flex;
+            justify-content: center;
+
+            @include headlineMerriweather-38px;
+            color: $white;
+
+            margin-bottom: 4.8rem;
+        }
+
+        .text {
+            display: flex;
+            justify-content: space-between;
+
+            &__column {
+                max-width: 45%;
+
+                p:first-child {
+                    max-width: 85%;
+                    min-height: 8.1rem;
+
+                    @include textGeorgia-24px;
+                    margin-bottom: 2.4rem;
+
+                    color: $white;
+
+                    span {
+                        @include highlight-class;
+                    }
+                }
+
+                p:last-child {
+                    max-width: 70%;
+
+                    @include textGeorgia-18px;
+                    color: $white;
+                }
+
+                p {
+                    text-shadow: 0px 0px 8.5rem rgba(0, 0, 0, 0.25);
+                }
+            }
+
+            &__column:first-child {
+                p:first-child {
+                    // max-width: 85%;
+                }
+                p:last-child {
+                    max-width: 70%;
+                }
+            }
+
+            &__column:last-child {
+                p:first-child {
+                    // max-width: 85%;
+                }
+                p:last-child {
+                    max-width: 60%;
+                }
+            }
+        }
+    }
+}
+
+.how-achieve {
+    background: $gray;
+    @include padding-top;
+
+    padding-bottom: 8rem;
+
+    .container {
+        h3 {
+            display: flex;
+            justify-content: center;
+            
+            @include headlineMerriweather-38px;
+
+            margin-bottom: 4.8rem;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 4rem;
+
+            img {
+                background: lightgray -29.614px 0px / 111.472% 100.514% no-repeat;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                max-width: 50%;
+
+                &__item {
+                    display: flex;
+                    align-items: flex-start;
+                    column-gap: 1.6rem;
+
+                    min-height: 6.5rem;
+
+                    padding: 2.6rem 0;
+
+                    border-bottom: .2rem solid $black;
+
+                    p {
+                        @include textGeorgia-18px;
+                        color: $black;
+                    }
+                }
+
+                &__item:first-child {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        button {
+            @include button;
         }
     }
 }

@@ -20,7 +20,7 @@
     "strategic sessions held": "проведённых стратегических сессий",
 
     "Education": "Образование",
-    "Europa-Universität Viadrina Frankfurt": "Европейский университет Виадрина, Франкфурт",
+    "Europa-Universität Viadrina Frankfurt": "Europa-Universität Viadrina Frankfurt",
 
     "The best way to predict the future is to create it...": "Лучший способ предсказать будущее – создать его...",
     "Peter Drucker": "Питер Друкер",
@@ -44,7 +44,7 @@
     "The strategy is being successfully implemented": "Стратегия успешно реализуется.",
     
     "My credo": "Моё кредо",
-    "Understand how it works, and then apply it to yourself": "<q>Пойми, как это работает, а потом примени у себя</q>",
+    "Understand how it works, and then apply it to yourself": "Пойми, как это работает, а потом примени у себя",
 
     "What are you getting": "Что вы получаете",
     "Define the company's development vision for the period of strategy development": "Определите видение развития компании на период разработки стратегии",
@@ -56,19 +56,23 @@
     "Create the prerequisites for successful implementation of the strategy": "Создадите предпосылки для успешной реализации стратегии",
 
     "How do I bring benefit": "Как я приношу пользу",
-    "The most impressive result achieved by the client was the fulfillment of 96% of the objectives set in the strategy": "Наиболее впечатляющий результат, которого достиг клиент, это исполнение 96% поставленных в стратегии задач",
+    "The most impressive result achieved by the client was the fulfillment of": "Наиболее впечатляющий результат, которого достиг клиент, это исполнение",
+    "of the objectives set in the strategy": "поставленных в стратегии задач",
     "The owners said they have never seen their business be so successful": "Собственники сказали, что они никогда не видели такого успеха своего бизнеса",
-    "On average, the implementation of strategic tasks is about 70%": "В среднем цифра исполнения стратегических задач около 70%",
+    "On average, the implementation of strategic tasks is about": "В среднем цифра исполнения стратегических задач около",
     "Strategies being developed with my participation are effective": "Стратегии, которые разрабатываются с моим участием, результативны",
 
     "How do I achieve this": "Как я этого достигаю",
-    "I myself am the director of strategic management in a rapidly and successfully growing company. I understand how it works in practice, not in theory": "Я сам являюсь директором по стратегическому управлению в быстро и успешно развивающейся компании. Я понимаю, <q>как это работает в практике, а не в  теории</q>.",
+    "I myself am the director of strategic management in a rapidly and successfully growing company. I understand": "Я сам являюсь директором по стратегическому управлению в быстро и успешно развивающейся компании. Я понимаю, ",
+    "how it works in practice, not in theory": "как это работает в практике, а не в  теории.",
+
     "I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client": "Всегда сам выполняю работу полного цикла. Провожу предварительное консультирование, диагностику, адаптацию или разрабатываю подход, наиболее эффективный и применимый для клиента.",
     "At each stage of cooperation I provide feedback on the process and the result": "На каждом этапе сотрудничества я даю обратную связь по процессу и результату.",
     "I maintain confidentiality of information": "Соблюдаю конфиденциальность информации.",
 
-    "Course marketing in MBA format": "Курс <q>Маркетинг в формате МВА</q>",
-    "Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies": "Направлен на повышение управленческих компетенций команды в маркетинге, овладение современными маркетинговыми технологиями",
+    "Course": "Курс",
+    "Marketing in MBA format": "Маркетинг в формате МВА",
+    "Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies": "Направлен на повышение управленческих компетенций команды в маркетинге, овладение современными маркетинговыми технологиями.",
     "Long-term": "Долгосрочный",
     "months": "месяцев",
     "hours": "часа",
@@ -81,12 +85,13 @@
     "Relevant clients": "Релевантные клиенты",
     "employees and managers who attended this course": "сотрудники и руководители которых обучались на этом курсе",
     "Automobile holding Atlant-M": "Автомобильный холдинг Атлант-М",
+    "operates in 3 countries": "работает в 3-х странах",
     "Manufacturing company Alutech": "Производственная компания Алютех",
-    "operates in more than 50 countries": "работает более чем в 50 страна",
+    "operates in more than 50 countries": "работает более чем в 50 странах",
     "Business school XXI century": "Бизнес-школа XXI век",
     "Open type MBA - for owners and top managers": "МВА открытого типа – для собственников и топ-менеджеров",
-    "DIY chain of stores OMA": "Сеть магазинов DIY <q>ОМА</q>",
-    "Automobile holding Aster": "Автомобильный холдинг <q>Aster</q>",
+    "DIY chain of stores": "Сеть магазинов DIY",
+    "Automobile holding": "Автомобильный холдинг",
 
     "Result": "Результат",
     "Employees will master modern and classical marketing management methodologies": "Сотрудники овладеют современными и классическими методологиями управления маркетингом",
@@ -152,13 +157,14 @@
     "Due to the increase in sales volume, the team became not just dealers, but importers of KIA cars in the Republic of Belarus": "За счет увеличения объема продаж команда стала не просто дилерами, а импортерами автомобилей KIA в РБ.",
     "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation": "Сергей Федоренко, директор Атлант-М (KIA), заказчик проекта: <q>У Олега огромный опыт работы, и это для меня означало доверие к вырабатываемым решениям. С ним приятно и легко работать, он готов к задачам любого уровня. По итогам проекта мы зафиксировали отличные результаты, благодарю за сотрудничество</q>.",
 
-    "Contact with me": "Свяжитесь со мной",
-    "Leave your contacts and I will contact you for a consultation": "Оставьте свои контакты и я свяжусь с Вами для консультации.",
-    "Name": "Имя",
-
     "Website design": "Дизайн сайта",
     "Maria Shkrabo": "Мария Шкрабо",
+    "Website creation": "Создание сайта",
+    "Rostislav Chanov": " Ростислав Чанов",
     "Phone No. / select messenger for communication": "Телефон */ выберите мессенджер для связи",
 
-    "Contact me": "Связаться"
+    "Leave your contacts and I will contact you for a consultation": "Оставьте свои контакты и я свяжусь с Вами для консультации.",
+    "Name": "Имя",
+    "Contact me": "Связаться",
+    "Contact with me": "Свяжитесь со мной"
 }

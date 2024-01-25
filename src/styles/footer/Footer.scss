@@ -1,0 +1,112 @@
+@import '../global.scss';
+
+footer {
+    background: $gray;
+
+    .container {
+        display: flex;
+        border-top: 1px solid $footer;
+
+
+        .contacts, .authors {
+            display: flex;
+            align-items: center;
+
+            width: 50%;
+
+            padding: .7rem 0;
+        }
+
+        .contacts {
+            justify-content: space-between;
+
+            padding-right: 5.5rem;
+            border-right: 1px solid $footer;
+
+            a {
+                text-decoration: none;
+
+                @include textGeorgia-18px;
+                color: $footer;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &__icons {
+                display: flex;
+                column-gap: 2.4rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+
+                    svg {
+                        transition: all .5s;
+
+                        &:hover {
+                            transition: all .5s;
+                        }
+                    }
+                }
+
+                a:first-child {
+                    svg {
+                        &:hover {
+                            path {
+                                fill: #7360F2;
+                            }
+                        }
+                    }
+                }
+
+                a:nth-child(2) {
+                    svg {
+                        &:hover {
+                            #Vector {
+                                fill: #24A1DE;
+                            }
+                            #Vector_2  {
+                                fill: white;
+                            }
+                        }
+                    }
+                }
+
+                a:last-child {
+                    svg {
+                        &:hover {
+                            #Ellipse{
+                                fill: white;
+                            }
+                            #Vector {
+                                fill: #25D366;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .authors {
+            justify-content: flex-end;
+            column-gap: .2rem;
+
+            span, a {
+                @include textGeorgia-18px;
+            }
+
+            span {
+                color: $footer;
+            }
+
+            a {
+                color: $text-gray;
+                text-decoration: underline;
+            }
+        }
+    }
+}
