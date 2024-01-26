@@ -1,6 +1,5 @@
 import React from "react";
 import i18n from "i18next";
-import { useTranslation } from "react-i18next";
 import { initReactI18next} from 'react-i18next';
 import LangEn from '../locales/en.json';
 import LangRu from '../locales/ru.json';
@@ -34,7 +33,6 @@ i18next.on('languageChanged', (lng) => {
 });
 
 const App = () => {
-    const { t } = useTranslation();
     
     return (
         <BrowserRouter>

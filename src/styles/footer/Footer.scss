@@ -92,20 +92,27 @@ footer {
         }
 
         .authors {
-            justify-content: flex-end;
-            column-gap: .2rem;
+            display: flex;
+            justify-content: space-between;
 
-            span, a {
-                @include textGeorgia-18px;
-            }
+            padding-left: 5.6rem;
 
-            span {
-                color: $footer;
-            }
+            &__author {
+                display: flex;
+                column-gap: .5rem;
 
-            a {
-                color: $text-gray;
-                text-decoration: underline;
+                span, a {
+                    @include textGeorgia-18px;
+                }
+    
+                span {
+                    color: $footer;
+                }
+    
+                a {
+                    color: $text-gray;
+                    text-decoration: underline;
+                }
             }
         }
     }

@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import '../../../styles/body/Trainings.scss';
 import introImg from '../../../images/content/trainings/introImg.webp';
-import resultBg from '../../../images/content/trainings/result.webp';
+import resultBg from '../../../images/content/trainings/training-result.webp';
+import cjm from '../../../images/content/trainings/cjm.webp';
+import trainingResult from '../../../images/content/trainings/cjm-result.webp';
 
 const Trainings = () => {
 
@@ -30,7 +32,7 @@ const Trainings = () => {
                                 </p>
                                 <p>{t (`Adapts to client needs`)}</p>
                                 <p>
-                                    <span>48-72</span>
+                                    <span>48-72 </span>
                                     {t (`hours`)}
                                 </p>
                                 <p>Online/Offline</p>
@@ -100,14 +102,63 @@ const Trainings = () => {
                     </div>
                 </div>
                 <div className="mba-trainings__result">
-                    <div className="img-container">
-                        <img src={resultBg} alt="result-bg" />
+                    <div 
+                        className="container"
+                        style={{backgroundImage: `url(${resultBg})`}}
+                    >
+                        <div className="result-inner">
+                            <h3>{t (`Result`)}</h3>
+                            <div className="in-detail">
+                                <p>{t (`Employees will master modern and classical marketing management methodologies`)}</p>
+                                <p>{t (`Employees will learn to use marketing tools in practical activities as applied to their company`)}</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </section>
+            <section className="cjm">
+                <div className="cjm__description">
                     <div className="container">
-                        <h3>{t (`Result`)}</h3>
-                        <div className="in-detail">
-                            <p>t {(`Employees will master modern and classical marketing management methodologies"`)}</p>
-                            <p>t {(`Employees will learn to use marketing tools in practical activities as applied to their company`)}</p>
+                        <div className="content">
+                            <h2>
+                                {t (`Training`)} Customer Journey Map
+                            </h2>
+                            <p className="aim-text">
+                                {t (`Aimed at increasing sales through a better understanding of customer behavior`)}
+                            </p>
+                            <div className="info-col">
+                                <p>
+                                    <span>48-72 </span>
+                                    {t (`hours`)}
+                                </p>
+                                <p>Online/Offline</p>
+                            </div>
+                            <button>
+                                <Link to="/contants">{t (`Contact me`)}</Link>
+                            </button>
+                        </div>
+                        <div className="img-container">
+                            <img src={cjm} alt="intro-img" />
+                        </div>
+                    </div>
+                </div>
+                <div className="cjm__info">
+                    <div className="container">
+                        <p>{t  (`CJM (Customer Journey Map or customer journey map) is a tool for strategic sales management through a better understanding of customer needs and mechanisms of interaction with them`)}</p>
+                        <p>{t  (`CJM is a technology that all leading companies use to improve customer service and, accordingly, increase the income received from customers`)}</p>
+                    </div>
+                </div>
+                <div className="cjm__result">
+                    <div 
+                        className="container"
+                        style={{backgroundImage: `url(${trainingResult})`}}
+                    >
+                        <div className="result-inner">
+                            <h3>{t (`Result`)}</h3>
+                            <div className="in-detail">
+                                <p>{t (`You will learn to compile CJM in accordance with international best practices`)}</p>
+                                <p>{t (`You will learn to understand which points of interaction and points of contact between your company and the client need to be improved in order to increase the effectiveness of interaction with the client`)}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

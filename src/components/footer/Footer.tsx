@@ -27,8 +27,14 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="authors">
-                    <span>{t (`Website design`)}:</span>
-                    <a href="">{t (`Maria Shkrabo`)}</a>
+                    <div className="authors__author">
+                        <span>{t (`Designer`)}:</span>
+                        <a href="https://www.behance.net/mariashkrabo">{t (`Maria Shkrabo`)}</a>
+                    </div>
+                    <div className="authors__author">
+                        <span>{t (`Programmer`)}:</span>
+                        <a href="">{t (`Rostislav Chanov`)}</a>
+                    </div>
                 </div>
             </div>
         </footer>
