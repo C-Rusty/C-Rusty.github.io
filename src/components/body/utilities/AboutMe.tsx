@@ -1,11 +1,15 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import photo from '../../../images/about-me/oleg-chanov.webp';
-import educationSvg from '../../../images/about-me/education.svg';
-import quoteBg from '../../../images/about-me/quote-bg.webp'
-import approachBg from '../../../images/about-me/approach.webp';
 import { Link } from "react-router-dom";
 import '../../../styles/Body/AboutMe.scss';
+import photo from '../../../images/content/about-me/oleg-chanov.webp';
+import educationSvg from '../../../images/content/about-me/education.svg';
+import quoteBg from '../../../images/content/about-me/quote-bg.webp'
+import approachBg from '../../../images/content/about-me/approach.webp';
+import credoBg from '../../../images/content/about-me/credo-bg.webp';
+import bringBenefitsBg from '../../../images/content/about-me/bring-benefits-bg.webp';
+import achieve from '../../../images/content/about-me/achieve.webp';
+import ticking from '../../../images/content/about-me/ticking.svg';
 
 const AboutMe = () => {
 
@@ -142,6 +146,108 @@ const AboutMe = () => {
                         </div>
                         <img src={approachBg} alt="my-approach" />
                     </div>
+                </div>
+            </section>
+            <section className="credo">
+                <div className="img">
+                    <img src={credoBg} alt="my-credo" />
+                </div>
+                    <div className="container">
+                        <h4>{t (`My credo`)}:</h4>
+                        <h5>&laquo;{t (`Understand how it works, and then apply it to yourself`)}&raquo;</h5>
+                    </div>
+            </section>
+            <section className="benefits">
+                <div className="container">
+                    <h3>{t (`What are you getting`)}&#63;</h3>
+                    <div className="cards">
+                        <div className="cards__card">
+                            <p>{t (`Define the company's development vision for the period of strategy development`)}</p>
+                        </div>
+                        <div className="cards__card">
+                            <p>{t (`Identify the pool of most important projects that need to be implemented to achieve your most important goals, and detail them`)}</p>
+                        </div>
+                        <div className="cards__card">
+                            <p>{t (`Determine how your company will develop most successfully and what needs to be done for this`)}</p>
+                        </div>
+                        <div className="cards__card">
+                            <p>{t (`Teach your team to develop a strategy and learn to involve employees in the change process, increase their competencies`)}</p>
+                        </div>
+                        <div className="cards__card">
+                            <p>{t (`Establish a strategy execution control system and mechanisms execution`)}</p>
+                        </div>
+                        <div className="cards__card">
+                            <p>{t (`You will have people responsible for implementing the strategy and key performance indicators`)}</p>
+                        </div>
+                        <div className="cards__card">
+                            <p>{t (`Create the prerequisites for successful implementation of the strategy`)}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bring-benefits">
+                <div className="img">
+                    <img src={bringBenefitsBg} alt="my-credo" />
+                </div>
+                <div className="container">
+                    <h3>{t (`How do I bring benefit`)}</h3>
+                    <div className="text">
+                        <div className="text__column">
+                            <p>
+                                {t (`The most impressive result achieved by the client was the fulfillment of`)}
+                                <span className="highlight"> 96% </span>
+                                {t (`of the objectives set in the strategy`)}
+                            </p>
+                            <p>
+                                {t (`The owners said they have never seen their business be so successful`)}
+                            </p>
+                        </div>
+                        <div className="text__column">
+                            <p>
+                                {t (`On average, the implementation of strategic tasks is about`)}
+                                <span className="highlight"> 70% </span>
+                            </p>
+                            <p>
+                                {t (`Strategies being developed with my participation are effective`)}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="how-achieve">
+                <div className="container">
+                    <h3>{t (`How do I achieve this`)}&#63;</h3>
+                    <div className="main">
+                        <img src={achieve} alt="achieve-session" />
+                        <div className="text">
+                            <div className="text__item">
+                                <img src={ticking} alt="achieve" />
+                                <p>
+                                    {t (`I myself am the director of strategic management in a rapidly and successfully growing company. I understand`)}
+                                    &laquo;{t (`how it works in practice, not in theory`)}&raquo;
+                                </p>
+                            </div>
+                            <div className="text__item">
+                                <img src={ticking} alt="achieve" />
+                                <p>
+                                    {t (`I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client`)}
+                                </p>
+                            </div>
+                            <div className="text__item">
+                                <img src={ticking} alt="achieve" />
+                                <p>
+                                    {t (`At each stage of cooperation I provide feedback on the process and the result`)}
+                                </p>
+                            </div>
+                            <div className="text__item">
+                                <img src={ticking} alt="achieve" />
+                                <p>{t (`I maintain confidentiality of information`)}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button>
+                        <Link to="/contacts">{t (`Contact me`)}</Link>
+                    </button>
                 </div>
             </section>
         </>

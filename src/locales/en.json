@@ -43,6 +43,9 @@
     "A strategy is being developed": "A strategy is being developed",
     "The strategy is being successfully implemented.": "The strategy is being successfully implemented.",
 
+    "My credo": "My credo",
+    "Understand how it works, and then apply it to yourself": "Understand how it works, and then apply it to yourself",
+
     "What are you getting": "What are you getting",
     "Define the company's development vision for the period of strategy development": "Define the company's development vision for the period of strategy development",
     "Identify the pool of most important projects that need to be implemented to achieve your most important goals, and detail them": "Identify the pool of most important projects that need to be implemented to achieve your most important goals, and detail them",
@@ -53,19 +56,22 @@
     "Create the prerequisites for successful implementation of the strategy": "Create the prerequisites for successful implementation of the strategy",
 
     "How do I bring benefit": "How do I bring benefit",
-    "The most impressive result achieved by the client was the fulfillment of 96% of the objectives set in the strategy": "The most impressive result achieved by the client was the fulfillment of 96% of the objectives set in the strategy",
+    "The most impressive result achieved by the client was the fulfillment of": "The most impressive result achieved by the client was the fulfillment of",
+    "of the objectives set in the strategy": "of the objectives set in the strategy",
     "The owners said they have never seen their business be so successful": "The owners said they have never seen their business be so successful",
-    "On average, the implementation of strategic tasks is about 70%": "On average, the implementation of strategic tasks is about 70%",
+    "On average, the implementation of strategic tasks is about": "On average, the implementation of strategic tasks is about",
     "Strategies being developed with my participation are effective": "Strategies being developed with my participation are effective",
 
     "How do I achieve this": "How do I achieve this",
-    "I myself am the director of strategic management in a rapidly and successfully growing company. I understand how it works in practice, not in theory": "I myself am the director of strategic management in a rapidly and successfully growing company. I understand <q>how it works in practice, not in theory</q>",
+    "I myself am the director of strategic management in a rapidly and successfully growing company. I understand": "I myself am the director of strategic management in a rapidly and successfully growing company. I understand ",
+    "how it works in practice, not in theory": "how it works in practice, not in theory.",
     "I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client": "I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client",
     "At each stage of cooperation I provide feedback on the process and the result": "At each stage of cooperation I provide feedback on the process and the result",
     "I maintain confidentiality of information": "I maintain confidentiality of information",
     
-    "Course marketing in MBA format": "Course <q>Marketing in MBA Format</q>",
-    "Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies": "Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies",
+    "Course": "Course",
+    "Marketing in MBA format": " Marketing in MBA format",
+    "Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies": "Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies.",
     "Long-term": "Long-term",
     "months": "months",
     "hours": "hours",
@@ -78,12 +84,13 @@
     "Relevant clients": "Relevant clients",
     "employees and managers who attended this course": "employees and managers who attended this course",
     "Automobile holding Atlant-M": "Automobile holding Atlant-M",
+    "operates in 3 countries": "operates in 3 countries",
     "Manufacturing company Alutech": "Manufacturing company Alutech",
     "operates in more than 50 countries": "operates in more than 50 countries",
     "Business school XXI century": "Business school XXI century",
     "Open type MBA - for owners and top managers": "Open type MBA - for owners and top managers",
-    "DIY chain of stores OMA": "DIY chain of stores <q>OMA</q>",
-    "Automobile holding Aster": "Automobile holding <q>Aster</q>",
+    "DIY chain of stores": "DIY chain of stores",
+    "Automobile holding": "Automobile holding",
     
     "Result": "Result",
     "Employees will master modern and classical marketing management methodologies": "Employees will master modern and classical marketing management methodologies",
@@ -149,13 +156,16 @@
     "Due to the increase in sales volume, the team became not just dealers, but importers of KIA cars in the Republic of Belarus": "Due to the increase in sales volume, the team became not just dealers, but importers of KIA cars in the Republic of Belarus",
     "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation": "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: <q>Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation</q>.",
     
+    "Designer": "Designer",
+    "Maria Shkrabo": "Maria Shkrabo",
+    "Programmer": "Programmer",
+    "Rostislav Chanov": " Rostislav Chanov",
+    "Phone No. / select messenger for communication": "Phone No. / select messenger for communication",
+
+    "Contact me": "Contact me",
     "Contact with me": "Contact with me",
     "Leave your contacts and I will contact you for a consultation": "Leave your contacts and I will contact you for a consultation",
     "Name": "Name",
-    
-    "Website design": "Дизайн сайта",
-    "Maria Shkrabo": "Maria Shkrabo",
-    "Phone No. / select messenger for communication": "Phone No. / select messenger for communication",
-
-    "Contact me": "Contact me"
+    "countries": "countries",
+    "operates in more than": "operates in more than"
 }
