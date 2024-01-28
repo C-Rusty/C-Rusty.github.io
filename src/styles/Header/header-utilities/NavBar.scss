@@ -1,6 +1,6 @@
 @import '../../global';
 
-nav {  
+.header-nav {  
     ul {
         display: flex;
         flex-direction: row;
@@ -38,6 +38,6 @@ nav {
     transition: all .5s;
 
     a {
-        @include text-color-white;
+        color: $white !important;
     }
 }

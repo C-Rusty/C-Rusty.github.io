@@ -16,7 +16,7 @@ const NavBar = () => {
     };
 
     return (
-        <nav>
+        <nav className="header-nav">
             <ul>
                 <li onClick={(e) => handleClick(e)} id="about-me">
                     <Link to="/">{t (`About me`)}</Link>
