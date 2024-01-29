@@ -1,7 +1,7 @@
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const storage = getStorage();
-const storageRefImg = ref(storage, `posts/kia-strategy.webp`);
+const storageRefImg = ref(storage, `posts/Strategy-porter.webp`);
 
 const uploadImage = (file: File) => {
     uploadBytes(storageRefImg, file).then(() => {

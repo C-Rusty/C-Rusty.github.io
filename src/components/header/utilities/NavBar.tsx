@@ -24,7 +24,7 @@ const NavBar = () => {
                 <li onClick={(e) => handleClick(e)} id="trainings">
                     <Link to="/trainings">{t (`Trainings`)}</Link>
                 </li>
-                <li onClick={(e) => handleClick(e)} id="cases">
+                <li onClick={(e) => handleClick(e)} id="articles-cases">
                     <Link to="/articles-and-cases">{t (`Articles & Case Studies`)}</Link>
                 </li>
                 <li onClick={(e) => handleClick(e)} id="contacts">

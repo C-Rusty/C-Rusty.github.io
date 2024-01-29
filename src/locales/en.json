@@ -109,7 +109,8 @@
     "Cases": "Cases",
     "Category": "Category",
     "Marketing": "Marketing",
-    "Strategy Development": "Strategy Development",
+    "Strategy development": "Strategy development",
+    "Strategy": "Strategy",
     
     "Development of a marketing strategy for": "Development of a marketing strategy for",
     
@@ -165,7 +166,7 @@
     "Contact me": "Contact me",
     "Contact with me": "Contact with me",
     "Leave your contacts and I will contact you for a consultation": "Leave your contacts and I will contact you for a consultation",
-    "Name": "Name",
+    "Name": "Name *",
     "countries": "countries",
     "operates in more than": "operates in more than"
 }

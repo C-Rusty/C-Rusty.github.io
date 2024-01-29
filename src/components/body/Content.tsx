@@ -9,10 +9,10 @@ import { Route, Routes} from "react-router-dom";
 const Content = () => {
     return(
         <Routes>
-            <Route path="/articles-and-cases" element={<AboutMe/>}/>
+            <Route path="/contacts" element={<AboutMe/>}/>
             <Route path="/trainings" element={<Trainings/>}/>
-            <Route path="/" element={<ArticlesAndCases/>}/>
-            <Route path="/contacts" element={<Contacts/>}/>
+            <Route path="/articles-and-cases" element={<ArticlesAndCases/>}/>
+            <Route path="/" element={<Contacts/>}/>
         </Routes>
     )
 };

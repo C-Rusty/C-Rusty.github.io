@@ -131,6 +131,12 @@ $footer: #9A9590;
     font-weight: 400;
 }
 
+@mixin PTSans-18px {
+    font-family: "PT Sans";
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
 @mixin PTSans-14px {
     font-family: "PT Sans";
     font-size: 1.4rem;

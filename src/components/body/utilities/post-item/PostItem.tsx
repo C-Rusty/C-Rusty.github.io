@@ -1,6 +1,8 @@
 import { IPost } from "interface/Interface";
 import React, { useEffect, useState } from "react";
 import { apiImg }  from "../../../../api/ApiImg";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const PostItem = ({post} : {post: IPost}) => {
 
@@ -8,17 +10,23 @@ const PostItem = ({post} : {post: IPost}) => {
 
     const getImg = async () => {
         const imgUrl = await apiImg.downloadImage(post.imageCloudPath);
-        if (imgUrl) setImg(imgUrl);
+        if (imgUrl) setImg(imgUrl);        
     };
 
     useEffect(() => {
         getImg();
     }, []);
 
+    const { t } = useTranslation();
+
+    const handleClick = () => {
+        document.querySelector(`#${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`)!.click();
+    };
+
     return (
-        <div className="post">
+        <div className="post" onClick={handleClick}>
             <div className="img">
-                <img src={img} alt={post.imageCloudPath} />
+                <img src={img} loading="lazy" alt={post.imageCloudPath.split(`/`)[1].split(`.`)[0]} />
                 <div className="img__read-hover">
                     <span>Читать</span>
                 </div>
@@ -27,10 +35,12 @@ const PostItem = ({post} : {post: IPost}) => {
                 <h2>{post.headline}</h2>
                 <div className="categories">
                     {post.categories.map(category => 
-                        <h3 key={category}>{category}</h3>    
+                        <h3 key={category}>{t (`${category}`)}
+                        </h3>    
                     )}
                 </div>
             </div>
+            <Link id={post.imageCloudPath.split(`/`)[1].split(`.`)[0]} to={`/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`}></Link>
         </div>
     );
 };

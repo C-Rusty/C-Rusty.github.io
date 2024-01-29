@@ -5,29 +5,45 @@ import { getFirestore } from "firebase/firestore";
 import firebaseConfig from "./DbConfig";
 import collections from "../collections/collections";
 import { IPost} from "../interface/Interface";
+import { postInterfaceFields } from "../locales/ProjectLocalization";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
-const createCollection = async () => {
-  const collectionName = collections.postsRuShort;
+const createCollection = async (pageLang: string) => {
+  let collectionName: string = ``;
+
+  if (pageLang === `ru`) {
+    collectionName = collections.postsRuShort;
+  } else if (pageLang === `en`) {
+    collectionName = collections.postsEnShort;
+  } else {
+    throw new Error (`Something wrong. Language is ${pageLang}`);
+  };
 
     try {
-        await setDoc(doc(db, collectionName, `KIA-strategy`), {
-          headline: `Разработка маркетинговой стратегии KIA Motors`,
-          types: [`Cтатья`, `Кейс`],
-          categories: [`Маркетинг`, `Стратегия`],
-          imageCloudPath: `posts/kia-strategy.webp` 
+        await setDoc(doc(db, collectionName, `Strategy-porter`), {
+          headline: `Strategy development in the “Hard” approach: how Porter’s 5 Forces Model is used`,
+          types: [`Article`],
+          categories: [`Marketing`],
+          imageCloudPath: `posts/Strategy-porter.webp` 
         });  
     } catch (error) {
         console.log(error);
     };
 };
 
-const getPosts = async () => {
-  
-  const collectionName = collections.postsRuShort;
+const getPosts = async (language: string) => {
+  let collectionName: string = ``;
+
+  if (language === `ru`) {
+    collectionName = collections.postsRuShort;
+  } else if (language === `en`) {
+    collectionName = collections.postsEnShort;
+  } else {
+    throw new Error (`Something wrong. Language is ${language}`);
+  };
   
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));

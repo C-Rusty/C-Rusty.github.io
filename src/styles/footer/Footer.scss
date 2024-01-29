@@ -45,44 +45,56 @@ footer {
                     
 
                     svg {
-                        transition: all .5s;
+                        width: 2.4rem;
+                        height: 2.4rem;
 
+                        path, circle {
+                            transition: all .3s;
+                        }
+    
                         &:hover {
-                            transition: all .5s;
+                            path, circle {
+                                transition: all .3s;
+                            }
                         }
                     }
                 }
 
                 a:first-child {
-                    svg {
-                        &:hover {
+                    &:hover {
+                        svg {
+                            path:first-child {
+                                fill: white;
+                            }
+    
                             path {
                                 fill: #7360F2;
                             }
                         }
                     }
                 }
-
+    
                 a:nth-child(2) {
-                    svg {
-                        &:hover {
-                            #Vector {
+                    &:hover {
+                        svg {
+                            path:first-child {
                                 fill: #24A1DE;
                             }
-                            #Vector_2  {
+    
+                            path {
                                 fill: white;
                             }
                         }
                     }
                 }
-
+                
                 a:last-child {
-                    svg {
-                        &:hover {
-                            #Ellipse{
+                    &:hover {
+                        svg {
+                            circle {
                                 fill: white;
                             }
-                            #Vector {
+                            path {
                                 fill: #25D366;
                             }
                         }
@@ -115,5 +127,13 @@ footer {
                 }
             }
         }
+
+        .alone {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            padding-left: 0;
+        } 
     }
 }

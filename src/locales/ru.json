@@ -110,7 +110,8 @@
     "Cases": "Кейсы",
     "Category": "Рубрика",
     "Marketing": "Маркетинг",
-    "Strategy Development": "Разработка стратегии",
+    "Strategy development": "Разработка стратегии",
+    "Strategy": "Стратегия",
 
     "Development of a marketing strategy for": "Разработка маркетинговой стратегии",
 
@@ -164,7 +165,7 @@
     "Phone No. / select messenger for communication": "Телефон */ выберите мессенджер для связи",
 
     "Leave your contacts and I will contact you for a consultation": "Оставьте свои контакты и я свяжусь с Вами для консультации.",
-    "Name": "Имя",
+    "Name": "Имя *",
     "Contact me": "Связаться",
     "Contact with me": "Свяжитесь со мной"
 }
