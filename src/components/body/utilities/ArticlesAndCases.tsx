@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense} from "react";
-import '../../../styles/Body/ArticlesCases.scss';
+import '../../../styles/body/ArticlesCases.scss';
 import { useTranslation } from "react-i18next";
 import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
