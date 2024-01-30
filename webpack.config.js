@@ -10,6 +10,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, `public`),
         filename: `./bundle.js`,
+        publicPath: `/`
     },
     resolve: {
         extensions: ['.js', '.jsx', `.tsx`, `.ts`]
@@ -26,7 +27,7 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             template: `./src/view/index.html`,
-            favicon: './src/view/favicon.svg'
+            favicon: './src/view/favicon.svg',
         }),
         new CopyWebpackPlugin({
             patterns: [
