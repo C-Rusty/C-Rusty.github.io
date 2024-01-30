@@ -4,7 +4,7 @@ import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
 import { apiImg } from "../../../api/ApiImg";
 import Loading from "./Loading";
-import '../../../styles/body/articles-cases.scss';
+import '../../../styles/main/articles-cases.scss';
 
 const ArticlesAndCases = () => {
 

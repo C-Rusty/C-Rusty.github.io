@@ -3,7 +3,7 @@ import Logo from "./utilities/Logo";
 import NavBar from "./utilities/NavBar";
 import LangSwitcher from "./utilities/LangSwitcher";
 import { Link } from "react-router-dom";
-import '../../styles/header/header.scss';
+import '../../styles/head/header.scss';
 
 const Header = () => {
     
