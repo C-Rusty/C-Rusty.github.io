@@ -1,15 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { collection, doc, setDoc, addDoc, getDocs  } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
 import { IPost} from "../interface/Interface";
-import { postInterfaceFields } from "../locales/ProjectLocalization";
 import { firebaseConfig } from "./dbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
 
 const createCollection = async (pageLang: string) => {
   let collectionName: string = ``;
@@ -24,6 +21,30 @@ const createCollection = async (pageLang: string) => {
 
     try {
         await setDoc(doc(db, collectionName, `Strategy-porter`), {
+          types: [`Case`],
+          categories: [`Marketing`, `Strategy`],
+          imageCloudPath: `posts/kia-strategy.webp`,
+          headline: `Strategy development in the “Hard” approach: how Porter’s 5 Forces Model is used`,
+          
+        });  
+    } catch (error) {
+        console.log(error);
+    };
+};
+
+const createCollectionPostsFull = async (pageLang: string, link: string) => {
+  let collectionName: string = ``;
+
+  if (pageLang === `ru`) {
+    collectionName = `posts-ru-full`;
+  } else if (pageLang === `en`) {
+    collectionName = `posts-en-full`;
+  } else {
+    throw new Error (`Something wrong. Language is ${pageLang}`);
+  };
+
+    try {
+        await setDoc(doc(db, collectionName, link), {
           headline: `Strategy development in the “Hard” approach: how Porter’s 5 Forces Model is used`,
           types: [`Article`],
           categories: [`Marketing`],
@@ -33,6 +54,20 @@ const createCollection = async (pageLang: string) => {
         console.log(error);
     };
 };
+
+const getFullPost = async (language: string, link: string) => {
+  let collectionName: string = ``;
+
+  if (language === `ru`) {
+    collectionName = collections.postsRuShort;
+  } else if (language === `en`) {
+    collectionName = collections.postsEnShort;
+  } else {
+    throw new Error (`Something wrong. Language is ${language}`);
+  };
+
+  const docRef = doc(db, `posts`)
+}
 
 const getPosts = async (language: string) => {
   let collectionName: string = ``;
@@ -63,5 +98,5 @@ const getPosts = async (language: string) => {
 
 export const api = {
   getPosts,
-  createCollection
+  // createCollection
 }

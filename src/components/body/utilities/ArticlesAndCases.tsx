@@ -11,6 +11,7 @@ const ArticlesAndCases = () => {
     const { t } = useTranslation();
 
     const [posts, setPosts] = useState<IPost[] | []>([]);
+    const [img, setImg] = useState<string>(`no-img`);
     const [pageLang, setPageLang] = useState<string>(`ru`);
 
     const [initialPosts, setInitialPosts] = useState<IPost[] | []>([]);
@@ -20,12 +21,20 @@ const ArticlesAndCases = () => {
 
     const PostItemsContainer = React.lazy(() => import('./post-item/PostItemsContainer'));
 
-    const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    const getImg = async (imageCloudPath: string) => {
+        return apiImg.downloadImage(imageCloudPath);
+    };
 
     const getPosts = async (pageLang: string) => {
         const posts: IPost[] | undefined = await api.getPosts(pageLang);
 
         if (posts) {
+
+            for (let post of posts) {
+                const imgUrl = await getImg(post.imageCloudPath);
+                post.imageUrl = imgUrl;
+            };
+
             setPosts(posts);
             setInitialPosts(posts);
         } else {
@@ -33,15 +42,15 @@ const ArticlesAndCases = () => {
         };
     };
 
-    const handleClickBtn = () => {
-        api.createCollection(document.documentElement.lang);
-    };
+    // const handleClickBtn = () => {
+    //     api.createCollection(document.documentElement.lang);
+    // };
 
-    const handleUpload = (file: File) => {
-        if (file) {
-            apiImg.uploadImage(file);         
-        };
-    };
+    // const handleUpload = (file: File) => {
+    //     if (file) {
+    //         apiImg.uploadImage(file);         
+    //     };
+    // };
 
     const filterPosts = (typesTagsSelected: string, categoryTagsSelected : string) => {
         let filteredPosts: IPost[] = [];

@@ -9,20 +9,23 @@ module.exports = {
     entry: `./src/index.tsx`,
     output: {
         path: path.join(__dirname, `public`),
-        filename: `bundle.js`
+        filename: `bundle.js`,
     },
     resolve: {
         extensions: ['.js', '.jsx', `.tsx`, `.ts`]
     },
     devServer : {
         port: 8080,
+        host: `0.0.0.0`,
         open: true,
         hot: true,
-        static: './public'
+        static: './public',
+        compress: true
     },
     plugins: [
         new HTMLWebpackPlugin({
             template: `./src/view/index.html`,
+            favicon: './src/view/favicon.svg'
         }),
         new CopyWebpackPlugin({
             patterns: [
@@ -57,10 +60,10 @@ module.exports = {
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'url-loader',
+                loader: 'file-loader',
                 options: {
                     limit: 10000,
-                    name: 'fonts/[contenthash].[ext]'
+                    outputPath: `fonts`
                 }
             }
         ]

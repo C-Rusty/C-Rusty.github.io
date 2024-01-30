@@ -32,13 +32,13 @@ const Footer = () => {
                     <div className="contacts">
                         <a href="mailto:info@alegchanov.com">info@alegchanov.com</a>
                         <div className="contacts__icons">
-                            <a href="viber://chat?number=%2BNUMBER">
+                            <a href="viber://chat?number=%2B3752961019786">
                                 <ViberLogo/>
                             </a>
-                            <a href="https://t.me/USERNAME">
+                            <a href="https://t.me/Aleg_Ch">
                                 <TelegramLogo/>
                             </a>                        
-                            <a href="https://wa.me/1XXXXXXXXXX">
+                            <a href="https://wa.me/48505025186">
                                 <WhatsAppLogo/>
                             </a>
                         </div>

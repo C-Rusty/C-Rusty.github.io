@@ -64,6 +64,8 @@
                 flex-direction: column;
                 column-gap: 2.4rem;
 
+                text-decoration: none;
+
                 max-width: 48%;
 
                 padding: 1.6rem;
@@ -151,6 +153,11 @@
 
                 }
             }
+
+            // hide posts
+            .post:nth-child(2), .post:last-child {
+                display: none;
+            } 
 
             .post:nth-child(5n + 1) {
                 flex-direction: row;

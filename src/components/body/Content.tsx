@@ -28,12 +28,12 @@ const Content = () => {
 
     return(
         <Routes>
-            <Route path="/contacts" element={<AboutMe/>}/>
+            <Route path="/" element={<AboutMe/>}/>
             <Route path="/trainings" element={<Trainings/>}/>
             <Route path="/articles-and-cases" element={<ArticlesAndCases/>}/>
-            <Route path="/" element={<Contacts/>}/>
+            <Route path="/contacts" element={<Contacts/>}/>
             {posts.map(post =>
-                <Route path={`articles-and-cases/` + post.imageCloudPath.split(`/`)[1].split(`.`)[0]} element={<FullPost/>}/>    
+                <Route path={`articles-and-cases/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`} element={<FullPost/>}/>    
             )}
         </Routes>
     )
