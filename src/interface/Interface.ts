@@ -1,19 +1,12 @@
-export interface IType {
-    type: `case` | `article` | `both` 
-}
-
-export interface ICategory {
-    category: `marketing` | `strategy` | `both`
-}
-
 export interface IPost {
     _id?: string,
     headline: string,
-    imagePath: string, 
-    type: IType,
-    category: ICategory 
+    imageCloudPath: string,
+    imageUrl?: string, 
+    types: [string],
+    categories: [string]
 }
 
-export interface IPosts {
-    posts: [IPost]
+export interface IImage {
+    image: string
 }

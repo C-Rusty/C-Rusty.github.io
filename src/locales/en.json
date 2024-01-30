@@ -107,9 +107,12 @@
     "All": "All",
     "Articles": "Articles",
     "Cases": "Cases",
-    "Categories": "Categories",
+    "Category": "Category",
     "Marketing": "Marketing",
-    "Strategy Development": "Strategy Development",
+    "Strategy development": "Strategy development",
+    "Strategy": "Strategy",
+
+    "Back to list": "Back to list",
     
     "Development of a marketing strategy for": "Development of a marketing strategy for",
     
@@ -122,7 +125,7 @@
     "development of a marketing strategy in all areas (car sales, service and maintenance)": "development of a marketing strategy in all areas (car sales, service and maintenance)",
     "constant support": "constant support",
     "A ready-made strategy is not a magic pill that will give results tomorrow. For everything to work, the implementation of strategic tasks must be monitored (provided support)": "A ready-made strategy is not a magic pill that will give results tomorrow. For everything to work, the implementation of strategic tasks must be monitored (provided support)",
-    "этап ": "stage",
+    "level ": "Stage",
     "Development of a marketing strategy for a car dealership": "Development of a marketing strategy for a car dealership",
     "The promotion strategy depends on the market capacity and competitiveness of the product. To begin with, we collected information and analyzed the Belarusian car market, the needs and wishes of customers, and compared the client’s marketing with the marketing of competitors. This research helped form a marketing foundation and structure, which subsequently influenced the increase in KIA's market share through promotion, positioning and competent development of the dealer network.": "The promotion strategy depends on the market capacity and competitiveness of the product. To begin with, we collected information and analyzed the Belarusian car market, the needs and wishes of customers, and compared the client’s marketing with the marketing of competitors. This research helped form a marketing foundation and structure, which subsequently influenced the increase in KIA's market share through promotion, positioning and competent development of the dealer network.",
     "Reorganization of the marketing department": "Reorganization of the marketing department",
@@ -149,12 +152,13 @@
     "days": "days",
     "Sergey Fedorenko, director of Atlant-M": "Sergey Fedorenko, director of Atlant-M",
     "Photo": "Photo",
+    "yearsRu": "years",
     "After three phases of the project, KIA sales increased and the team planned for further growth. They constantly held sessions to optimize the strategy: they set new goals and growth indicators, updated data on the market and competitors": "After three phases of the project, KIA sales increased and the team planned for further growth. They constantly held sessions to optimize the strategy: they set new goals and growth indicators, updated data on the market and competitors",
     "As a project consultant, I accompanied the implementation of a marketing strategy and helped carry out an advertising campaign. Throughout the project, I conducted marketing research of the target audience for KIA, drew portraits of real customers, and selected new priority customer segments for promotion": "As a project consultant, I accompanied the implementation of a marketing strategy and helped carry out an advertising campaign. Throughout the project, I conducted marketing research of the target audience for KIA, drew portraits of real customers, and selected new priority customer segments for promotion",
     "Over three years of joint work, KIA's market share increased from 3% to 11%": "Over three years of joint work, KIA's market share increased from 3% to 11%",
     "Out of 20 car dealers in the Republic of Belarus, the KIA auto center took 7th place": "Out of 20 car dealers in the Republic of Belarus, the KIA auto center took 7th place",
     "Due to the increase in sales volume, the team became not just dealers, but importers of KIA cars in the Republic of Belarus": "Due to the increase in sales volume, the team became not just dealers, but importers of KIA cars in the Republic of Belarus",
-    "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation": "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: <q>Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation</q>.",
+    "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation": "Sergey Fedorenko, director of Atlant-M (KIA), customer of the project: Oleg has extensive work experience, and this for me meant trust in the solutions being developed. It is pleasant and easy to work with him, he is ready for tasks of any level. As a result of the project, we recorded excellent results, thank you for your cooperation.",
     
     "Designer": "Designer",
     "Maria Shkrabo": "Maria Shkrabo",
@@ -165,7 +169,7 @@
     "Contact me": "Contact me",
     "Contact with me": "Contact with me",
     "Leave your contacts and I will contact you for a consultation": "Leave your contacts and I will contact you for a consultation",
-    "Name": "Name",
+    "Name": "Name *",
     "countries": "countries",
     "operates in more than": "operates in more than"
 }

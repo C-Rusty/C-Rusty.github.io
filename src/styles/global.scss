@@ -6,7 +6,11 @@ $black: #181716;
 $text-gray: #4B4845;
 $orange-hover: #FD6623;
 $gray-additional: #D7D2CC;
+$nav-articles: #3E3B39;
+$articles-header: #1D1D1D;
+$tags-bg: #4B4845;
 $footer: #9A9590;
+$tags: #4E4E4E;
 
 @mixin dark {
     background: #181716;
@@ -62,11 +66,17 @@ $footer: #9A9590;
     }
 }
 
+@mixin headlineMerriweather-24px {
+    font-family: 'Merriweather';
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
 @mixin headlineMerriweather-28px {
     color: $black;
 
     font-family: 'Merriweather';
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 700;
 }
 
@@ -108,4 +118,28 @@ $footer: #9A9590;
     font-family: Georgia;
     font-size: 2.4rem;
     font-weight: 400;
+}
+
+@mixin PTSans-24px {
+    font-family: "PT Sans";
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+@mixin PTSans-20px {
+    font-family: "PT Sans";
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+@mixin PTSans-18px {
+    font-family: "PT Sans";
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+@mixin PTSans-14px {
+    font-family: "PT Sans";
+    font-size: 1.4rem;
+    font-weight: 700;
 }
