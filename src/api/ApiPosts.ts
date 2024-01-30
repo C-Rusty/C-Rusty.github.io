@@ -2,10 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { collection, doc, setDoc, addDoc, getDocs  } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
-import firebaseConfig from "./DbConfig";
 import collections from "../collections/collections";
 import { IPost} from "../interface/Interface";
 import { postInterfaceFields } from "../locales/ProjectLocalization";
+import { firebaseConfig } from "./dbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

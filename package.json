@@ -40,10 +40,12 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.6",
+    "framer-motion": "^11.0.3",
     "i18next": "^23.7.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^14.0.1"
+    "react-i18next": "^14.0.1",
+    "react-loading-iframe": "^1.1.0"
   },
   "keywords": [],
   "description": ""

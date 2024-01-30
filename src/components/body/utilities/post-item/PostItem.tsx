@@ -19,14 +19,16 @@ const PostItem = ({post} : {post: IPost}) => {
 
     const { t } = useTranslation();
 
+    const postUrlPath = post.imageCloudPath.split(`/`)[1].split(`.`)[0];
+
     const handleClick = () => {
-        document.querySelector(`#${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`)!.click();
+        document.querySelector(`#${postUrlPath}`)!.click();
     };
 
     return (
         <div className="post" onClick={handleClick}>
             <div className="img">
-                <img src={img} loading="lazy" alt={post.imageCloudPath.split(`/`)[1].split(`.`)[0]} />
+                <img src={img} loading="lazy" alt={postUrlPath} />
                 <div className="img__read-hover">
                     <span>Читать</span>
                 </div>
@@ -40,7 +42,7 @@ const PostItem = ({post} : {post: IPost}) => {
                     )}
                 </div>
             </div>
-            <Link id={post.imageCloudPath.split(`/`)[1].split(`.`)[0]} to={`/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`}></Link>
+            <Link id={postUrlPath} to={`/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`}></Link>
         </div>
     );
 };

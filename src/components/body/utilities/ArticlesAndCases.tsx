@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import '../../../styles/body/ArticlesCases.scss';
 import { useTranslation } from "react-i18next";
 import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
-import PostItem from "./post-item/PostItem";
 import { apiImg } from "../../../api/ApiImg";
+import Loading from "./Loading";
 
 const ArticlesAndCases = () => {
 
@@ -17,6 +17,10 @@ const ArticlesAndCases = () => {
 
     const [typesTagsSelected, setTypesTagsSelected] = useState<string>(`All`);
     const [categoryTagsSelected, setCategoryTagsSelected] = useState<string>(`All`);
+
+    const PostItemsContainer = React.lazy(() => import('./post-item/PostItemsContainer'));
+
+    const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
     const getPosts = async (pageLang: string) => {
         const posts: IPost[] | undefined = await api.getPosts(pageLang);
@@ -88,7 +92,6 @@ const ArticlesAndCases = () => {
         getPosts(pageLang);
     }, [pageLang]);
 
-
     useEffect(() => {
         filterPosts(typesTagsSelected, categoryTagsSelected);
     }, [typesTagsSelected, categoryTagsSelected]);
@@ -156,11 +159,9 @@ const ArticlesAndCases = () => {
                         </ul>
                     </div>
                 </nav>
-                <div className="articles-cases-container">
-                    {posts.map(post => 
-                        <PostItem key={post._id} post={post}/>    
-                    )}
-                </div>
+                <Suspense fallback={<Loading/>}>
+                    <PostItemsContainer posts={posts}/>
+                </Suspense>
             </div>
         </div>
     );
