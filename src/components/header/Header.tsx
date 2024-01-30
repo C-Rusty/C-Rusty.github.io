@@ -2,8 +2,8 @@ import React from "react";
 import Logo from "./utilities/Logo";
 import NavBar from "./utilities/NavBar";
 import LangSwitcher from "./utilities/LangSwitcher";
-import '../../styles/header/Header.scss';
 import { Link } from "react-router-dom";
+import '../../styles/header/header.scss';
 
 const Header = () => {
     

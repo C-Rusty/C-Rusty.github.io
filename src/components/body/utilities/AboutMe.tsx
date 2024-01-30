@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import '../../../styles/body/AboutMe.scss';
 import photo from '../../../images/content/about-me/oleg-chanov.webp';
 import educationSvg from '../../../images/content/about-me/education.svg';
 import quoteBg from '../../../images/content/about-me/quote-bg.webp'
@@ -10,6 +9,7 @@ import credoBg from '../../../images/content/about-me/credo-bg.webp';
 import bringBenefitsBg from '../../../images/content/about-me/bring-benefits-bg.webp';
 import achieve from '../../../images/content/about-me/achieve.webp';
 import ticking from '../../../images/content/about-me/ticking.svg';
+import '../../../styles/body/about-me.scss';
 
 const AboutMe = () => {
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, Suspense} from "react";
-import '../../../styles/body/ArticlesCases.scss';
 import { useTranslation } from "react-i18next";
 import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
 import { apiImg } from "../../../api/ApiImg";
 import Loading from "./Loading";
+import '../../../styles/body/articles-cases.scss';
 
 const ArticlesAndCases = () => {
 
