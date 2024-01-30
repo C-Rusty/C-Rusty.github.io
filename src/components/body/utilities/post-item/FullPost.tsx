@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import '../../../../styles/Body/FullPost/FullPostItem.scss';
+import '../../../../styles/main/FullPost/FullPostItem.scss';
 import { Link } from "react-router-dom";
 import ArrowBack from "../../../../images/content/articles-cases/ArrowBack";
 

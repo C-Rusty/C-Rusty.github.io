@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next';
 import LangIcon from "./LangIcon";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import '../../../styles/Header/header-utilities/LangSwitcher.scss';
+import '../../../styles/head/header-utilities/LangSwitcher.scss';
 import { FormControl} from "@mui/material";
 
 const LangSwitcher = () => {

@@ -9,7 +9,7 @@ import credoBg from '../../../images/content/about-me/credo-bg.webp';
 import bringBenefitsBg from '../../../images/content/about-me/bring-benefits-bg.webp';
 import achieve from '../../../images/content/about-me/achieve.webp';
 import ticking from '../../../images/content/about-me/ticking.svg';
-import '../../../styles/body/about-me.scss';
+import '../../../styles/main/about-me.scss';
 
 const AboutMe = () => {
 

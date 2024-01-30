@@ -5,7 +5,7 @@ import introImg from '../../../images/content/trainings/introImg.webp';
 import resultBg from '../../../images/content/trainings/training-result.webp';
 import cjm from '../../../images/content/trainings/cjm.webp';
 import trainingResult from '../../../images/content/trainings/cjm-result.webp';
-import '../../../styles/body/trainings.scss';
+import '../../../styles/main/trainings.scss';
 
 const Trainings = () => {
 

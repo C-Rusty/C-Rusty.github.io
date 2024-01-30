@@ -6,7 +6,7 @@ import WhatsAppLogo from "../../../components/footer/utilities/WhatsAppLogo";
 import viber from '../../../images/footer/viber.svg'
 import telegram from '../../../images/footer/telegram.svg';
 import whatsApp from '../../../images/footer/whats-app.svg';
-import '../../../styles/body/contacts.scss';
+import '../../../styles/main/contacts.scss';
 
 const Contacts = () => {
 
