@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import '../../../styles/body/Contacts.scss';
 import ViberLogo from "../../../components/footer/utilities/ViberLogo";
 import TelegramLogo from "../../../components/footer/utilities/TelegramLogo";
 import WhatsAppLogo from "../../../components/footer/utilities/WhatsAppLogo";
 import viber from '../../../images/footer/viber.svg'
 import telegram from '../../../images/footer/telegram.svg';
 import whatsApp from '../../../images/footer/whats-app.svg';
+import '../../../styles/body/contacts.scss';
 
 const Contacts = () => {
 
