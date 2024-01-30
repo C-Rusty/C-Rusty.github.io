@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import '../../../styles/body/Trainings.scss';
+import '../../../styles/Body/Trainings.scss';
 import introImg from '../../../images/content/trainings/introImg.webp';
 import resultBg from '../../../images/content/trainings/training-result.webp';
 import cjm from '../../../images/content/trainings/cjm.webp';
