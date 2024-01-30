@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import '../../../styles/Body/Contacts.scss';
+import '../../../styles/body/Contacts.scss';
 import ViberLogo from "../../../components/footer/utilities/ViberLogo";
 import TelegramLogo from "../../../components/footer/utilities/TelegramLogo";
 import WhatsAppLogo from "../../../components/footer/utilities/WhatsAppLogo";

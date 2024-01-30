@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense, lazy } from "react";
+import React, { useEffect, useState, Suspense} from "react";
 import '../../../styles/body/ArticlesCases.scss';
 import { useTranslation } from "react-i18next";
 import { api } from "../../../api/ApiPosts";

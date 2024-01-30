@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import '../../../styles/Body/AboutMe.scss';
+import '../../../styles/body/AboutMe.scss';
 import photo from '../../../images/content/about-me/oleg-chanov.webp';
 import educationSvg from '../../../images/content/about-me/education.svg';
 import quoteBg from '../../../images/content/about-me/quote-bg.webp'

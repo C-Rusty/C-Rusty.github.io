@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./utilities/Logo";
 import NavBar from "./utilities/NavBar";
 import LangSwitcher from "./utilities/LangSwitcher";
-import '../../styles/Header/Header.scss';
+import '../../styles/header/Header.scss';
 import { Link } from "react-router-dom";
 
 const Header = () => {
