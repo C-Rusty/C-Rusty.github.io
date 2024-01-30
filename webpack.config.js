@@ -20,7 +20,8 @@ module.exports = {
         open: true,
         hot: true,
         static: './public',
-        compress: true
+        compress: true,
+        historyApiFallback: { index: "/", disableDotRule: true },
     },
     plugins: [
         new HTMLWebpackPlugin({
