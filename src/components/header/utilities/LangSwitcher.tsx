@@ -15,6 +15,7 @@ const LangSwitcher = () => {
     };
 
     const [isLangRu, setIsLangRu] = useState<boolean>(true);
+
     const handleLangOptionShow = () => {
         if (document.documentElement.lang === `en`) {
             setIsLangRu(false);

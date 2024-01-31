@@ -51,7 +51,7 @@ const Footer = () => {
                     </div>
                     <div className="authors__author">
                         <span>{t (`Programmer`)}:</span>
-                        <a href="">{t (`Rostislav Chanov`)}</a>
+                        <a href="https://www.linkedin.com/in/rostislavchanov/">{t (`Rostislav Chanov`)}</a>
                     </div>
                 </div>
             </div>
