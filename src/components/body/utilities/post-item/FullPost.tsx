@@ -65,7 +65,7 @@ const FullPost = () => {
                         </div>
                         <div className="article">
                             <h3>
-                                {t (`stage`)} 1. {t (`Development of a marketing strategy for a car dealership`)}
+                                {t (`Stage`)} 1. {t (`Development of a marketing strategy for a car dealership`)}
                             </h3>
                             <p>
                                 {t (`The promotion strategy depends on the market capacity and competitiveness of the product. To begin with, we collected information and analyzed the Belarusian car market, the needs and wishes of customers, and compared the client’s marketing with the marketing of competitors. This research helped form a marketing foundation and structure, which subsequently influenced the increase in KIA's market share through promotion, positioning and competent development of the dealer network.`)}
@@ -73,7 +73,7 @@ const FullPost = () => {
                         </div>
                         <div className="article">
                             <h3>
-                                {t (`stage`)} 2. {t (`Reorganization of the marketing department`)}
+                                {t (`Stage`)} 2. {t (`Reorganization of the marketing department`)}
                             </h3>
                             <div className="elements-with-text">
                                 <p >
@@ -100,7 +100,7 @@ const FullPost = () => {
                         </div>
                         <div className="article">
                             <h3>
-                                {t (`stage`)} 3. {t (`Conducting a strategic session`)}
+                                {t (`Stage`)} 3. {t (`Conducting a strategic session`)}
                             </h3>
                             <div className="elements-with-text">
                                 <p >
@@ -128,7 +128,7 @@ const FullPost = () => {
                             </div>
                         </div>
                         <div className="article">
-                            <h3>{t (`stage`)} 4. {t (`Conducting a strategic session`)}</h3>
+                            <h3>{t (`Stage`)} 4. {t (`Conducting a strategic session`)}</h3>
                             <div className="elements-with-text">
                                 <p>
                                     {t (`After three phases of the project, KIA sales increased and the team planned for further growth. They constantly held sessions to optimize the strategy: they set new goals and growth indicators, updated data on the market and competitors`)}

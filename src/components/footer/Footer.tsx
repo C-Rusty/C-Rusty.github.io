@@ -30,7 +30,7 @@ const Footer = () => {
                     <></> 
                     :
                     <div className="contacts">
-                        <a href="mailto:info@alegchanov.com">info@alegchanov.com</a>
+                        <a href="mailto:bfchanoff@gmail.com">bfchanoff@gmail.com</a>
                         <div className="contacts__icons">
                             <a href="viber://chat?number=%2B3752961019786">
                                 <ViberLogo/>
