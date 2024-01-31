@@ -38,7 +38,7 @@ const Trainings = () => {
                                 <p>Online/Offline</p>
                             </div>
                             <button>
-                                <Link to="/contants">{t (`Contact me`)}</Link>
+                                <Link to="/contacts">{t (`Contact me`)}</Link>
                             </button>
                         </div>
                         <div className="img-container">
@@ -134,7 +134,7 @@ const Trainings = () => {
                                 <p>Online/Offline</p>
                             </div>
                             <button>
-                                <Link to="/contants">{t (`Contact me`)}</Link>
+                                <Link to="/contacts">{t (`Contact me`)}</Link>
                             </button>
                         </div>
                         <div className="img-container">

@@ -30,7 +30,7 @@ const AboutMe = () => {
                         <h2>{t (`Strategic management consultant`)}</h2>
                         <h3>{t ('Strategy development in offline and online sessions. Holding strategic sessions using AI (Artificial Intelligence)')}</h3>
                         <button>
-                            <Link to="/contants">{t (`Contact me`)}</Link>
+                            <Link to="/contacts">{t (`Contact me`)}</Link>
                         </button>
                     </div>
                 </div>
