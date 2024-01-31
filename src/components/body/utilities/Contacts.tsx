@@ -104,9 +104,9 @@ const Contacts = () => {
                     <p>
                         {t (`Leave your contacts and I will contact you for a consultation`)}
                     </p>
-                    <a href="mailto:info@alegchanov.com">
+                    <a href="mailto:bfchanoff@gmail.com">
                         <img src="../../../images/content/contact-me/mail-icon.svg" alt="mail" />
-                        <span>info@alegchanov.com</span>
+                        <span>bfchanoff@gmail.com</span>
                     </a>
                     <div className="social-logos">
                         <a href="viber://chat?number=%2B3752961019786">
