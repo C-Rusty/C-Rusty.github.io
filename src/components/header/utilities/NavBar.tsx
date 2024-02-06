@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import '../../../styles/head/header-utilities/NavBar.scss'
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({className}: {className: string}) => {
 
     const { t } = useTranslation();
 
@@ -16,9 +16,9 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="header-nav">
+        <nav className={`header-nav nav-${className}`}>
             <ul>
-                <li onClick={(e) => handleClick(e)} id="about-me">
+                <li onClick={(e) => handleClick(e)} id="about-me" className="active">
                     <Link to="/">{t (`About me`)}</Link>
                 </li>
                 <li onClick={(e) => handleClick(e)} id="trainings">

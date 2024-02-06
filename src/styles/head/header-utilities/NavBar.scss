@@ -12,9 +12,15 @@
 
         list-style-type: none;
 
+        @media screen and (max-width: 991px) {
+            column-gap: 0;
+        }
+
         li {
             border-radius: .8rem;
             padding: 1.6rem;
+
+            transition: all .5s;
 
             a {
                 @include text-color-gray;
@@ -22,11 +28,11 @@
 
                 width: 100%;
 
-                transition: all .5s;
-
-                &:hover {
-                    @include text-color-white;
-                    transition: all .5s;
+                @media screen and (min-width: 767px) {
+                    &:hover {
+                        @include text-color-white;
+                        transition: all .5s;
+                    }
                 }
             }
         }

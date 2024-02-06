@@ -3,10 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import photo from '../../../images/content/about-me/oleg-chanov.webp';
 import educationSvg from '../../../images/content/about-me/education.svg';
-import quoteBg from '../../../images/content/about-me/quote-bg.webp'
 import approachBg from '../../../images/content/about-me/approach.webp';
-import credoBg from '../../../images/content/about-me/credo-bg.webp';
-import bringBenefitsBg from '../../../images/content/about-me/bring-benefits-bg.webp';
 import achieve from '../../../images/content/about-me/achieve.webp';
 import ticking from '../../../images/content/about-me/ticking.svg';
 import '../../../styles/main/about-me.scss';
@@ -19,19 +16,28 @@ const AboutMe = () => {
         <>
             <section className="intro">
                 <div className="container">
-                    <div className="img">
+                    <Link to="/contacts" className="mobile-btn">
+                        {t (`Contact me`)}
+                    </Link>
+                    <div className="img-container">
                         <img src={photo} alt="oleg-chanov" />
                     </div>
                     <div className="text">
                         <div className="text__headline">
                             <h1>{t (`Aleg Chanov`)}</h1>
-                            <div className="underline"></div>
+                            <div className="underline-container">
+                                <div className="underline"></div>
+                            </div>
                         </div>
                         <h2>{t (`Strategic management consultant`)}</h2>
-                        <h3>{t ('Strategy development in offline and online sessions. Holding strategic sessions using AI (Artificial Intelligence)')}</h3>
-                        <button>
-                            <Link to="/contacts">{t (`Contact me`)}</Link>
-                        </button>
+                        <h3>
+                            {t ('Strategy development in offline and online sessions')}
+                            {window.innerWidth < 1150 && <br />}
+                            {t (`Holding strategic sessions using AI (Artificial Intelligence)`)}   
+                        </h3>
+                        <Link to="/contacts" className="desktop-btn">
+                            {t (`Contact me`)}
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -58,7 +64,7 @@ const AboutMe = () => {
                     </div>
                 </div>
             </section>
-            <section className="education">
+            {/* <section className="education">
                 <div className="container">
                     <h3>{t (`Education`)}</h3>
                     <div className="text">
@@ -73,9 +79,6 @@ const AboutMe = () => {
                 </div>
             </section>
             <section className="quote">
-                <div className="img">
-                    <img src={quoteBg} alt="" />
-                </div>
                 <div className="container">
                     <h4>{t (`The best way to predict the future is to create it...`)}</h4>
                     <h5>{t (`Peter Drucker`)}</h5>
@@ -144,14 +147,15 @@ const AboutMe = () => {
                                 <p>{t ('The strategy is being successfully implemented')}</p>
                             </div>
                         </div>
-                        <img src={approachBg} alt="my-approach" />
+                        {window.innerWidth > 991 &&
+                            <div className="main__img-container">
+                                <img src={approachBg} alt="my-approach" />
+                            </div>
+                        }
                     </div>
                 </div>
             </section>
             <section className="credo">
-                <div className="img">
-                    <img src={credoBg} alt="my-credo" />
-                </div>
                     <div className="container">
                         <h4>{t (`My credo`)}:</h4>
                         <h5>&laquo;{t (`Understand how it works, and then apply it to yourself`)}&raquo;</h5>
@@ -186,9 +190,6 @@ const AboutMe = () => {
                 </div>
             </section>
             <section className="bring-benefits">
-                <div className="img">
-                    <img src={bringBenefitsBg} alt="my-credo" />
-                </div>
                 <div className="container">
                     <h3>{t (`How do I bring benefit`)}</h3>
                     <div className="text">
@@ -218,7 +219,9 @@ const AboutMe = () => {
                 <div className="container">
                     <h3>{t (`How do I achieve this`)}&#63;</h3>
                     <div className="main">
-                        <img src={achieve} alt="achieve-session" />
+                        <div className="main__img-container">
+                            <img src={achieve} alt="achieve-session" />
+                        </div>
                         <div className="text">
                             <div className="text__item">
                                 <img src={ticking} alt="achieve" />
@@ -245,11 +248,11 @@ const AboutMe = () => {
                             </div>
                         </div>
                     </div>
-                    <button>
-                        <Link to="/contacts">{t (`Contact me`)}</Link>
-                    </button>
+                    <Link to="/contacts" className="mobile-btn">
+                        {t (`Contact me`)}
+                    </Link>
                 </div>
-            </section>
+            </section> */}
         </>
     )
 };

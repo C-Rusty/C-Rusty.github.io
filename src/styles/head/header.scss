@@ -5,12 +5,75 @@ header {
     padding: 2.4rem 0;
 
     @include dark;
-
     font-family: "PT Sans";
+
+    @media screen and (max-width: 767px) {
+        position: relative;
+        z-index: 11;
+    }
 
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: .5rem;
+    
+        position: relative;
+    
+        width: 2.8rem;
+        height: 100%;
+    
+        &__line {
+            width: 2.8rem;
+            height: .3rem;
+            border-radius: .2rem;
+    
+            background: $gray-additional;
+    
+            transition: all .5s;
+        }
+    
+        &__line:first-child {
+            transform: rotate(0deg);
+    
+        }
+        &__line:nth-child(2) {
+            transform: rotate(0deg);
+    
+        }
+        &__line:last-child {
+            transform: rotate(0deg);
+        }
+    }
+
+    .hamburger-active {
+        position: relative;
+    
+        .hamburger__line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+        }
+    
+        .hamburger__line:first-child {
+            transform: rotate(45deg);
+    
+        }
+        .hamburger__line:nth-child(2) {
+            transform: rotate(-45deg);
+    
+        }
+        .hamburger__line:last-child {
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+    
     }
 }

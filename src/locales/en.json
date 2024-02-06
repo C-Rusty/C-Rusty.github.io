@@ -1,6 +1,10 @@
 {
+    
     "Welcome to the website": "Welcome to the website",
     "Text Component": "Text Component",
+    "Language": "Language",
+    "English": "English",
+    "Russian": "Russian",
 
     "About me": "About me",
     "Trainings": "Trainings",
@@ -9,11 +13,12 @@
 
     "Aleg Chanov": "Aleg Chanov",
     "Strategic management consultant": "Strategic management consultant",
-    "Strategy development in offline and online sessions. Holding strategic sessions using AI (Artificial Intelligence)": "Strategy development in offline and online sessions. Holding strategic sessions using AI (Artificial Intelligence)",
+    "Strategy development in offline and online sessions": "Strategy development in offline and online sessions.",
+    "Holding strategic sessions using AI (Artificial Intelligence)": "Holding strategic sessions using AI (Artificial Intelligence)",
 
     "In numbers": "In numbers",
     "Since 2005": "Since 2005",
-    "in consulting business": "consulting business",
+    "in consulting business": "in consulting business",
     "years": "years",
     "in a large automobile holding Volkswagen from an employee to a marketing director": "in a large automobile holding Volkswagen from an employee to a marketing director",
     "of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc.": "of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc.",

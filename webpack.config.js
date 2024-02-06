@@ -12,11 +12,10 @@ module.exports = {
         filename: `./bundle.js`,
     },
     resolve: {
-        extensions: ['.js', '.jsx', `.tsx`, `.ts`]
+        extensions: ['.js', `.tsx`, `.ts`]
     },
     devServer : {
         port: 8080,
-        host: `0.0.0.0`,
         open: true,
         hot: true,
         static: './public',
@@ -53,11 +52,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|svg|webp)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'images/[contenthash].[ext]'
-                }
+                type: 'asset/resource',
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,

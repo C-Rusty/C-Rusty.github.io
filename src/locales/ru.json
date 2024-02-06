@@ -1,6 +1,9 @@
 {
     "Welcome to the website": "Добро пожаловать на сайт",
     "Text Component": "Текстовый компонент",
+    "Language": "Язык",
+    "English": "Английский",
+    "Russian": "Русский",
 
     "About me": "Обо мне",
     "Trainings": "Тренинги",
@@ -9,7 +12,8 @@
 
     "Aleg Chanov": "Олег Чанов",
     "Strategic management consultant": "Консультант по стратегическому управлению",
-    "Strategy development in offline and online sessions. Holding strategic sessions using AI (Artificial Intelligence)": "Разработка стратегий в формате стратегических сессий в offline и online. Проведение  стратегических сессий с использованием AI (Искусственного Интеллекта).",
+    "Strategy development in offline and online sessions": "Разработка стратегий в формате стратегических сессий в offline и online.",
+    "Holding strategic sessions using AI (Artificial Intelligence)": "Проведение  стратегических сессий с использованием AI (Искусственного Интеллекта).",
 
     "In numbers": "В цифрах",
     "Since 2005": "с 2005 года",

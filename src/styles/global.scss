@@ -46,6 +46,10 @@ $tags: #4E4E4E;
     border-radius: 2.4rem;
     border: none;
 
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+
     background: $orange;
 
     transition: all .5s;
@@ -58,11 +62,6 @@ $tags: #4E4E4E;
         background: $orange-hover;
         cursor: pointer;
         transition: all .5s;
-    }
-
-    a {
-        text-decoration: none;
-        color: $white;
     }
 }
 
@@ -123,6 +122,12 @@ $tags: #4E4E4E;
 @mixin PTSans-24px {
     font-family: "PT Sans";
     font-size: 2.4rem;
+    font-weight: 700;
+}
+
+@mixin PTSans-22px {
+    font-family: "PT Sans";
+    font-size: 2.2rem;
     font-weight: 700;
 }
 

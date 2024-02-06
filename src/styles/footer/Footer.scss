@@ -7,6 +7,10 @@ footer {
         display: flex;
         border-top: 1px solid $footer;
 
+        @media screen and (max-width: 1150px) {
+            flex-direction: column;
+            padding: 0;
+        }
 
         .contacts, .authors {
             display: flex;
@@ -15,6 +19,17 @@ footer {
             width: 50%;
 
             padding: .7rem 0;
+
+            @media screen and (max-width:1150px) {
+                width: 100%;
+                padding: 0;
+            }
+
+            &__email, &__author, &__icons {
+                @media screen and (max-width: 1150px) {
+                    padding: 2.5rem 5.6rem;
+                }
+            }
         }
 
         .contacts {
@@ -23,14 +38,26 @@ footer {
             padding-right: 5.5rem;
             border-right: 1px solid $footer;
 
-            a {
-                text-decoration: none;
+            @media screen and (max-width:1150px) {
+                border-bottom: 1px solid $footer;
+                padding-right: 0;
+            }
 
-                @include textGeorgia-18px;
-                color: $footer;
-
+            &__email {
                 &:hover {
                     cursor: pointer;
+                }
+                
+                @media screen and (max-width:1150px) {
+                    width: 50%;   
+                    border-right: 1px solid $footer;
+                }
+
+                a {
+                    text-decoration: none;
+
+                    @include textGeorgia-18px;
+                    color: $footer;
                 }
             }
 
@@ -109,9 +136,19 @@ footer {
 
             padding-left: 5.6rem;
 
+            @media screen and (max-width: 1150px) {
+                padding-left: 0;
+            }
+
             &__author {
                 display: flex;
                 column-gap: .5rem;
+
+                @media screen and (max-width: 1150px) {
+                    flex-direction: column;
+                    column-gap: 0;
+                    row-gap: .5rem;
+                }
 
                 span, a {
                     @include textGeorgia-18px;
@@ -124,6 +161,13 @@ footer {
                 a {
                     color: $text-gray;
                     text-decoration: underline;
+                }
+            }
+
+            &__author:first-child {
+                @media screen and (max-width: 1150px) {
+                    min-width: 50%;
+                    border-right: 1px solid $footer;
                 }
             }
         }

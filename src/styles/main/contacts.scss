@@ -3,11 +3,7 @@
 .contact-me {
     background: $gray;
 
-    min-height: 90vh;
-    min-width: 98vw;
-
-    position: relative;
-    z-index: 2;
+    min-height: calc(100vh - (10.1rem + 3.6rem));
 
     display: flex;
     justify-content: center;
@@ -207,7 +203,7 @@
 
                     .list {
                         position: relative;
-                        z-index: 20;
+                        z-index: 1;
 
                         img {
                             max-width: 2.4rem;

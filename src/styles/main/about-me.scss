@@ -10,8 +10,35 @@
         align-items: center;
         justify-content: space-between;
 
+        @media screen and (max-width: 991px) {
+            flex-direction: column-reverse;
+        }
+
+        .img-container {
+            @media screen and (max-width: 991px) {
+                margin-bottom: 4.8rem;
+                width: 100%;
+            }
+
+            img {
+                @media screen and (max-width: 991px) {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
         .text {
             padding: 9.5rem 0;
+
+            @media screen and (max-width: 991px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                text-align: center;                
+                padding: 0;
+            }
 
             &__headline {
                 margin-bottom: 4.8rem;
@@ -32,8 +59,11 @@
             h2 {
                 @include headlineMerriweather-38px;
                 max-width: 85%;
-
                 margin-bottom: 3.2rem;
+
+                @media screen and (max-width: 991px) {
+                    max-width: 100%;
+                }
             }
 
             h3 {
@@ -41,11 +71,29 @@
                 max-width: 93%;
 
                 margin-bottom: 7.2rem;
+
+                @media screen and (max-width: 991px) {
+                    max-width: 100%;
+                    margin-bottom: 4.8rem;
+                }
             }
 
-            button {
-                @include button;
+            @media screen and (max-width: 991px) {
+                .desktop-btn {
+                    display: none
+                }
             }
+        }
+
+        .mobile-btn {
+            min-width: 100%;
+            @media screen and (min-width: 991px) {
+                display: none
+            }
+        }
+
+        a {
+            @include button;
         }
     }    
 }
@@ -70,6 +118,13 @@
             justify-content: space-between;
             align-items: center;
 
+            text-align: center;
+
+            @media screen and (max-width: 1150px) {
+                flex-wrap: wrap;
+                row-gap: 7rem;
+            }
+
             &__card {
                 width: 32rem;
                 height: 32rem;
@@ -84,6 +139,14 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+
+                @media screen and (max-width: 1450px) {
+                    width: 26rem;
+                    padding: 1.2rem;
+                }
+                @media screen and (max-width: 1150px) {
+                    width: 45%;
+                }
 
                 h4 {
                     @include headlineMerriweather-38px;
@@ -139,35 +202,15 @@
 }
 
 .quote {
-    height: 40rem;
-    position: relative;
-
     padding: 0;
     
-    .img {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), lightgray -2px -296.793px / 100.162% 204.36% no-repeat;
+    .container {
+        background: url(../../images/content/about-me/quote-bg.webp),linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), lightgray -2px -296.793px / 100.162% 204.36% no-repeat;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
-        height: 100%;
-        width: 100%;
-
-        position: absolute;
-        z-index: 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .container {
-        position: relative;
-        z-index: 20;
-
-        height: 100%;
-        width: 100%;
+        max-height: 44.3rem;
 
         display: flex;
         flex-direction: column;
@@ -199,18 +242,28 @@
 
 .system {
     background: $gray;
-
     @include padding-top;    
 
     .container {
         display: flex;
         column-gap: 8.6rem;
         justify-content: space-between;
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+        }
     
         h3 {
-            margin-top: 11rem;
+            display: flex;
+            align-items: center;
+
             @include headlineMerriweather-38px;
             font-weight: 400;
+
+            @media screen and (max-width: 991px) {
+                min-width: 100%;
+                margin-bottom: 4.8rem;
+            }
         }
 
         .quotes {
@@ -253,11 +306,19 @@
         display: flex;
         column-gap: 8.4rem;
         justify-content: space-between;
+        
+        &__plan, &__img-container {
+            width: 50%;
+        }
 
         &__plan {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            @media screen and (max-width: 991px) {
+                width: 100%;
+            }
 
             .item {
                 display: flex;
@@ -280,43 +341,32 @@
                     color: $black;
                 }
             }
+
+            .item:first-child {
+                padding-top: 0;
+            }
+        }
+
+        &__img-container {
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }
 
 .credo {
-    height: 40rem;
-    position: relative;
-
     padding: 0;
-    
-    .img {
-        background: lightgray 0.21px -113.105px / 100% 212.664% no-repeat;;
+
+    .container {
+        padding: 14.5rem 24rem;
+        max-height: 44.3rem;
+
+        background: url(../../images/content/about-me/credo-bg.webp), lightgray 0.21px -113.105px / 100% 212.664% no-repeat;;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
-        height: 100%;
-        width: 100%;
-
-        position: absolute;
-        z-index: 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .container {
-        position: relative;
-        z-index: 20;
-
-        height: 100%;
-        width: 100%;
-
-        padding: 14.5rem 24rem;
-
 
         h4 {
             @include textGeorgia-24px;
@@ -372,44 +422,29 @@
 
                 @include textGeorgia-18px;
                 text-align: center;
+
+                @media screen and (max-width: 1150px) {
+                    max-width: 48%;
+                }
             }
         }
     }
 }
 
 .bring-benefits {
-    height: 40rem;
-    position: relative;
-
     padding: 0;
-    
-    .img {
-        background: lightgray 0.21px -113.105px / 100% 212.664% no-repeat;;
+
+    .container {
+        background: url(../../images/content/about-me/bring-benefits-bg.webp) ,lightgray 0.21px -113.105px / 100% 212.664% no-repeat;;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
-        height: 100%;
-        width: 100%;
-
-        position: absolute;
-        z-index: 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .container {
-        position: relative;
-        z-index: 20;
-
-        height: 100%;
-        width: 100%;
-
         padding: 7.2rem 24rem;
 
+        @media screen and (max-width: 1600px) {
+            padding: 7.2rem 5.6rem;
+        }
 
         h3 {
             display: flex;
@@ -428,14 +463,22 @@
             &__column {
                 max-width: 45%;
 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                row-gap: 4.8rem;
+
                 p:first-child {
                     max-width: 85%;
                     min-height: 8.1rem;
 
                     @include textGeorgia-24px;
-                    margin-bottom: 2.4rem;
 
                     color: $white;
+
+                    @media screen and (max-width: 1600px) {
+                        max-width: 95%;
+                    }
 
                     span {
                         @include highlight-class;
@@ -445,30 +488,16 @@
                 p:last-child {
                     max-width: 70%;
 
+                    @media screen and (max-width: 1600px) {
+                        max-width: 95%;
+                    }
+
                     @include textGeorgia-18px;
                     color: $white;
                 }
 
                 p {
                     text-shadow: 0px 0px 8.5rem rgba(0, 0, 0, 0.25);
-                }
-            }
-
-            &__column:first-child {
-                p:first-child {
-                    // max-width: 85%;
-                }
-                p:last-child {
-                    max-width: 70%;
-                }
-            }
-
-            &__column:last-child {
-                p:first-child {
-                    // max-width: 85%;
-                }
-                p:last-child {
-                    max-width: 60%;
                 }
             }
         }
@@ -482,6 +511,12 @@
     padding-bottom: 8rem;
 
     .container {
+        @media screen and (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+        
         h3 {
             display: flex;
             justify-content: center;
@@ -494,18 +529,40 @@
         .main {
             display: flex;
             justify-content: space-between;
-
+            column-gap: 5rem;
             margin-bottom: 4rem;
 
-            img {
-                background: lightgray -29.614px 0px / 111.472% 100.514% no-repeat;
+            @media screen and (max-width: 991px) {
+                flex-direction: column-reverse;
             }
+
+            &__img-container {
+                min-height: 40rem;
+                min-width: 32%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
 
             .text {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                max-width: 50%;
+                max-width: 60%;
+
+                @media screen and (max-width: 1500px) {
+                    max-width: 50%;
+                }
+                @media screen and (max-width: 1150px) {
+                    max-width: 45%;
+                }
+                @media screen and (max-width: 991px) {
+                    max-width: 100%;
+                    margin-bottom: 4.8rem;
+                }
 
                 &__item {
                     display: flex;
@@ -514,9 +571,12 @@
 
                     min-height: 6.5rem;
 
-                    padding: 2.6rem 0;
-
+                    padding-bottom: 2.6rem;
                     border-bottom: .2rem solid $black;
+
+                    @media screen and (max-width: 991px) {
+                        padding-top: 2.6rem;
+                    }
 
                     p {
                         @include textGeorgia-18px;
@@ -530,8 +590,13 @@
             }
         }
 
-        button {
+        .mobile-btn {
             @include button;
+
+            @media screen and (max-width: 991px) {
+                display: block;
+                min-width: 70%;
+            }
         }
     }
 }
