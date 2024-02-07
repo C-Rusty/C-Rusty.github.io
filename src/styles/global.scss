@@ -38,6 +38,10 @@ $tags: #4E4E4E;
 
 @mixin padding-top {
     padding-top: 7.2rem;
+
+    @media screen and (max-width: 425px) {
+        padding-top: 4.8rem;
+    }
 }
 
 @mixin button {
@@ -62,6 +66,10 @@ $tags: #4E4E4E;
         background: $orange-hover;
         cursor: pointer;
         transition: all .5s;
+    }
+
+    @media screen and (max-width: 425px) {
+        padding: 1.6rem 6.4rem;
     }
 }
 
@@ -147,4 +155,28 @@ $tags: #4E4E4E;
     font-family: "PT Sans";
     font-size: 1.4rem;
     font-weight: 700;
+}
+
+@mixin textMobile-16px {
+    font-size: 1.6rem;
+}
+
+@mixin textMobile-18px {
+    font-size: 1.8rem;
+}
+
+@mixin headlineMobile-22px {
+    font-size: 2.2rem;
+}
+
+@mixin headlineMobile-30px {
+    font-size: 3.0rem;
+}
+
+@mixin headlineMobile-34px {
+    font-size: 3.4rem;
+}
+
+@mixin headlineMobile-36px {
+    font-size: 3.6rem;
 }

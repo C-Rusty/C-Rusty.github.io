@@ -5,6 +5,10 @@
 
     padding-top: 8rem;
 
+    @media screen and (max-width: 425px) {
+        padding-top: 4.8rem;
+    }
+
     .container {
         display: flex;
         align-items: center;
@@ -36,15 +40,22 @@
                 flex-direction: column;
                 align-items: center;
 
-                text-align: center;                
                 padding: 0;
             }
 
             &__headline {
                 margin-bottom: 4.8rem;
 
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 3.2rem;
+                }
+
                 h1 {
                     @include headlineMerriweather-32px;
+
+                    @media screen and (max-width: 425px) {
+                        @include headlineMobile-30px;
+                    }
                 }
                 
                 .underline {
@@ -56,17 +67,24 @@
                 }
             }
 
-            h2 {
+            &__supporting-headline {
                 @include headlineMerriweather-38px;
                 max-width: 85%;
                 margin-bottom: 3.2rem;
 
+
                 @media screen and (max-width: 991px) {
                     max-width: 100%;
                 }
+
+                @media screen and (max-width: 575px) {
+                    @include headlineMobile-34px;
+                    margin-bottom: 2.4rem;
+                    text-align: center;
+                }
             }
 
-            h3 {
+            &__description-headline {
                 @include textGeorgia-20px;
                 max-width: 93%;
 
@@ -76,6 +94,12 @@
                     max-width: 100%;
                     margin-bottom: 4.8rem;
                 }
+                @media screen and (max-width: 425px) {
+                    @include textMobile-16px;
+                    text-align: center;
+                    margin-bottom: 3.2rem;
+                }
+                
             }
 
             @media screen and (max-width: 991px) {
@@ -107,9 +131,15 @@
             display: flex;
             justify-content: center;
 
+            margin-bottom: 4.8rem;
+
             @include headlineMerriweather-38px;
 
-            margin-bottom: 4.8rem;
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-30px;
+                text-align: center;
+                margin-bottom: 4rem;
+            }
         }
 
         .cards {
@@ -123,6 +153,13 @@
             @media screen and (max-width: 1150px) {
                 flex-wrap: wrap;
                 row-gap: 7rem;
+            }
+            @media screen and (max-width: 575px) {
+                flex-direction: column;
+                row-gap: 4rem;
+            }
+            @media screen and (max-width: 425px) {
+                row-gap: 3.2rem;
             }
 
             &__card {
@@ -147,14 +184,32 @@
                 @media screen and (max-width: 1150px) {
                     width: 45%;
                 }
+                @media screen and (max-width: 575px) {
+                    background: transparent;
+                    box-shadow: none;
 
-                h4 {
-                    @include headlineMerriweather-38px;
-                    margin-bottom: 1.6rem;
+                    width: 100%;
+                    height: auto;
+
+                    padding: 0;
                 }
 
-                p {
+                .card-headline {
+                    @include headlineMerriweather-38px;
+                    margin-bottom: 1.6rem;
+
+                    @media screen and (max-width: 425px) {
+                        @include headlineMobile-30px;
+                    }
+                }
+
+                .card-text {
                     @include textGeorgia-18px;
+
+                    @media screen and (max-width: 425px) {
+                        text-align: center;
+                        @include textMobile-16px;
+                    }
                 }
             }
         }
@@ -169,13 +224,19 @@
         flex-direction: column;
         align-items: center;
 
-        h3 {
+        .headline {
             @include headlineMerriweather-38px;
             margin-bottom: 4.8rem;
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-34px;
+                margin-bottom: 4rem;
+            }
         }
     
         .text {
             display: flex;
+            align-items: center;
             column-gap: 2.4rem;
 
             padding: 3.2rem 8.8rem;
@@ -184,6 +245,17 @@
             background: $gray-additional;
             box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                text-align: center;
+
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+
+                row-gap: 1.6rem;
+            }
+
             .main {
                 display: flex;
                 flex-direction: column;
@@ -191,10 +263,20 @@
                 span:first-child {
                     @include headlineMerriweather-28px;
                     margin-bottom: .4rem;
+
+                    @media screen and (max-width: 768px) {
+                        margin-bottom: .8rem;
+                    }
                 }
 
                 span:last-child {
                     @include textGeorgia-20px;
+                }
+
+                span {
+                    @media screen and (max-width: 425px) {
+                        @include textMobile-18px;
+                    }
                 }
             }
         }
@@ -221,21 +303,42 @@
 
         row-gap: 3.8rem;
 
-        h4 {
+        @media screen and (max-width: 1200px) {
+            padding: 14.5rem 5.6rem;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 4.8rem 5.6rem;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 4.8rem 2.4rem;
+        }
+
+        .headline {
             @include headlineMerriweather-38px;
             font-weight: 400;
             color: $white;
 
             text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
+
+            @media screen and (max-width: 768px) {
+                text-wrap: pretty;
+            }
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-22px;
+            }
         }
 
-        h5 {
-            display: flex;
+        .headline-support {
             width: 100%;
-            justify-content: flex-end;
+            text-align: right;
 
             @include textGeorgia-24px;
             color: $white;
+
+            @media screen and (max-width: 425px) {
+                @include textMobile-16px;
+            }
         }
     }
 }
@@ -264,6 +367,15 @@
                 min-width: 100%;
                 margin-bottom: 4.8rem;
             }
+
+            @media screen and (max-width: 425px) {
+                @include textGeorgia-18px;
+                @include textMobile-16px;
+
+                margin-bottom: 0;
+                padding-bottom: 1.6rem;
+                border-bottom: .2rem solid $black;
+            }
         }
 
         .quotes {
@@ -273,6 +385,11 @@
                 border-bottom: .2rem solid $black;
 
                 @include textGeorgia-18px;
+
+                @media screen and (max-width: 425px) {
+                    @include textMobile-16px;
+                    border-width: .1rem;
+                }
 
                 .highlight {
                     @include highlight-class;
@@ -291,8 +408,50 @@
     }
 }
 
+.quote-system {
+    padding: 0;
+
+    .container {
+        background: url(../../images/content/about-me/quote-system.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        max-height: 44.3rem;
+        height: 100%;
+
+        padding: 14.5rem 5.6rem;
+
+        text-align: right;
+
+        @media screen and (max-width: 768px) {
+            padding: 4.8rem 5.6rem;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 4.8rem 2.4rem;
+        }
+
+        .headline {
+            @include headlineMerriweather-38px;
+            font-weight: 400;
+            color: $white;
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-22px;
+            }
+        }
+    }    
+}
+
 .approach {
     background: $gray;
+
+    @media screen and (max-width: 991px) {
+        padding-top: 7.2rem;
+    }
+    @media screen and (max-width: 425px) {
+        padding-top: 4.8rem;
+    }
 
     h3 {
         @include headlineMerriweather-38px;
@@ -300,6 +459,11 @@
         justify-content: center;
 
         margin-bottom: 5.5rem;
+
+        @media screen and (max-width: 425px) {
+            @include headlineMobile-34px;
+            margin-bottom: 3.6rem;
+        }
     }
 
     .main {
@@ -328,17 +492,32 @@
                 padding: 1.6rem 0;
                 border-bottom: .2rem solid $black;
 
-                span {
+                @media screen and (max-width: 425px) {
+                    border-width: .1rem;
+                    padding: 4.3rem 0;
+
+                    border-width: .1rem;
+                }
+
+                &__number {
                     @include headlineMerriweather-38px;
                     color: $orange;
 
                     position: relative;
                     bottom: 0.5rem;
+
+                    @media screen and (max-width: 425px) {
+                        @include headlineMobile-36px;
+                    }
                 }
 
-                p {
+                &__text {
                     @include textGeorgia-18px;
                     color: $black;
+
+                    @media screen and (max-width: 425px) {
+                        @include textMobile-16px;
+                    }
                 }
             }
 
@@ -360,6 +539,11 @@
     padding: 0;
 
     .container {
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 2.4rem;
+
         padding: 14.5rem 24rem;
         max-height: 44.3rem;
 
@@ -368,18 +552,39 @@
         background-repeat: no-repeat;
         background-size: cover;
 
-        h4 {
-            @include textGeorgia-24px;
-            margin-bottom: 2.4rem;
+        @media screen and (max-width: 1200px) {
+            padding: 14.5rem 5.6rem;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 4.8rem 5.6rem;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 4.8rem 2.4rem;
+        }
+        @media screen and (max-width: 425px) {
+            row-gap: .8rem;
         }
 
-        h5 {
+        .credo-headline {
+            @include textGeorgia-24px;
+
+            @media screen and (max-width: 425px) {
+                @include textMobile-16px;
+                margin-bottom: .8rem;
+            }
+        }
+
+        .credo-quote {
             @include headlineMerriweather-38px;
             font-weight: 400;
 
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-22px;
+                text-align: right;
+            }
         }
 
-        h4, h5 {
+        .credo-headline, .credo-quote {
             color: $white;
             text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
         }
@@ -398,6 +603,12 @@
             @include headlineMerriweather-38px;
 
             margin-bottom: 4.8rem;
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-34px;
+                margin-bottom: 4rem;
+                text-align: center;
+            }
         }
 
         .cards {
@@ -406,6 +617,10 @@
             justify-content: center;
 
             gap: 3rem;
+
+            @media screen and (max-width: 991px) {
+                gap: 0;
+            }
 
             &__card {
                 display: flex;
@@ -424,7 +639,27 @@
                 text-align: center;
 
                 @media screen and (max-width: 1150px) {
-                    max-width: 48%;
+                    min-width: 40rem;
+                }
+                @media screen and (max-width: 991px) {
+                    min-width: 100%;
+                    height: auto;
+
+                    background: none;
+                    box-shadow: none;
+
+                    justify-content: center;
+
+                    border-bottom: .1rem solid $black;
+                    border-radius: 0;
+
+                    padding: 3.2rem 1.6rem;
+                }
+            }
+
+            &__card:first-child {
+                @media screen and (max-width: 991px) {
+                    padding-top: 0;
                 }
             }
         }
@@ -445,6 +680,15 @@
         @media screen and (max-width: 1600px) {
             padding: 7.2rem 5.6rem;
         }
+        @media screen and (max-width: 1200px) {
+            padding: 14.5rem 5.6rem;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 4.8rem 5.6rem;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 4.8rem 2.4rem;
+        }
 
         h3 {
             display: flex;
@@ -454,11 +698,22 @@
             color: $white;
 
             margin-bottom: 4.8rem;
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-34px;
+                margin-bottom: 6.4rem;
+                text-align: center;
+            }
         }
 
         .text {
             display: flex;
             justify-content: space-between;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                row-gap: 4.2rem;
+            }
 
             &__column {
                 max-width: 45%;
@@ -467,6 +722,11 @@
                 flex-direction: column;
                 justify-content: space-between;
                 row-gap: 4.8rem;
+
+                @media screen and (max-width: 768px) {
+                    max-width: 100%;
+                    row-gap: 1.6rem;
+                }
 
                 p:first-child {
                     max-width: 85%;
@@ -479,6 +739,13 @@
                     @media screen and (max-width: 1600px) {
                         max-width: 95%;
                     }
+                    @media screen and (max-width: 768px) {
+                        max-width: 100%;
+                        min-height: auto;
+                    }
+                    @media screen and (max-width: 425px) {
+                        @include textMobile-18px;
+                    }
 
                     span {
                         @include highlight-class;
@@ -488,16 +755,26 @@
                 p:last-child {
                     max-width: 70%;
 
+                    @include textGeorgia-18px;
+                    color: $white;
+
                     @media screen and (max-width: 1600px) {
                         max-width: 95%;
                     }
-
-                    @include textGeorgia-18px;
-                    color: $white;
+                    @media screen and (max-width: 768px) {
+                        max-width: 100%;
+                    }
+                    @media screen and (max-width: 425px) {
+                        @include textMobile-16px;
+                    }
                 }
 
                 p {
                     text-shadow: 0px 0px 8.5rem rgba(0, 0, 0, 0.25);
+
+                    @media screen and (max-width: 768px) {
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -524,6 +801,12 @@
             @include headlineMerriweather-38px;
 
             margin-bottom: 4.8rem;
+
+            @media screen and (max-width: 425px) {
+                margin-bottom: 4rem;
+                @include headlineMobile-34px;
+                text-align: center;
+            }
         }
 
         .main {
@@ -539,6 +822,10 @@
             &__img-container {
                 min-height: 40rem;
                 min-width: 32%;
+
+                @media screen and (max-width: 991px) {
+                    min-height: auto;
+                }
 
                 img {
                     width: 100%;
@@ -563,6 +850,9 @@
                     max-width: 100%;
                     margin-bottom: 4.8rem;
                 }
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 3.2rem;
+                }
 
                 &__item {
                     display: flex;
@@ -576,11 +866,21 @@
 
                     @media screen and (max-width: 991px) {
                         padding-top: 2.6rem;
+                        column-gap: 4.3rem;
+                    }
+                    
+                    @media screen and (max-width: 425px) {
+                        border-width: .1rem;
+                        padding: 1.6rem 0;
                     }
 
                     p {
                         @include textGeorgia-18px;
                         color: $black;
+
+                        @media screen and (max-width: 425px) {
+                            @include textMobile-16px;
+                        }
                     }
                 }
 

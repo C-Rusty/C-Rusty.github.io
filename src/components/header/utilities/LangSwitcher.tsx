@@ -23,6 +23,9 @@ const LangSwitcher = ({className}: {className: string}) => {
 
         const navItemClicked = e.currentTarget;
         document.getElementById(`${navItemClicked.id}`)?.classList.add(`active-lang`);
+
+        document.querySelector('.mobile-menu')?.classList.toggle(`opened`);
+        document.querySelector(`.hamburger`)?.classList.toggle(`hamburger-active`);
     };
 
     const handleSelectOpen = () => {

@@ -11,6 +11,7 @@ footer {
             flex-direction: column;
             padding: 0;
         }
+        
 
         .contacts, .authors {
             display: flex;
@@ -29,6 +30,9 @@ footer {
                 @media screen and (max-width: 1150px) {
                     padding: 2.5rem 5.6rem;
                 }
+                @media screen and (max-width: 575px) {
+                    padding: 2.5rem 2.4rem;
+                }
             }
         }
 
@@ -38,9 +42,12 @@ footer {
             padding-right: 5.5rem;
             border-right: 1px solid $footer;
 
-            @media screen and (max-width:1150px) {
+            @media screen and (max-width: 1150px) {
                 border-bottom: 1px solid $footer;
                 padding-right: 0;
+            }
+            @media screen and (max-width: 575px) {
+                justify-content: normal;
             }
 
             &__email {
@@ -52,18 +59,31 @@ footer {
                     width: 50%;   
                     border-right: 1px solid $footer;
                 }
+                @media screen and (max-width: 575px) {
+                    width: max-content;
+                }
 
                 a {
-                    text-decoration: none;
-
                     @include textGeorgia-18px;
+                    text-decoration: none;
                     color: $footer;
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 1.6rem;
+                    }
                 }
             }
 
             &__icons {
                 display: flex;
                 column-gap: 2.4rem;
+
+                @media screen and (max-width: 575px) {
+                    column-gap: 2.1rem;
+                    justify-content: space-evenly;
+                    width: 100%;
+                    padding-right: 1.7rem;
+                }
 
                 a {
                     display: flex;
@@ -139,6 +159,9 @@ footer {
             @media screen and (max-width: 1150px) {
                 padding-left: 0;
             }
+            @media screen and (max-width: 575px) {
+                flex-direction: column;
+            }
 
             &__author {
                 display: flex;
@@ -149,9 +172,19 @@ footer {
                     column-gap: 0;
                     row-gap: .5rem;
                 }
+                @media screen and (max-width: 575px) {
+                    min-width: 100%;
+                    flex-direction: row;
+                    row-gap: 0;
+                    column-gap: 1rem;
+                }
 
                 span, a {
                     @include textGeorgia-18px;
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 1.6rem;
+                    }
                 }
     
                 span {
@@ -168,6 +201,11 @@ footer {
                 @media screen and (max-width: 1150px) {
                     min-width: 50%;
                     border-right: 1px solid $footer;
+                }
+                @media screen and (max-width: 575px) {
+                    min-width: 100%;
+                    border-right: none;
+                    border-bottom: 1px solid $footer;
                 }
             }
         }

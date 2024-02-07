@@ -7,7 +7,7 @@ header {
     @include dark;
     font-family: "PT Sans";
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
         position: relative;
         z-index: 11;
     }
@@ -53,7 +53,6 @@ header {
     }
 
     .hamburger-active {
-        position: relative;
     
         .hamburger__line {
             position: absolute;
