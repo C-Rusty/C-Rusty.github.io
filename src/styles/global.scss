@@ -45,6 +45,8 @@ $tags: #4E4E4E;
 }
 
 @mixin button {
+    min-width: max-content;
+
     padding: 2rem 6.4rem;
 
     border-radius: 2.4rem;
@@ -69,7 +71,8 @@ $tags: #4E4E4E;
     }
 
     @media screen and (max-width: 425px) {
-        padding: 1.6rem 6.4rem;
+        padding: 1.6rem 0;
+        font-size: 1.8rem;
     }
 }
 

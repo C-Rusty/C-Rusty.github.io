@@ -7,7 +7,7 @@ header {
     @include dark;
     font-family: "PT Sans";
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 991px) {
         position: relative;
         z-index: 11;
     }
@@ -16,6 +16,15 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .logo {
+        @media screen and (max-width: 425px) {
+            svg {
+                width: 4.6rem;
+                height: 2.4rem;
+            }
+        }
     }
 
     .hamburger {

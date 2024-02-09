@@ -70,7 +70,7 @@ const ArticlesAndCases = () => {
             filteredPosts = initialPosts.filter(post => post.categories.find(category => category === categoryTagsSelected));
             setPosts(filteredPosts);
         } else {
-            throw new Error(`Somtheing wrong with the filtration`);
+            throw new Error(`Something wrong with the filtration`);
         }
     };
 

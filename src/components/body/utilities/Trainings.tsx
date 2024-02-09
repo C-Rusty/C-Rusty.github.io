@@ -1,10 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import introImg from '../../../images/content/trainings/introImg.webp';
-import resultBg from '../../../images/content/trainings/training-result.webp';
-import cjm from '../../../images/content/trainings/cjm.webp';
-import trainingResult from '../../../images/content/trainings/cjm-result.webp';
 import '../../../styles/main/trainings.scss';
 
 const Trainings = () => {
@@ -19,31 +15,46 @@ const Trainings = () => {
                         <div className="content">
                             <h2>
                                 {t (`Course`)}
+                                &#160;
                                 &laquo;{t (`Marketing in MBA format`)}&raquo;
                             </h2>
+                            {window.innerWidth < 1151 &&
+                                <div className="img-container-mobile">
+                                    <img src={'../../../images/content/trainings/introImg.webp'} alt="intro-img" />
+                                </div>
+                            }
                             <p className="aim-text">
                                 {t (`Aimed at improving the team’s management competencies in marketing and mastering modern marketing technologies`)}
                             </p>
                             <div className="info-col">
-                                <p>
-                                    {t (`Long-term`)},
-                                    <span> 4-6 </span>
-                                    {t (`months`)}
-                                </p>
-                                <p>{t (`Adapts to client needs`)}</p>
-                                <p>
-                                    <span>48-72 </span>
-                                    {t (`hours`)}
-                                </p>
-                                <p>Online/Offline</p>
+                                <div className="info-col__item">
+                                    <p>
+                                        {t (`Long-term`)},
+                                        <br />
+                                        &#160;4-6 &#160;
+                                        {t (`months`)}
+                                    </p>
+                                    <p>
+                                        48-72 &#160;
+                                        {t (`hours`)}
+                                    </p>
+                                </div>
+                                <div className="info-col__item">
+                                    <p>
+                                        {t (`Adapts to client needs`)}
+                                    </p>
+                                    <p>
+                                        Online/Offline
+                                    </p>
+                                </div>
                             </div>
-                            <button>
-                                <Link to="/contacts">{t (`Contact me`)}</Link>
-                            </button>
+                            <Link to="/contacts">{t (`Contact me`)}</Link>
                         </div>
-                        <div className="img-container">
-                            <img src={introImg} alt="intro-img" />
-                        </div>
+                        {window.innerWidth >= 1151 &&
+                            <div className="img-container-desktop">
+                                <img src={'../../../images/content/trainings/introImg.webp'} alt="intro-img" />
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className="mba-trainings__when-needed">
@@ -104,7 +115,6 @@ const Trainings = () => {
                 <div className="mba-trainings__result">
                     <div 
                         className="container"
-                        style={{backgroundImage: `url(${resultBg})`}}
                     >
                         <div className="result-inner">
                             <h3>{t (`Result`)}</h3>
@@ -123,35 +133,42 @@ const Trainings = () => {
                             <h2>
                                 {t (`Training`)} Customer Journey Map
                             </h2>
+                            {window.innerWidth < 1151 &&
+                            <div className="img-container-mobile">
+                                <img src={'../../../images/content/trainings/cjm.webp'} alt="intro-img" />
+                            </div>
+                        }
                             <p className="aim-text">
                                 {t (`Aimed at increasing sales through a better understanding of customer behavior`)}
                             </p>
                             <div className="info-col">
-                                <p>
-                                    <span>48-72 </span>
-                                    {t (`hours`)}
-                                </p>
-                                <p>Online/Offline</p>
+                                <div className="info-col__item">
+                                    <p>
+                                        48-72 &#160; {t (`hours`)}
+                                    </p>
+                                    <p>
+                                        Online/Offline
+                                    </p>
+                                </div>
                             </div>
-                            <button>
-                                <Link to="/contacts">{t (`Contact me`)}</Link>
-                            </button>
+                            <Link to="/contacts">{t (`Contact me`)}</Link>
                         </div>
-                        <div className="img-container">
-                            <img src={cjm} alt="intro-img" />
-                        </div>
+                        {window.innerWidth >= 1151 &&
+                            <div className="img-container-desktop">
+                                <img src={'../../../images/content/trainings/cjm.webp'} alt="intro-img" />
+                            </div>
+                        }
                     </div>
                 </div>
                 <div className="cjm__info">
                     <div className="container">
-                        <p>{t  (`CJM (Customer Journey Map or customer journey map) is a tool for strategic sales management through a better understanding of customer needs and mechanisms of interaction with them`)}</p>
-                        <p>{t  (`CJM is a technology that all leading companies use to improve customer service and, accordingly, increase the income received from customers`)}</p>
+                        <p className="card">{t  (`CJM (Customer Journey Map or customer journey map) is a tool for strategic sales management through a better understanding of customer needs and mechanisms of interaction with them`)}</p>
+                        <p className="card">{t  (`CJM is a technology that all leading companies use to improve customer service and, accordingly, increase the income received from customers`)}</p>
                     </div>
                 </div>
                 <div className="cjm__result">
                     <div 
                         className="container"
-                        style={{backgroundImage: `url(${trainingResult})`}}
                     >
                         <div className="result-inner">
                             <h3>{t (`Result`)}</h3>

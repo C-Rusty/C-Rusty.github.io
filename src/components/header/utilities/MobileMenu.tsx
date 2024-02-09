@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import NavBar from "./NavBar";
 import LangSwitcher from "./LangSwitcher";
 import '../../../styles/head/header-utilities/MobileMenu.scss';

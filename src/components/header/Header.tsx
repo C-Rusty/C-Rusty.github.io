@@ -17,7 +17,7 @@ const Header = () => {
     };
 
     useEffect(() => {
-        window.innerWidth > 768 ? setIsDesktop(true) : setIsDesktop(false);
+        window.innerWidth > 991 ? setIsDesktop(true) : setIsDesktop(false);
     }, [window.innerWidth]);
 
     useEffect(() => {
