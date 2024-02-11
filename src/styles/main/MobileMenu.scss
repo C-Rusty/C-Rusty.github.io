@@ -1,4 +1,4 @@
-@import '../../global';
+@import '../global.scss';
 
 .mobile-menu {
     display: flex;
@@ -8,7 +8,7 @@
 
     position: absolute;
     left: 0;
-    top: -90vh;
+    top: -95vh;
     z-index: -1;
 
     transition: all 1s;

@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Logo from "./utilities/Logo";
-import NavBar from "./utilities/NavBar";
-import MobileMenu from "./utilities/MobileMenu";
+import Navigation from "./utilities/Navigation";
 import LangSwitcher from "./utilities/LangSwitcher";
 import { Link } from "react-router-dom";
 import '../../styles/head/header.scss';
+import { useDispatch, useSelector } from "react-redux";
+import { setState } from "../../store/ShowMenuReducer";
+import { setScreen } from "../../store/DeviceTypeReducer";
 
 const Header = () => {
 
     const [isDesktop, setIsDesktop] = useState<boolean>();
     const [className, setClassName] = useState<string>(``);
-    const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
-    const handleMenuAction = () => {
-        setIsMenuOpened((currentState) => !currentState);
+    const isMobileMenuOpened = useSelector((state) => state.menuVisibility.value);
+    const dispatch = useDispatch();
+
+    const handleHamburgerClick = () => {
+        dispatch(setState(!isMobileMenuOpened));
     };
 
     useEffect(() => {
@@ -21,13 +25,13 @@ const Header = () => {
     }, [window.innerWidth]);
 
     useEffect(() => {
-        isDesktop ? setClassName(`desktop`) : setClassName(`mobile`);
+        isDesktop ? dispatch(setScreen(`desktop`)) : dispatch(setScreen(`mobile`));
     }, [isDesktop]);
 
     useEffect(() => {
         const hamburger = document.querySelector(`.hamburger`);
         hamburger?.classList.toggle(`hamburger-active`);
-    }, [isMenuOpened]);
+    }, [isMobileMenuOpened]);
     
     return (
         <>
@@ -38,11 +42,14 @@ const Header = () => {
                     </Link>
                     {isDesktop ? 
                         <>
-                            <NavBar className={className}/>
-                            <LangSwitcher className={className}/>
+                            <Navigation/>
+                            <LangSwitcher/>
                         </>
                         :
-                        <div className="hamburger" onClick={handleMenuAction}>
+                        <div 
+                            className="hamburger" 
+                            onClick={handleHamburgerClick}
+                        >
                             <div className="hamburger__line"></div>
                             <div className="hamburger__line"></div>
                             <div className="hamburger__line"></div>
@@ -50,12 +57,6 @@ const Header = () => {
                     }
                 </div>
             </header>
-            {!isDesktop && 
-                <MobileMenu 
-                    className={className} 
-                    isMenuOpened={isMenuOpened} 
-                /> 
-            }
         </>
 
     )

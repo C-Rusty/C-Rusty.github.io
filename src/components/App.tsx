@@ -9,6 +9,9 @@ import i18next from "i18next";
 import Content from "./body/Content";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "./footer/Footer";
+import { Provider } from "react-redux";
+import store from "../store/store";
+import Menu from "../components/body/utilities/menu/Menu";
 
 const resources  = {
     en: {
@@ -36,9 +39,12 @@ const App = () => {
     
     return (
         <BrowserRouter>
-            <Header/>
-            <Content/>
-            <Footer/>
+            <Provider store={store}>
+                <Header/>
+                <Menu/>
+                <Content/>
+                <Footer/>
+            </Provider>
         </BrowserRouter>
     );
 };

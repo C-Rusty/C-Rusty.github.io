@@ -6,7 +6,7 @@ import Contacts from "./utilities/Contacts";
 import { Route, Routes} from "react-router-dom";
 import { api } from "../../api/ApiPosts";
 import { IPost } from "../../interface/Interface";
-import FullPost from "./utilities/post-item/FullPost";
+import FullPost from "./utilities/post/FullPost";
 
 const Content = () => {
 

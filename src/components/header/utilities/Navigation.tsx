@@ -2,10 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import '../../../styles/head/header-utilities/NavBar.scss'
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const NavBar = ({className}: {className: string}) => {
+const Navigation = () => {
 
     const { t } = useTranslation();
+    const deviceType = useSelector((state) => state.screenType.value);
 
     const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const currentActiveItem = document.querySelector(`.active`);
@@ -19,7 +21,7 @@ const NavBar = ({className}: {className: string}) => {
     };
 
     return (
-        <nav className={`header-nav nav-${className}`}>
+        <nav className={`header-nav nav-${deviceType}`}>
             <ul>
                 <li onClick={(e) => handleClick(e)} id="about-me" className="active">
                     <Link to="/">{t (`About me`)}</Link>
@@ -38,4 +40,4 @@ const NavBar = ({className}: {className: string}) => {
     );
 };
 
-export default NavBar;
+export default Navigation;

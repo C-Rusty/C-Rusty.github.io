@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-const PostItem = ({post} : {post: IPost}) => {
+const ShortPost = ({post} : {post: IPost}) => {
 
     const { t } = useTranslation();
 
@@ -14,7 +14,7 @@ const PostItem = ({post} : {post: IPost}) => {
             <div className="img">
                 <img src={post.imageUrl} loading="lazy" alt={postUrlPath} />
                 <div className="img__read-hover">
-                    <span>Читать</span>
+                    <span>{t (`To read`)}</span>
                 </div>
             </div>
             <div className="post__info">
@@ -30,4 +30,4 @@ const PostItem = ({post} : {post: IPost}) => {
     );
 };
 
-export default PostItem;
+export default ShortPost;
