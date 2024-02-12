@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export type TypeTag = {chosen: `All` | `Articles` | `Cases`};
+
+const initialState: TypeTag = {chosen: `All`};
+
 export const typeTagReducer = createSlice({
-    name: `TypeTagReducer`,
-    initialState: {
-        value: `All`
-    },
+    name: `TypeTag`,
+    initialState,
     reducers: {
         setTypeTag: (state, action) => {
-            state.value = action.payload
+            state.chosen = action.payload
         }
     },
 });

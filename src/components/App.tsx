@@ -11,7 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 import Footer from "./footer/Footer";
 import { Provider } from "react-redux";
 import store from "../store/store";
-import Menu from "../components/body/utilities/menu/Menu";
+import MobileMenuContainer from "./body/utilities/menu/MobileMenuContainer";
 
 const resources  = {
     en: {
@@ -41,7 +41,7 @@ const App = () => {
         <BrowserRouter>
             <Provider store={store}>
                 <Header/>
-                <Menu/>
+                <MobileMenuContainer/>
                 <Content/>
                 <Footer/>
             </Provider>

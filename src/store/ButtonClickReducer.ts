@@ -1,17 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export type ButtonClicked = {button: `mobileMenu` | `mobileFilters` | `none`};
+
+const initialState: ButtonClicked = {button: `none`};
+
 export const buttonClickReducer = createSlice({
     name: `buttonClicked`,
-    initialState: {
-        value: `none`
-    },
+    initialState,
     reducers: {
-        setComponent: (state, action) => {
-            state.value = action.payload;
+        setButton: (state, action) => {
+            state.button = action.payload;
         }
     }
 });
 
-export const {setComponent} = buttonClickReducer.actions;
+export const {setButton} = buttonClickReducer.actions;
 
 export default buttonClickReducer.reducer;

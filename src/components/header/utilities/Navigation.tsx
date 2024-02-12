@@ -3,11 +3,12 @@ import { useTranslation } from "react-i18next";
 import '../../../styles/head/header-utilities/NavBar.scss'
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { IRootState } from "store/store";
 
 const Navigation = () => {
 
     const { t } = useTranslation();
-    const deviceType = useSelector((state) => state.screenType.value);
+    const deviceType: string = useSelector<IRootState, string>((state) => state.deviceType.screenType);
 
     const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const currentActiveItem = document.querySelector(`.active`);

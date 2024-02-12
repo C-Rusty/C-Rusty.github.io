@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export type CategoryTag = {chosen: `All` | `Marketing` | `Strategy`};
+
+const initialState: CategoryTag = {chosen : `All`};
+
 export const categoryTagReducer = createSlice({
-    name: `categoryTag`,
-    initialState: {
-        value: `All`
-    },
+    name: `CategoryTag`,
+    initialState,
     reducers: {
         setCategoryTag: (state, action) => {
-            state.value = action.payload
+            state.chosen = action.payload
         }
     },
 });

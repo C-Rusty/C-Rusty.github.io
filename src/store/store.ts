@@ -1,16 +1,20 @@
-import {configureStore} from "@reduxjs/toolkit";
-import menuShowReducer from './ShowMenuReducer';
+import { configureStore } from "@reduxjs/toolkit";
+import MenuStateReducer from './MenuOpenReducer';
 import buttonClickReducer from "./ButtonClickReducer";
 import categoryTagReducer from "./CategoryTagReducer";
 import typeTagReducer from "./TypeTagReducer";
 import DeviceTypeReducer from "./DeviceTypeReducer";
 
-export default configureStore({
+const store = configureStore({
     reducer: {
-        menuVisibility: menuShowReducer,
+        MenuStateReducer: MenuStateReducer,
         buttonClicked: buttonClickReducer,
         categoryTag: categoryTagReducer,
         typeTag: typeTagReducer,
         deviceType: DeviceTypeReducer
     }
 });
+
+export type IRootState = ReturnType<typeof store.getState>;
+
+export default store;

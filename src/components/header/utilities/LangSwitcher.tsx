@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {useTranslation} from 'react-i18next';
 import LangIcon from "./LangIcon";
 import Select from '@mui/material/Select';
@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import '../../../styles/head/header-utilities/LangSwitcher.scss';
 import { FormControl} from "@mui/material";
 import { useSelector } from "react-redux";
+import { IRootState } from "../../../store/store";
 
 const LangSwitcher = () => {
 
@@ -37,7 +38,7 @@ const LangSwitcher = () => {
         document.querySelector(`.select`)?.classList.remove(`select-active`);
     };
 
-    const deviceType = useSelector((state) => state.screenType.value);
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screenType);
 
     return (
         <div className={`lang-switcher lang-switcher-${deviceType}`}>

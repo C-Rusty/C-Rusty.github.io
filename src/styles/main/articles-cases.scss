@@ -1,4 +1,5 @@
 @import '../global.scss';
+@import './utilities/FiltersBar.scss';
 
 .articles-cases {
     padding: 8rem 0;
@@ -53,63 +54,9 @@
         }
 
         .nav-bar {
-            @media screen and (max-width: 768px) {
-                position: absolute;
-                z-index: 2;
-                left: 0;
-                top: 8.3rem;
+            @include filtersBarStyles;
 
-                background: beige;
-
-                // width: 100%;
-                // height: 100%;
-
-                padding: 0 5.6rem;
-                
-            }
-
-            &__types, &__categories {
-                span {
-                    @include PTSans-24px;
-                    color: $nav-articles;
-                }
-
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 2.4rem;
-
-                    margin-top: 3.2rem;
-
-                    list-style-type: none;
-
-                    li {
-                        @include PTSans-20px;
-                        color: $nav-articles;
-
-                        transition: all .5s;
-                        scale: 1;
-
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
-
-                    .active-type-tag, .active-category-tag {
-                        font-weight: 700;
-                        transition: all .5s;
-                        scale: 1.05;
-                    }
-                }
-            }
-
-            &__types {
-                margin-bottom: 6.4rem;
-            }
-        }
-
-        .nav-bar-opened {
-
+            
         }
 
         .articles-cases-container {

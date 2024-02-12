@@ -1,38 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Logo from "./utilities/Logo";
 import Navigation from "./utilities/Navigation";
 import LangSwitcher from "./utilities/LangSwitcher";
 import { Link } from "react-router-dom";
 import '../../styles/head/header.scss';
-import { useDispatch, useSelector } from "react-redux";
-import { setState } from "../../store/ShowMenuReducer";
-import { setScreen } from "../../store/DeviceTypeReducer";
+import { useSelector } from "react-redux";
+import { IRootState } from "../../store/store";
+import MobileHamburger from "./utilities/MobileHamburger";
 
 const Header = () => {
 
-    const [isDesktop, setIsDesktop] = useState<boolean>();
-    const [className, setClassName] = useState<string>(``);
+    const screenType: string = useSelector<IRootState, string>((state) => state.deviceType.screenType);
 
-    const isMobileMenuOpened = useSelector((state) => state.menuVisibility.value);
-    const dispatch = useDispatch();
-
-    const handleHamburgerClick = () => {
-        dispatch(setState(!isMobileMenuOpened));
-    };
-
-    useEffect(() => {
-        window.innerWidth > 991 ? setIsDesktop(true) : setIsDesktop(false);
-    }, [window.innerWidth]);
-
-    useEffect(() => {
-        isDesktop ? dispatch(setScreen(`desktop`)) : dispatch(setScreen(`mobile`));
-    }, [isDesktop]);
-
-    useEffect(() => {
-        const hamburger = document.querySelector(`.hamburger`);
-        hamburger?.classList.toggle(`hamburger-active`);
-    }, [isMobileMenuOpened]);
-    
     return (
         <>
             <header>
@@ -40,20 +19,13 @@ const Header = () => {
                     <Link to="/">
                         <Logo/>
                     </Link>
-                    {isDesktop ? 
+                    {screenType === `desktop` ? 
                         <>
                             <Navigation/>
                             <LangSwitcher/>
                         </>
                         :
-                        <div 
-                            className="hamburger" 
-                            onClick={handleHamburgerClick}
-                        >
-                            <div className="hamburger__line"></div>
-                            <div className="hamburger__line"></div>
-                            <div className="hamburger__line"></div>
-                        </div>
+                        <MobileHamburger/>
                     }
                 </div>
             </header>
