@@ -7,6 +7,8 @@ import viber from '../../../images/footer/viber.svg'
 import telegram from '../../../images/footer/telegram.svg';
 import whatsApp from '../../../images/footer/whats-app.svg';
 import '../../../styles/main/contacts.scss';
+import { useSelector } from "react-redux";
+import { IRootState } from "store/store";
 
 const Contacts = () => {
 
@@ -24,6 +26,8 @@ const Contacts = () => {
 
     const nameInput = useRef<HTMLInputElement | null>(null);
     const phoneInput = useRef<HTMLInputElement | null>(null);
+
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     const handleOpen = () => {
         if (isOpen) {

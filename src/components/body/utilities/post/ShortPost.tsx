@@ -11,7 +11,7 @@ const ShortPost = ({post} : {post: IPost}) => {
 
     return (
         <Link to={`/articles-and-cases/${postUrlPath}`} className="post">
-            <div className="img">
+            <div className="post__img">
                 <img src={post.imageUrl} loading="lazy" alt={postUrlPath} />
                 <div className="img__read-hover">
                     <span>{t (`To read`)}</span>

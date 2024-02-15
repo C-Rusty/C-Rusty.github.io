@@ -38,7 +38,7 @@ const LangSwitcher = () => {
         document.querySelector(`.select`)?.classList.remove(`select-active`);
     };
 
-    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screenType);
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     return (
         <div className={`lang-switcher lang-switcher-${deviceType}`}>

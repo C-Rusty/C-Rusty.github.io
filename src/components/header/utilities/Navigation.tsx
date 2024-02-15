@@ -8,7 +8,7 @@ import { IRootState } from "store/store";
 const Navigation = () => {
 
     const { t } = useTranslation();
-    const deviceType: string = useSelector<IRootState, string>((state) => state.deviceType.screenType);
+    const deviceType: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     const handleClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
         const currentActiveItem = document.querySelector(`.active`);

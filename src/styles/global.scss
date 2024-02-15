@@ -160,6 +160,10 @@ $tags: #4E4E4E;
     font-weight: 700;
 }
 
+@mixin textMobile-12px {
+    font-size: 1.2rem;
+}
+
 @mixin textMobile-16px {
     font-size: 1.6rem;
 }

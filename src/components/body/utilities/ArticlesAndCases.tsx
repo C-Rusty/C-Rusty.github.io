@@ -90,14 +90,16 @@ const ArticlesAndCases = () => {
         filterPosts(typeTag, categoryTag);
     }, [typeTag, categoryTag]);
 
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
+
     return(
         <div className="articles-cases">
             {/* <button onClick={handleClickBtn}>Create Post</button> */}
             <div className="container">
-                {window.innerWidth <= 768 ? 
-                    <MobileFilterBtn/>
-                    : 
+                {deviceType === `desktop` ? 
                     <FiltersBar />
+                    :
+                    <MobileFilterBtn/>
                 }
                 <div className="articles-cases-container">
                     {posts.map(post => 

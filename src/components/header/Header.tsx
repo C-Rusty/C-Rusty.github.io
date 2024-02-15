@@ -7,10 +7,11 @@ import '../../styles/head/header.scss';
 import { useSelector } from "react-redux";
 import { IRootState } from "../../store/store";
 import MobileHamburger from "./utilities/MobileHamburger";
+import MobileMenuContainer from "../../components/body/utilities/menu/MobileMenuContainer";
 
 const Header = () => {
 
-    const screenType: string = useSelector<IRootState, string>((state) => state.deviceType.screenType);
+    const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     return (
         <>
@@ -19,7 +20,7 @@ const Header = () => {
                     <Link to="/">
                         <Logo/>
                     </Link>
-                    {screenType === `desktop` ? 
+                    {screen === `desktop` ? 
                         <>
                             <Navigation/>
                             <LangSwitcher/>
@@ -29,6 +30,7 @@ const Header = () => {
                     }
                 </div>
             </header>
+            {screen === `mobile` && <MobileMenuContainer/>}
         </>
 
     )

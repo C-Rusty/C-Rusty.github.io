@@ -30,7 +30,7 @@ const FiltersBar = () => {
             };
         };
 
-        const isMobile = useSelector<IRootState, string>((state) => state.deviceType.screenType);
+        const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
         const dispatch = useDispatch();
 
         const handleCategoryClick = (category: string) => {
@@ -102,7 +102,7 @@ const FiltersBar = () => {
                         </ul>
                     </div>
                 </nav>
-                {isMobile === `mobile` && <button>{t (`Apply`)}</button>}
+                {deviceType === `mobile` && <button>{t (`Apply`)}</button>}
             </>
 
         );

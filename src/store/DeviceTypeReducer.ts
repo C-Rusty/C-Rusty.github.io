@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export type ScreenTypeState = {screenType: `desktop` | `mobile`};
+export type DeviceType = {screen: `desktop` | `mobile`};
 
-const initialState: ScreenTypeState = {screenType: window.innerWidth >= 991 ? `desktop` : `mobile`};
+const initialState: DeviceType = {screen: window.innerWidth >= 991 ? `desktop` : `mobile`};
 
 export const DeviceTypeReducer = createSlice({
-    name: `screen`,
+    name: `device`,
     initialState,
     reducers: {
-        setScreen: (state, action) => {
-            state.screenType = action.payload
+        setDevice: (state, action) => {
+            state.screen = action.payload
         }
     }
 });
 
-export const { setScreen } = DeviceTypeReducer.actions;
+export const { setDevice } = DeviceTypeReducer.actions;
 
 export default DeviceTypeReducer.reducer;

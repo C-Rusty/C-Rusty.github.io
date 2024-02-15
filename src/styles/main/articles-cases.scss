@@ -12,13 +12,13 @@
         justify-content: space-between;
         align-items: flex-start;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 991px) {
             flex-direction: column;
             row-gap: 4.8rem;
         }
         @media screen and (max-width: 425px) {
             flex-direction: column;
-            row-gap: 2.4rem;
+            row-gap: 1.6rem;
         }
 
         .filters {
@@ -55,8 +55,6 @@
 
         .nav-bar {
             @include filtersBarStyles;
-
-            
         }
 
         .articles-cases-container {
@@ -68,8 +66,13 @@
 
             max-width: 74%;
 
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 991px) {
                 max-width: 100%;
+            }
+
+            @media screen and (max-width: 576px) {
+                flex-direction: column;
+                flex-wrap: nowrap;
             }
 
             .post {
@@ -86,6 +89,13 @@
                 box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
                 background: $gray-additional;
+
+                @media screen and (max-width: 768px) {
+                    max-width: 47%;
+                }
+                @media screen and (max-width: 576px) {
+                    max-width: 100%;
+                }
 
                 &:hover {
                     cursor: pointer;
@@ -106,7 +116,7 @@
                     }
                 }
 
-                .img {
+                &__img {
                     position: relative;
                     margin-bottom: 1.6rem;
 
@@ -120,7 +130,7 @@
                         transition: all .3s;
                     }
 
-                    &__read-hover {
+                    .img__read-hover {
                         @include headlineMerriweather-24px;
                         color: $white;
 
@@ -141,13 +151,16 @@
 
                         margin-bottom: 1.6rem;
 
+                        @media screen and (max-width: 425px) {
+                            @include textMobile-18px;
+                        }
+
                     }
 
                     .categories {
                         display: flex;
                         flex-wrap: wrap;
                         column-gap: .8rem;
-
 
                         h3 {
                             display: flex;
@@ -161,16 +174,15 @@
 
                             @include PTSans-14px;
                             color: $white;
+
+                            @media screen and (max-width: 425px) {
+                                @include textMobile-12px;
+                            }
                         }
                     }
 
                 }
             }
-
-            // // hide posts
-            // .post:nth-child(2), .post:last-child {
-            //     display: none;
-            // } 
 
             .post:nth-child(5n + 1) {
                 flex-direction: row;
@@ -191,7 +203,11 @@
                     }
                 }
 
-                .img {
+                @media screen and (max-width: 576px) {
+                    flex-direction: column;
+                }
+
+                .post__img {
                     margin-bottom: 0;
                     max-height: 100%;
 
@@ -215,6 +231,32 @@
                     }
                 }
             }
+
+            .post, .post:nth-child(5n + 1) {
+                @media screen and (max-width: 576px) {
+                    height: 48rem;
+                    max-width: 100%;
+
+                    padding: .8rem .8rem 1.6rem;
+
+                    .post__img {
+                        margin-bottom: .8rem;
+
+                        min-height: 70%;
+                        max-height: 70%;
+                    }
+
+                    .post__info {
+                        padding: 0;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+
+                @media screen and (max-width: 425px) {
+                    height: 50%;
+                }
+            }
+
         }
     }
 }

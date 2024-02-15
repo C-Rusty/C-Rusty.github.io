@@ -103,10 +103,9 @@
             }
 
             ul {
-                @media screen and (max-width: 991px) {
-                    align-items: center;
-                    justify-content: center;
-                }
+                align-items: center;
+                justify-content: center;
+                
                 @media screen and (max-width: 576px) {
                     row-gap: .8rem;
                     margin-bottom: 1.2rem;
