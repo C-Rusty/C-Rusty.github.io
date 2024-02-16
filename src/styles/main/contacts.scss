@@ -15,20 +15,25 @@
         align-items: flex-start;
 
         width: 100%;
-        
-        @media screen and (max-width: 991px) {
-            justify-content: space-between;
-        }
     }
 
-    .text {
+    &__inner {
         max-width: 40%;
+
+        @media screen and (max-width: 991px) {
+            max-width: 100%;
+        }
 
         h1 {
             @include headlineMerriweather-38px;
             color: $text-gray;
 
             margin-bottom: 3.2rem;
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-30px;
+                margin-bottom: 2.4rem;
+            }
         }
 
         p {
@@ -39,6 +44,17 @@
 
             @media screen and (max-width: 991px) {
                 max-width: 100%;
+            }
+
+            @media screen and (max-width: 425px) {
+                @include textMobile-16px;
+                margin-bottom: 3.2rem;
+            }
+        }
+
+        h1, p {
+            @media screen and (max-width: 991px) {
+                text-align: center;
             }
         }
 
@@ -56,62 +72,87 @@
             }
         }
 
-        .social-logos {
-            display: flex;
-            align-items: center;
+        .contacts {
+            @media screen and (max-width: 991px) {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+            }
 
-            column-gap: 2.4rem;
+            &__mail {
+                @media screen and (max-width: 991px) {
+                    margin-bottom: 0;
+                }
+            }
 
-            a {
-                svg {
-                    path, circle {
-                        transition: all .3s;
-                    }
+            &__social-logos {
+                display: flex;
+                align-items: center;
 
-                    &:hover {
+                column-gap: 2.4rem;
+
+                @media screen and (max-width: 991px) {
+                    column-gap: 4.8rem;
+                    margin-bottom: 3.2rem;
+                }
+
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 1.6rem;
+                }
+
+                a {
+                    margin-bottom: 0;
+
+                    svg {
                         path, circle {
                             transition: all .3s;
                         }
-                    }
-                }
-            }
 
-            a:first-child {
-                &:hover {
-                    svg {
-                        path:first-child {
-                            fill: white;
-                        }
-
-                        path {
-                            fill: #7360F2;
+                        &:hover {
+                            path, circle {
+                                transition: all .3s;
+                            }
                         }
                     }
                 }
-            }
 
-            a:nth-child(2) {
-                &:hover {
-                    svg {
-                        path:first-child {
-                            fill: #24A1DE;
-                        }
+                a:first-child {
+                    &:hover {
+                        svg {
+                            path:first-child {
+                                fill: white;
+                            }
 
-                        path {
-                            fill: white;
+                            path {
+                                fill: #7360F2;
+                            }
                         }
                     }
                 }
-            }
 
-            a:last-child {
-                &:hover {
-                    svg {
-                        circle {
-                            fill: white;
+                a:nth-child(2) {
+                    &:hover {
+                        svg {
+                            path:first-child {
+                                fill: #24A1DE;
+                            }
+
+                            path {
+                                fill: white;
+                            }
                         }
-                        path {
-                            fill: #25D366;
+                    }
+                }
+
+                a:last-child {
+                    &:hover {
+                        svg {
+                            circle {
+                                fill: white;
+                            }
+                            path {
+                                fill: #25D366;
+                            }
                         }
                     }
                 }
@@ -123,6 +164,18 @@
         min-width: 50%;
         min-height: 28.8rem;
 
+        @media screen and (max-width: 991px) {
+            margin-bottom: 6.4rem;
+            min-height: max-content;
+
+            min-height: auto;
+        }
+
+        @media screen and (max-width: 425px) {
+            margin-bottom: 4.8rem;
+            min-height: auto;
+        }
+
         form {
             display: flex;
             flex-direction: column;
@@ -130,6 +183,11 @@
 
             min-height: 28.8rem;
             width: 100%;
+
+            @media screen and (max-width: 425px) {
+                min-height: auto;
+                justify-content: normal;
+            }
 
             label {
                 width: 100%;
@@ -163,11 +221,19 @@
                     &:focus {
                         background: $white-additional;
                     }
+                    
+                    @media screen and (max-width: 425px) {
+                        padding: 1.6rem;
+                    }
                 }
             }
 
             .name-label {
                 margin-bottom: 2.4rem;
+
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 1.6rem;
+                }
 
                 input {
                     width: 100%;
@@ -183,6 +249,10 @@
                 border-radius: 1.6rem;
 
                 margin-bottom: 4.8rem;
+
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 2.4rem;
+                }
                 
                 input {
                     border-bottom-right-radius: .1rem;
@@ -261,6 +331,10 @@
                 color: $white;
 
                 max-width: 35%;
+
+                @media screen and (max-width: 991px) {
+                    max-width: 100%;
+                }
             }
         }
     }

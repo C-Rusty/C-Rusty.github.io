@@ -1,9 +1,65 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import viber from '../../../../images/footer/viber.svg'
+import telegram from '../../../../images/footer/telegram.svg';
+import whatsApp from '../../../../images/footer/whats-app.svg';
 
-const Form = () => {
+const ContactForm = () => {
+
+    const { t } = useTranslation();
+
+    const [selectedMessenger, setSelectedMessenger] = useState(whatsApp);
+    const [firstOption, setFirstOption] = useState(telegram);
+    const [secondOption, setSecondOption] = useState(viber);
+
+    const [currentMessengerString, setCurrentMessengerString] = useState<string>(`WhatsApp`);
+    const [firstOptionString, setFirstOptionString] = useState(`Telegram`);
+    const [secondOptionString, setSecondOptionString] = useState(`Viber`);
+
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const nameInput = useRef<HTMLInputElement | null>(null);
     const phoneInput = useRef<HTMLInputElement | null>(null);
+
+    const handleOpen = () => {
+        if (isOpen) {
+            document.querySelector(`.list__options`)?.classList.add(`opened`);
+            document.querySelector(`.select__open-btn`)?.classList.add(`arrow-transform`);
+        } else {
+            document.querySelector(`.list__options`)?.classList.remove(`opened`);
+            document.querySelector(`.select__open-btn`)?.classList.remove(`arrow-transform`);
+        };
+    };
+
+    const handleClickMessenger = (option: string) => {
+        if (option === `Telegram`) {
+            setSelectedMessenger(telegram);
+            setCurrentMessengerString(`Telegram`);
+            setFirstOption(whatsApp);
+            setFirstOptionString(`WhatsApp`);
+            setSecondOption(viber);
+            setSecondOptionString(`viber`);
+        } else if (option === `Viber`) {
+            setSelectedMessenger(viber);
+            setCurrentMessengerString(`Viber`);
+            setFirstOption(telegram);
+            setFirstOptionString(`Telegram`);
+            setSecondOption(whatsApp);
+            setSecondOptionString(`WhatsApp`);
+        } else if (option === `WhatsApp`) {
+            setSelectedMessenger(whatsApp);
+            setCurrentMessengerString(`WhatsApp`);
+            setFirstOption(telegram);
+            setFirstOptionString(`Telegram`);
+            setSecondOption(viber);
+            setSecondOptionString(`Viber`);
+        };
+    };
+
+    useEffect(() => {
+        handleOpen();
+    }, [isOpen]);
+
 
     const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -31,6 +87,11 @@ const Form = () => {
         });
     };
 
+    const setSelectBg = () => {
+        document.querySelector(`.select-messenger`)?.classList.toggle(`gray-bg`);
+        document.querySelector(`.messengers-label`)?.classList.toggle(`gray-bg`);
+    };
+
 
     return (
         <div className="form">
@@ -47,7 +108,7 @@ const Form = () => {
                 <input 
                     required={true}
                     type="tel"
-                    placeholder={t (`Phone No. / select messenger for communication`)}
+                    placeholder={t (`Phone No. / Messenger *`)}
                      ref={phoneInput}
                 />
                 <div className="select-messenger">
@@ -82,4 +143,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export default ContactForm;

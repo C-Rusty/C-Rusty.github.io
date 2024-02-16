@@ -19,6 +19,8 @@ const Navigation = () => {
 
         document.querySelector('.mobile-menu')?.classList.toggle(`opened`);
         document.querySelector(`.hamburger`)?.classList.toggle(`hamburger-active`);
+
+        document.body.style.overflowY = `auto`;
     };
 
     return (

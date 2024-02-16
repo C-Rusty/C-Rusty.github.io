@@ -7,6 +7,13 @@
 
     min-height: calc(100vh - (10.1rem + 3.9rem));
 
+    @media screen and (max-width: 991px) {
+        padding: 4.8rem 0;
+    }
+    @media screen and (max-width: 425px) {
+        padding: 3.2rem 0;
+    }
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -18,7 +25,7 @@
         }
         @media screen and (max-width: 425px) {
             flex-direction: column;
-            row-gap: 1.6rem;
+            row-gap: 2.4rem;
         }
 
         .filters {
