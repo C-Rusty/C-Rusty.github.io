@@ -1,5 +1,6 @@
-@import '../global.scss';
+@import '../global/mixins.scss';
 @import './utilities/FiltersBar.scss';
+@import '../global/fonts-mixins/PTSansMix.scss';
 
 .mobile-menu {
     display: flex;
@@ -16,12 +17,13 @@
 
     transition: all 1s;
 
-    padding: 8.5rem 5.6rem 0;
+    padding: 0 5.6rem;
+    margin: auto;
 
     width: 100%;
-    height: calc(100vh - 8.3rem);
+    height: 100%;
 
-    background: $gray;
+    background: $gray-primary;
 
     @media screen and (min-width: 769px) {
         justify-content: center;
@@ -51,7 +53,7 @@
         flex-direction: column;
         align-items: center;
 
-        color: $footer;
+        color: $gray-secondary-light-ultra;
 
         &__headline {
             @include PTSans-22px;
@@ -93,7 +95,7 @@
 
 
             span, ul > li {
-                color:  $footer;
+                color:  $gray-secondary-light-ultra;
             }
 
             span {
@@ -142,8 +144,8 @@
             transition: all .5s;
             scale: 1.05;
 
-            background: $orange;
-            color: $white;
+            background: $accent;
+            color: $tetriary;
         }
     }
 
@@ -164,13 +166,13 @@
 
 .opened {
     transition: all 1s;
-    top: 8.3rem;
+    top: 0;
     z-index: 10;
 
     overflow: hidden;
 }
 
 .active-lang {
-    color: $white;
-    background: $orange;
+    color: $tetriary;
+    background: $accent;
 }

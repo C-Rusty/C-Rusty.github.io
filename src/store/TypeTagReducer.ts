@@ -8,12 +8,12 @@ export const typeTagReducer = createSlice({
     name: `TypeTag`,
     initialState,
     reducers: {
-        setTypeTag: (state, action) => {
+        setTypeTagReducer: (state, action) => {
             state.chosen = action.payload
         }
     },
 });
 
-export const { setTypeTag } = typeTagReducer.actions;
+export const { setTypeTagReducer } = typeTagReducer.actions;
 
 export default typeTagReducer.reducer;

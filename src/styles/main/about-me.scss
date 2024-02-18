@@ -1,7 +1,32 @@
-@import '../global.scss';
+@import '../global/mixins.scss';
+@import '../global/fonts-mixins/MerriweatherMix.scss';
+@import '../global/fonts-mixins/GeorgiaMix.scss';
+
+@mixin quotes-padding {
+    padding: 14.5rem 24rem;
+
+    @media screen and (max-width: 3000px) {
+        padding: 14.5rem 20%;
+    }
+    @media screen and (max-width: 2500px) {
+        padding: 14.5rem 15%;
+    }
+    @media screen and (max-width: 2000px) {
+        padding: 14.5rem 10%;
+    }
+    @media screen and (max-width: 1200px) {
+        padding: 14.5rem 5.6rem;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 4.8rem 5.6rem;
+    }
+    @media screen and (max-width: 575px) {
+        padding: 4.8rem 2.4rem;
+    }
+}
 
 .intro {
-    background: $gray;
+    background: $gray-primary;
 
     padding-top: 8rem;
 
@@ -51,7 +76,7 @@
                 }
 
                 h1 {
-                    @include headlineMerriweather-32px;
+                    @include Merriweather-32px;
 
                     @media screen and (max-width: 425px) {
                         @include headlineMobile-30px;
@@ -63,12 +88,12 @@
                     height: .15rem;
 
                     stroke-width: 2px;
-                    background: $black;
+                    background: $black-secondary;
                 }
             }
 
             &__supporting-headline {
-                @include headlineMerriweather-38px;
+                @include Merriweather-38px;
                 max-width: 85%;
                 margin-bottom: 3.2rem;
 
@@ -85,7 +110,7 @@
             }
 
             &__description-headline {
-                @include textGeorgia-20px;
+                @include Georgia-20px;
                 max-width: 93%;
 
                 margin-bottom: 7.2rem;
@@ -123,7 +148,7 @@
 }
 
 .digits {
-    background: $gray;
+    background: $gray-primary;
 
     .container {
 
@@ -133,7 +158,7 @@
 
             margin-bottom: 4.8rem;
 
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
 
             @media screen and (max-width: 425px) {
                 @include headlineMobile-30px;
@@ -168,7 +193,7 @@
                 
                 padding: 3.2rem;
                 border-radius: 16px;
-                background: $gray-additional;
+                background: $gray-primary-light;
 
                 box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
@@ -195,7 +220,7 @@
                 }
 
                 .card-headline {
-                    @include headlineMerriweather-38px;
+                    @include Merriweather-38px;
                     margin-bottom: 1.6rem;
 
                     @media screen and (max-width: 425px) {
@@ -204,7 +229,7 @@
                 }
 
                 .card-text {
-                    @include textGeorgia-18px;
+                    @include Georgia-18px;
 
                     @media screen and (max-width: 425px) {
                         text-align: center;
@@ -217,7 +242,7 @@
 }
 
 .education {
-    background: $gray;
+    background: $gray-primary;
 
     .container {
         display: flex;
@@ -225,7 +250,7 @@
         align-items: center;
 
         .headline {
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
             margin-bottom: 4.8rem;
 
             @media screen and (max-width: 425px) {
@@ -242,7 +267,7 @@
             padding: 3.2rem 8.8rem;
             border-radius: 1.6rem;
 
-            background: $gray-additional;
+            background: $gray-primary-light;
             box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
             @media screen and (max-width: 768px) {
@@ -261,7 +286,7 @@
                 flex-direction: column;
 
                 span:first-child {
-                    @include headlineMerriweather-28px;
+                    @include Merriweather-28px-Bold;
                     margin-bottom: .4rem;
 
                     @media screen and (max-width: 768px) {
@@ -270,7 +295,7 @@
                 }
 
                 span:last-child {
-                    @include textGeorgia-20px;
+                    @include Georgia-20px;
                 }
 
                 span {
@@ -303,20 +328,12 @@
 
         row-gap: 3.8rem;
 
-        @media screen and (max-width: 1200px) {
-            padding: 14.5rem 5.6rem;
-        }
-        @media screen and (max-width: 768px) {
-            padding: 4.8rem 5.6rem;
-        }
-        @media screen and (max-width: 575px) {
-            padding: 4.8rem 2.4rem;
-        }
+        @include quotes-padding;
 
         .headline {
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
             font-weight: 400;
-            color: $white;
+            color: $tetriary;
 
             text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
 
@@ -333,8 +350,8 @@
             width: 100%;
             text-align: right;
 
-            @include textGeorgia-24px;
-            color: $white;
+            @include Georgia-24px;
+            color: $tetriary;
 
             @media screen and (max-width: 425px) {
                 @include textMobile-16px;
@@ -344,7 +361,7 @@
 }
 
 .system {
-    background: $gray;
+    background: $gray-primary;
     @include padding-top;    
 
     .container {
@@ -360,7 +377,7 @@
             display: flex;
             align-items: center;
 
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
             font-weight: 400;
 
             @media screen and (max-width: 991px) {
@@ -369,12 +386,12 @@
             }
 
             @media screen and (max-width: 425px) {
-                @include textGeorgia-18px;
+                @include Georgia-18px;
                 @include textMobile-16px;
 
                 margin-bottom: 0;
                 padding-bottom: 1.6rem;
-                border-bottom: .2rem solid $black;
+                border-bottom: .2rem solid $black-secondary;
             }
         }
 
@@ -382,9 +399,9 @@
             p {
                 padding: 1.6rem 0;
 
-                border-bottom: .2rem solid $black;
+                border-bottom: .2rem solid $black-secondary;
 
-                @include textGeorgia-18px;
+                @include Georgia-18px;
 
                 @media screen and (max-width: 425px) {
                     @include textMobile-16px;
@@ -432,9 +449,9 @@
         }
 
         .headline {
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
             font-weight: 400;
-            color: $white;
+            color: $tetriary;
 
             @media screen and (max-width: 425px) {
                 @include headlineMobile-22px;
@@ -444,7 +461,7 @@
 }
 
 .approach {
-    background: $gray;
+    background: $gray-primary;
 
     @media screen and (max-width: 991px) {
         padding-top: 7.2rem;
@@ -454,7 +471,7 @@
     }
 
     h3 {
-        @include headlineMerriweather-38px;
+        @include Merriweather-38px;
         display: flex;
         justify-content: center;
 
@@ -490,7 +507,7 @@
                 column-gap: 3.2rem;
 
                 padding: 1.6rem 0;
-                border-bottom: .2rem solid $black;
+                border-bottom: .2rem solid $black-secondary;
 
                 @media screen and (max-width: 425px) {
                     border-width: .1rem;
@@ -500,8 +517,8 @@
                 }
 
                 &__number {
-                    @include headlineMerriweather-38px;
-                    color: $orange;
+                    @include Merriweather-38px;
+                    color: $accent;
 
                     position: relative;
                     bottom: 0.5rem;
@@ -512,8 +529,8 @@
                 }
 
                 &__text {
-                    @include textGeorgia-18px;
-                    color: $black;
+                    @include Georgia-18px;
+                    color: $black-secondary;
 
                     @media screen and (max-width: 425px) {
                         @include textMobile-16px;
@@ -552,21 +569,14 @@
         background-repeat: no-repeat;
         background-size: cover;
 
-        @media screen and (max-width: 1200px) {
-            padding: 14.5rem 5.6rem;
-        }
-        @media screen and (max-width: 768px) {
-            padding: 4.8rem 5.6rem;
-        }
-        @media screen and (max-width: 575px) {
-            padding: 4.8rem 2.4rem;
-        }
+        @include quotes-padding;
+
         @media screen and (max-width: 425px) {
             row-gap: .8rem;
         }
 
         .credo-headline {
-            @include textGeorgia-24px;
+            @include Georgia-24px;
 
             @media screen and (max-width: 425px) {
                 @include textMobile-16px;
@@ -575,7 +585,7 @@
         }
 
         .credo-quote {
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
             font-weight: 400;
 
             @media screen and (max-width: 425px) {
@@ -585,14 +595,14 @@
         }
 
         .credo-headline, .credo-quote {
-            color: $white;
+            color: $tetriary;
             text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
         }
     }
 }
 
 .benefits {
-    background: $gray;
+    background: $gray-primary;
     @include padding-top;
 
     .container {
@@ -600,7 +610,7 @@
             display: flex;
             justify-content: center;
 
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
 
             margin-bottom: 4.8rem;
 
@@ -632,10 +642,10 @@
                 padding: 3.2rem;
                 border-radius: 1.6rem;
 
-                background: $gray-additional;
+                background: $gray-primary-light;
                 box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
-                @include textGeorgia-18px;
+                @include Georgia-18px;
                 text-align: center;
 
                 @media screen and (max-width: 1150px) {
@@ -650,7 +660,7 @@
 
                     justify-content: center;
 
-                    border-bottom: .1rem solid $black;
+                    border-bottom: .1rem solid $black-secondary;
                     border-radius: 0;
 
                     padding: 3.2rem 1.6rem;
@@ -677,25 +687,14 @@
 
         padding: 7.2rem 24rem;
 
-        @media screen and (max-width: 1600px) {
-            padding: 7.2rem 5.6rem;
-        }
-        @media screen and (max-width: 1200px) {
-            padding: 14.5rem 5.6rem;
-        }
-        @media screen and (max-width: 768px) {
-            padding: 4.8rem 5.6rem;
-        }
-        @media screen and (max-width: 575px) {
-            padding: 4.8rem 2.4rem;
-        }
+        @include quotes-padding;
 
         h3 {
             display: flex;
             justify-content: center;
 
-            @include headlineMerriweather-38px;
-            color: $white;
+            @include Merriweather-38px;
+            color: $tetriary;
 
             margin-bottom: 4.8rem;
 
@@ -732,9 +731,9 @@
                     max-width: 85%;
                     min-height: 8.1rem;
 
-                    @include textGeorgia-24px;
+                    @include Georgia-24px;
 
-                    color: $white;
+                    color: $tetriary;
 
                     @media screen and (max-width: 1600px) {
                         max-width: 95%;
@@ -755,8 +754,8 @@
                 p:last-child {
                     max-width: 70%;
 
-                    @include textGeorgia-18px;
-                    color: $white;
+                    @include Georgia-18px;
+                    color: $tetriary;
 
                     @media screen and (max-width: 1600px) {
                         max-width: 95%;
@@ -782,7 +781,7 @@
 }
 
 .how-achieve {
-    background: $gray;
+    background: $gray-primary;
     @include padding-top;
 
     padding-bottom: 8rem;
@@ -798,7 +797,7 @@
             display: flex;
             justify-content: center;
             
-            @include headlineMerriweather-38px;
+            @include Merriweather-38px;
 
             margin-bottom: 4.8rem;
 
@@ -862,7 +861,7 @@
                     min-height: 6.5rem;
 
                     padding-bottom: 2.6rem;
-                    border-bottom: .2rem solid $black;
+                    border-bottom: .2rem solid $black-secondary;
 
                     @media screen and (max-width: 991px) {
                         padding-top: 2.6rem;
@@ -875,8 +874,8 @@
                     }
 
                     p {
-                        @include textGeorgia-18px;
-                        color: $black;
+                        @include Georgia-18px;
+                        color: $black-secondary;
 
                         @media screen and (max-width: 425px) {
                             @include textMobile-16px;

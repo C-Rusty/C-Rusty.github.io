@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setState } from "../../../store/MenuOpenReducer";
+import { setMobileState } from "../../../store/MenuOpenReducer";
 import { setButton } from "../../../store/ButtonClickReducer";
 import { IRootState } from "../../../store/store";
 
 const MobileHamburger = () => {
 
-    const isMobileMenuOpened = useSelector<IRootState, boolean>((state) => state.MenuStateReducer.isVisible);
+    const isMobileMenuOpened = useSelector<IRootState, boolean>((state) => state.MenuStateReducer.isOpened);
 
     const dispatch = useDispatch();
 
     const handleHamburgerClick = () => {
-        dispatch(setState(!isMobileMenuOpened));
+        dispatch(setMobileState(!isMobileMenuOpened));
     };
 
     const handleMobileMenuState = () => {

@@ -12,6 +12,7 @@ const LangSwitcher = () => {
 
     const { i18n } = useTranslation();
     const { t } = useTranslation();
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
     
     const handleLangSwitch = (e: {target: { value: string; }} ) => {
         const newLang = e.target.value;
@@ -29,6 +30,8 @@ const LangSwitcher = () => {
 
         document.querySelector('.mobile-menu')?.classList.toggle(`opened`);
         document.querySelector(`.hamburger`)?.classList.toggle(`hamburger-active`);
+
+        document.body.style.overflowY = `auto`;
     };
 
     const handleSelectOpen = () => {
@@ -37,8 +40,6 @@ const LangSwitcher = () => {
     const handleSelectClose = () => {
         document.querySelector(`.select`)?.classList.remove(`select-active`);
     };
-
-    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     return (
         <div className={`lang-switcher lang-switcher-${deviceType}`}>
@@ -64,14 +65,14 @@ const LangSwitcher = () => {
                         <MenuItem 
                             value="en"
                             sx={{
-                                display: `flex`, justifyContent: `center`, alignItems: `center`,  width: `6rem`, height: `5.5rem`, padding: `2rem`, minWidth: `100%`, background: `#F3F3F3 !important`, transition: `all .5s`, ":hover": `#F3F3F3`
+                                display: `flex`, justifyContent: `center`, alignItems: `center`,  width: `6rem`, height: `5.5rem`, padding: `2rem`, minWidth: `100%`, background: `#F3F3F3 !important`, transition: `all .5s`, ":hover": `#F3F3F3`, fontSize: `1.8rem`, fontFamily: `PT Sans`
                             }}
                             className="en"
                         >EN</MenuItem>
                         <MenuItem 
                             value="ru"
                             sx={{
-                                display: `flex`, justifyContent: `center`, alignItems: `center`,  width: `6rem`, height: `5.5rem`, padding: `2rem`, minWidth: `100%`, background: `#F3F3F3 !important`, transition: `all .5s`, ":hover": `#F3F3F3`
+                                display: `flex`, justifyContent: `center`, alignItems: `center`,  width: `6rem`, height: `5.5rem`, padding: `2rem`, minWidth: `100%`, background: `#F3F3F3 !important`, transition: `all .5s`, ":hover": `#F3F3F3`, fontSize: `1.8rem`, fontFamily: `PT Sans`
                             }}
                             className="ru"
                         >RU</MenuItem>

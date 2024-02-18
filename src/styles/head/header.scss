@@ -1,11 +1,10 @@
-@import '../global';
+@import '../global/mixins.scss';
 
 header {
     width: 100%;
     padding: 2.4rem 0;
 
-    @include dark;
-    font-family: "PT Sans";
+    background: $black-secondary;
 
     @media screen and (max-width: 991px) {
         position: relative;
@@ -43,7 +42,7 @@ header {
             height: .3rem;
             border-radius: .2rem;
     
-            background: $gray-additional;
+            background: $gray-primary-light;
     
             transition: all .5s;
         }

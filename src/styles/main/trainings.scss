@@ -1,4 +1,6 @@
-@import '../global.scss';
+@import '../global/mixins.scss';
+@import '../global/fonts-mixins/MerriweatherMix.scss';
+@import '../global/fonts-mixins/GeorgiaMix.scss';
 
 @mixin margin-bottom {
     margin-bottom: 8rem;
@@ -12,7 +14,7 @@
     padding-top: 8rem;
     margin-bottom: 7.2rem;
 
-    background: $gray-additional;
+    background: $gray-primary-light;
     border-radius: 4rem;
 
     @media screen and (max-width: 425px) {
@@ -44,7 +46,7 @@
             }
 
             h2 {
-                @include headlineMerriweather-38px;
+                @include Merriweather-38px;
                 margin-bottom: 3.2rem;
 
                 @media screen and (max-width: 991px) {
@@ -76,7 +78,7 @@
             }
 
             .aim-text {
-                @include textGeorgia-24px;
+                @include Georgia-24px;
                 margin-bottom: 4rem;
 
                 @media screen and (max-width: 768px) {
@@ -123,7 +125,7 @@
                     }
 
                     p, span {
-                        @include textGeorgia-20px;
+                        @include Georgia-20px;
                         font-weight: 700;
 
                         @media screen and (max-width: 768px) {
@@ -193,8 +195,8 @@
             }
 
             h3 {
-                @include headlineMerriweather-32px;
-                color: $white;
+                @include Merriweather-32px;
+                color: $tetriary;
                 text-align: center;
 
                 margin-bottom: 4.8rem;
@@ -220,8 +222,8 @@
                 }
                 
                 p {
-                    @include textGeorgia-24px;
-                    color: $white-additional;
+                    @include Georgia-24px;
+                    color: $tetriary-inactive;
 
                     @media screen and (max-width: 991px) {
                         text-align: center;
@@ -253,7 +255,7 @@
 }
 
 .container-page {
-    background: $gray;
+    background: $gray-primary;
     padding: 8rem 5.6rem;
 
     @media screen and (max-width: 576px) {
@@ -306,7 +308,7 @@
                     padding: 6rem 3.2rem;
                     border-radius: 1.6rem;
 
-                    background: $gray-additional;
+                    background: $gray-primary-light;
                     box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
                     text-align: center;
@@ -322,12 +324,12 @@
                         background: none;
                         box-shadow: none;
 
-                        border-bottom: .1rem solid $black;
+                        border-bottom: .1rem solid $black-secondary;
                         border-radius: 0;
                     }
 
                     p {
-                        @include textGeorgia-18px;
+                        @include Georgia-18px;
 
                         @media screen and (max-width: 425px) {
                             @include textMobile-16px;
@@ -350,7 +352,7 @@
                     }
 
                     h3 {
-                        @include headlineMerriweather-32px;
+                        @include Merriweather-32px;
                         font-weight: 700;
                         margin-bottom: 1rem;
 
@@ -361,7 +363,7 @@
                     }
 
                     h4 {
-                        @include textGeorgia-24px;
+                        @include Georgia-24px;
 
                         @media screen and (max-width: 425px) {
                             @include textMobile-18px;
@@ -396,7 +398,7 @@
                         }
                         
                         h5 {
-                            @include textGeorgia-24px;
+                            @include Georgia-24px;
                             font-weight: 700;
 
                             margin-bottom: .8rem;
@@ -408,7 +410,7 @@
 
                         .country {
                             display: block;
-                            @include textGeorgia-18px;
+                            @include Georgia-18px;
 
                             @media screen and (max-width: 425px) {
                                 @include textMobile-16px;
@@ -478,12 +480,12 @@
                     align-items: center;
 
                     border-radius: 1.6rem;
-                    background: $gray-additional;
+                    background: $gray-primary-light;
 
                     box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
-                    @include textGeorgia-18px;
-                    color: $text-gray;
+                    @include Georgia-18px;
+                    color: $gray-secondary-light;
                     text-align: center;
 
                     @media screen and (max-width: 425px) {
@@ -491,7 +493,7 @@
                         background: none;
                         box-shadow: none;
 
-                        border-bottom: .1rem solid $black;
+                        border-bottom: .1rem solid $black-secondary;
                         border-radius: 0;
 
                         @include textMobile-16px;

@@ -21,9 +21,11 @@ const resources  = {
     }
 };
 
+const browserLang = navigator.language.split(`-`)[0];
+
 i18n.use(initReactI18next).init({
     resources,
-    lng: `en`,
+    lng: browserLang,
     fallbackLng: `en`,
     interpolation: {
         escapeValue: false

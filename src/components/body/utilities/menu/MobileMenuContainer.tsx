@@ -7,7 +7,7 @@ import { IRootState } from "../../../../store/store";
 const MobileMenuContainer = () => {
 
     const buttonClicked = useSelector<IRootState, string>((state) => state.buttonClicked.button);
-    const isMobileMenuOpened = useSelector<IRootState>((state) => state.MenuStateReducer.isVisible);
+    const isMobileMenuOpened = useSelector<IRootState>((state) => state.MenuStateReducer.isOpened);
 
     const [openedMenuComponent, setOpenedMenuComponent] = useState<string>(``);
 

@@ -1,7 +1,10 @@
-@import '../../global.scss';
+@import '../../global/mixins.scss';
+@import '../../global/fonts-mixins/PTSansMix.scss';
+@import '../../global/fonts-mixins/GeorgiaMix.scss';
+@import '../../global/fonts-mixins/MerriweatherMix.scss';
 
 .post {
-    background: $gray;
+    background: $gray-primary;
 
     padding: 8rem 0;
 
@@ -14,7 +17,7 @@
 
             .back {
                 @include PTSans-18px;
-                color: $footer;
+                color: $gray-secondary-light-ultra;
 
                 a {
                     display: flex;
@@ -23,7 +26,7 @@
 
                     column-gap: .8rem;
                     
-                    color: $footer;
+                    color: $gray-secondary-light-ultra;
                     transition: all .4s;
 
                     svg {
@@ -61,7 +64,7 @@
                 column-gap: 8rem;
 
                 span {
-                    @include textGeorgia-20px;
+                    @include Georgia-20px;
                     color: $tags;
                     font-weight: 700;
                 }
@@ -72,14 +75,14 @@
             padding: 0 8.6rem;
 
             h1 {
-                @include headlineMerriweather-38px;
+                @include Merriweather-38px;
                 color: $articles-header;
 
                 margin-bottom: 4.8rem;
             }
 
             h2 {
-                @include textGeorgia-18px;
+                @include Georgia-18px;
                 color: $articles-header;
 
                 margin-bottom: 3.2rem;
@@ -97,7 +100,7 @@
                 }
 
                 p {
-                    @include textGeorgia-18px;
+                    @include Georgia-18px;
                     color: $articles-header;
                 }
             }
@@ -107,7 +110,7 @@
             margin-top: 4rem;
 
             h3 {
-                @include headlineMerriweather-32px;
+                @include Merriweather-32px;
                 color: $articles-header;
                 font-weight: 700;
 
@@ -115,29 +118,29 @@
             }
 
             .elements-with-text {
-                @include textGeorgia-18px;
+                @include Georgia-18px;
                 color: $articles-header;
 
                 display: flex;
                 flex-direction: column;
                 row-gap: 2.4rem;
 
-                .ul, li, p {
-                    @include textGeorgia-18px;
+                ul, li, p {
+                    @include Georgia-18px;
                     color: $articles-header;
                     text-align: justify;
                 }
             }
 
-            .ul, li, p {
-                @include textGeorgia-18px;
+            ul, li, p {
+                @include Georgia-18px;
                 color: $articles-header;
                 text-align: justify;
             }
 
             ul {
                 padding-left: 2rem;
-                @include textGeorgia-18px;
+                @include Georgia-18px;
             }
         }
 

@@ -8,12 +8,12 @@ export const categoryTagReducer = createSlice({
     name: `CategoryTag`,
     initialState,
     reducers: {
-        setCategoryTag: (state, action) => {
+        setCategoryTagReducer: (state, action) => {
             state.chosen = action.payload
         }
     },
 });
 
-export const { setCategoryTag } = categoryTagReducer.actions;
+export const { setCategoryTagReducer } = categoryTagReducer.actions;
 
 export default categoryTagReducer.reducer;

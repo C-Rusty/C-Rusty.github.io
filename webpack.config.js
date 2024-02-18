@@ -55,12 +55,8 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-                loader: 'file-loader',
-                options: {
-                    limit: 10000,
-                    outputPath: `fonts`
-                }
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+                type: 'asset/resource',
             }
         ]
     }

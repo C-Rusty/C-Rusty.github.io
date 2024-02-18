@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IRootState } from "../../../../store/store";
-import { setState } from "../../../../store/MenuOpenReducer";
+import { setMobileState } from "../../../../store/MenuOpenReducer";
 import { setButton } from "../../../../store/ButtonClickReducer";
 import { useTranslation } from "react-i18next";
 
@@ -9,7 +9,7 @@ const MobileFilterBtn = () => {
 
     const { t } = useTranslation();
 
-    const isMobileMenuOpened = useSelector<IRootState, boolean>((state) => state.MenuStateReducer.isVisible);
+    const isMobileMenuOpened = useSelector<IRootState, boolean>((state) => state.MenuStateReducer.isOpened);
     const dispatch = useDispatch();
 
     const [isFilterBtnClicked, setIsFilterBtnClicked] = useState<boolean>(false);
@@ -19,7 +19,7 @@ const MobileFilterBtn = () => {
     };
 
     useEffect(() => {
-        if (isFilterBtnClicked) dispatch(setState(!isMobileMenuOpened));
+        if (isFilterBtnClicked) dispatch(setMobileState(!isMobileMenuOpened));
     
         switch (isMobileMenuOpened) {
             case true:

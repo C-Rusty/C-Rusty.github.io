@@ -1,59 +1,108 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategoryTag } from "../../../../store/CategoryTagReducer";
-import { setTypeTag } from "../../../../store/TypeTagReducer";
+import { setCategoryTagReducer } from "../../../../store/CategoryTagReducer";
+import { setTypeTagReducer } from "../../../../store/TypeTagReducer";
 import '../../../../styles/main/utilities/FiltersBar.scss';
 import { IRootState } from "../../../../store/store";
+import { setMobileState } from "../../../../store/MenuOpenReducer";
 
 const FiltersBar = () => {
 
-    const [isApplyClicked, setIsApplyClicked] = useState<boolean>(false);
+    const typeTagReducer = useSelector<IRootState, string>((state) => state.typeTag.chosen);
+    const typeCategoryReducer = useSelector<IRootState, string>((state) => state.categoryTag.chosen);
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
+    
+    const dispatch = useDispatch();
+
+    const [typeTag, setTypeTag] = useState<string>(typeTagReducer);
+    const [categoryTag, setCategoryTag] = useState<string>(typeCategoryReducer);
 
     const { t } = useTranslation();
 
     const handleClickTag = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-
+        
         if (e.currentTarget.parentElement?.classList.contains(`types-list`)) {
-            const currentActiveTypeTag = document.querySelector(`.active-type-tag`);
+            removeClassFromTypeTag();
 
-            currentActiveTypeTag?.classList.remove(`active-type-tag`);
             const navItemClicked = e.currentTarget;
-
             document.getElementById(`${navItemClicked.id}`)!.classList.add(`active-type-tag`);
 
         } else if (e.currentTarget.parentElement?.classList.contains(`categories-list`)) {
-            const currentActiveCategoryTag = document.querySelector(`.active-category-tag`);
-            currentActiveCategoryTag?.classList.remove(`active-category-tag`);
-            const navItemClicked = e.currentTarget;
+            removeClassFromCategoryTag();
 
+            const navItemClicked = e.currentTarget;
             document.getElementById(`${navItemClicked.id}`)?.classList.add(`active-category-tag`);
         };
     };
 
-    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
-    const dispatch = useDispatch();
+    useEffect(() => {
+        if (deviceType === `desktop`) dispatch(setTypeTagReducer(typeTag));
+    }, [typeTag]);
 
-    const handleCategoryClick = (category: string) => {
-        dispatch(setCategoryTag(category));
-    };
+    useEffect(() => {
+        if (deviceType === `desktop`) dispatch(setCategoryTagReducer(categoryTag));
+    }, [categoryTag]);
 
-    const handleTypeClick = (type: string) => {
-        dispatch(setTypeTag(type));
-    };
 
-    const handleTagClick = ( {tagType: string } ) => {
-        switch (deviceType) {
-            case `desktop`:
-                
+    const handleTypeTagTap = () => {
+
+        removeClassFromTypeTag();
+
+        switch (typeTag) {
+            case `All`:
+                document.getElementById(`all-types`)!.classList.add(`active-type-tag`);
+            break;
+            case `Articles`:
+                document.getElementById(typeTag.toLowerCase())!.classList.add(`active-type-tag`);
+            break;
+            case `Cases`:
+                document.getElementById(typeTag.toLowerCase())!.classList.add(`active-type-tag`);
             break;
 
-            case `mobile`:
-                
-            break;
-        
             default: break;
-        }
+        };
+    };
+
+    const handleCategoryTagTap = () => {
+        removeClassFromCategoryTag();
+
+        switch (categoryTag) {
+            case `All`:
+                document.getElementById(`all-categories`)!.classList.add(`active-category-tag`);
+            break;
+            case `Marketing`:
+                document.getElementById(categoryTag.toLowerCase())!.classList.add(`active-category-tag`);
+            break;
+            case `Strategy`:
+                document.getElementById(categoryTag.toLowerCase())!.classList.add(`active-category-tag`);
+            break;
+
+            default: break;
+        };
+    };
+
+    const removeClassFromTypeTag = () => {
+        const currentActiveTypeTag = document.querySelector(`.active-type-tag`);
+        currentActiveTypeTag?.classList.remove(`active-type-tag`);
+    };
+
+    const removeClassFromCategoryTag = () => {
+        const currentActiveCategoryTag = document.querySelector(`.active-category-tag`);
+        currentActiveCategoryTag?.classList.remove(`active-category-tag`);
+    };
+
+    useEffect(() => {
+        handleTypeTagTap();
+        handleCategoryTagTap();
+    }, []);
+
+    const handleApplyBtn = () => {
+        if (deviceType === `mobile`) {
+            dispatch(setTypeTagReducer(typeTag));
+            dispatch(setCategoryTagReducer(categoryTag));
+            dispatch(setMobileState(false));
+        };
     };
 
     return (
@@ -67,7 +116,7 @@ const FiltersBar = () => {
                     <ul className="list types-list">
                         <li
                             onClick={(e) => {
-                                handleTypeClick(`All`);
+                                setTypeTag(`All`);
                                 handleClickTag(e)
                             }}
                             id="all-types"
@@ -75,14 +124,14 @@ const FiltersBar = () => {
                         >{t (`All`)}</li>
                         <li
                             onClick={(e) => {
-                                handleTypeClick(`Articles`);
+                                setTypeTag(`Articles`);
                                 handleClickTag(e)
                             }}
                             id="articles"
                         >{t (`Articles`)}</li>
                         <li
                             onClick={(e) => {
-                                handleTypeClick(`Cases`);
+                                setTypeTag(`Cases`);
                                 handleClickTag(e)
                             }}
                             id="cases"
@@ -94,7 +143,7 @@ const FiltersBar = () => {
                     <ul className="list categories-list">
                         <li
                             onClick={(e) => {
-                                handleCategoryClick(`All`);
+                                setCategoryTag(`All`);
                                 handleClickTag(e)
                             }}
                             id="all-categories"
@@ -102,14 +151,14 @@ const FiltersBar = () => {
                         >{t (`All`)}</li>
                         <li
                             onClick={(e) => {
-                                handleCategoryClick(`Marketing`);
+                                setCategoryTag(`Marketing`)
                                 handleClickTag(e)
                             }}
                             id="marketing"
                         >{t (`Marketing`)}</li>
                         <li
                             onClick={(e) => {
-                                handleCategoryClick(`Strategy`);
+                                setCategoryTag(`Strategy`);
                                 handleClickTag(e)
                             }}
                             id="strategy"
@@ -118,7 +167,7 @@ const FiltersBar = () => {
                 </div>
             </nav>
             {deviceType === `mobile` && 
-                <button onClick={}>{t (`Apply`)}</button>
+                <button onClick={handleApplyBtn}>{t (`Apply`)}</button>
             }
         </>
 

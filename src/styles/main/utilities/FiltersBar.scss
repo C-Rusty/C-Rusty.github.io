@@ -1,10 +1,11 @@
-@import '../../global.scss';
+@import '../../global/mixins.scss';
 
 @mixin filtersBarStyles {
     &__types, &__categories {
         span {
             @include PTSans-24px;
-            color: $nav-articles;
+            font-weight: 700;
+            color: $gray-secondary-hovered;
         }
 
         ul {
@@ -18,7 +19,7 @@
 
             li {
                 @include PTSans-20px;
-                color: $nav-articles;
+                color: $gray-secondary-hovered;
 
                 transition: all .5s;
                 scale: 1;

@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export type MenuState = {isVisible: boolean};
+export type MenuState = {isOpened: boolean};
 
-const initialState: MenuState = {isVisible: false};
+const initialState: MenuState = {isOpened: false};
 
 export const MenuStateReducer = createSlice({
     name: `menu`,
     initialState,
     reducers: {
-        setState: (state, action) => {
-            state.isVisible = action.payload;
+        setMobileState: (state, action) => {
+            state.isOpened = action.payload;
         },
     }
 });
 
-export const { setState } = MenuStateReducer.actions;
+export const { setMobileState } = MenuStateReducer.actions;
 
 export default MenuStateReducer.reducer;
