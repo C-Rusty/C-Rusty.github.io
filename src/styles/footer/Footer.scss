@@ -214,10 +214,20 @@ footer {
 
         .alone {
             display: flex;
-            justify-content: space-between;
             width: 100%;
 
             padding-left: 0;
+
+            .authors__author {
+                flex-direction: row;
+
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;
+                }
+                @media screen and (max-width: 575px) {
+                    padding: 1.6rem 2.4rem;
+                }
+            }
         } 
     }
 }

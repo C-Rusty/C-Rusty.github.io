@@ -1,20 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import telegram from '../../../../images/footer/telegram.svg'
 import viber from '../../../../images/footer/viber.svg'
-import telegram from '../../../../images/footer/telegram.svg';
-import whatsApp from '../../../../images/footer/whats-app.svg';
+import whatsApp from '../../../../images/footer/whats-app.svg'
 
 const ContactForm = () => {
 
     const { t } = useTranslation();
 
-    const [selectedMessenger, setSelectedMessenger] = useState(whatsApp);
-    const [firstOption, setFirstOption] = useState(telegram);
-    const [secondOption, setSecondOption] = useState(viber);
+    const telegram: string = `../../../../images/footer/telegram.svg`;
+    const viber: string = `../../../../images/footer/viber.svg`;
+    const whatsApp: string = `../../../../images/footer/whats-app.svg`;
 
-    const [currentMessengerString, setCurrentMessengerString] = useState<string>(`WhatsApp`);
-    const [firstOptionString, setFirstOptionString] = useState(`Telegram`);
-    const [secondOptionString, setSecondOptionString] = useState(`Viber`);
+    const options: Array<string> = [telegram, viber, whatsApp];
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -32,28 +30,7 @@ const ContactForm = () => {
     };
 
     const handleClickMessenger = (option: string) => {
-        if (option === `Telegram`) {
-            setSelectedMessenger(telegram);
-            setCurrentMessengerString(`Telegram`);
-            setFirstOption(whatsApp);
-            setFirstOptionString(`WhatsApp`);
-            setSecondOption(viber);
-            setSecondOptionString(`viber`);
-        } else if (option === `Viber`) {
-            setSelectedMessenger(viber);
-            setCurrentMessengerString(`Viber`);
-            setFirstOption(telegram);
-            setFirstOptionString(`Telegram`);
-            setSecondOption(whatsApp);
-            setSecondOptionString(`WhatsApp`);
-        } else if (option === `WhatsApp`) {
-            setSelectedMessenger(whatsApp);
-            setCurrentMessengerString(`WhatsApp`);
-            setFirstOption(telegram);
-            setFirstOptionString(`Telegram`);
-            setSecondOption(viber);
-            setSecondOptionString(`Viber`);
-        };
+
     };
 
     useEffect(() => {
@@ -87,58 +64,34 @@ const ContactForm = () => {
         });
     };
 
-    const setSelectBg = () => {
-        document.querySelector(`.select-messenger`)?.classList.toggle(`gray-bg`);
-        document.querySelector(`.messengers-label`)?.classList.toggle(`gray-bg`);
-    };
-
-
     return (
-        <div className="form">
-        <form action="submit" method="post" onSubmit={(e) => submitForm(e)}>
-            <label className="name-label">
-                <input 
-                    required={true}
-                    type="text" 
-                    placeholder={t (`Name`)}
-                    ref={nameInput}
-                />
-            </label>
-            <label className="messengers-label" onClick={setSelectBg}>
-                <input 
-                    required={true}
-                    type="tel"
-                    placeholder={t (`Phone No. / Messenger *`)}
-                     ref={phoneInput}
-                />
-                <div className="select-messenger">
-                    <img 
-                        src="../../../images/content/contact-me/arrow.svg" 
-                        alt="arrow"
-                        className="select__open-btn"
-                        onClick={() => setIsOpen(previousState => !previousState)}  
+        <div className="form-container">
+            <form action="submit" method="post" onSubmit={(e) => submitForm(e)}>
+                <label className="name">
+                    <input 
+                        required={true}
+                        type="text" 
+                        placeholder={t (`Name`)}
+                        ref={nameInput}
                     />
-                    <div className="list">
-                        <img 
-                            src={selectedMessenger}  alt="selected-messenger" 
-                        />
-                        <div className="list__options">
-                            <img 
-                                src={firstOption} 
-                                alt="messenger"
-                                onClick={() => handleClickMessenger(firstOptionString)}
-                            />
-                            <img 
-                                src={secondOption} 
-                                alt="messenger" 
-                                onClick={() => handleClickMessenger(secondOptionString)}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </label>
-            <button type="submit">{t (`Contact me`)}</button>
-        </form>
+                </label>
+                <label className="phone">
+                    <input 
+                        required={true}
+                        type="tel"
+                        placeholder={t (`Phone No. / Messenger *`)}
+                        ref={phoneInput}
+                    />
+                    <select>
+                        {options.map(option => 
+                            <option style={{}}>
+                                <span style={{backgroundImage: `url(${option})`}}></span>
+                            </option>
+                        )}
+                    </select>
+                </label>
+                <button type="submit">{t (`Contact me`)}</button>
+            </form>
     </div>
     );
 };

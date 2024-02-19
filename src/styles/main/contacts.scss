@@ -6,11 +6,19 @@
 .contact-me {
     background: $gray-primary;
 
-    min-height: calc(100vh - (10.1rem + 3.6rem));
+    min-height: calc(100vh - (10.32rem + 3.6rem));
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1150px) {
+        min-height: calc(100vh - (10.32rem + 7.16rem));
+        padding: 8rem 0;
+    }
+    @media screen and (max-width: 991px) {
+        min-height: auto
+    }
     
     .container {
         display: flex;
@@ -167,7 +175,7 @@
         }
     }
 
-    .form {
+    .form-container {
         min-width: 50%;
         min-height: 28.8rem;
 
@@ -209,33 +217,30 @@
                         border-color: #D30808;
                         outline: #D30808;
                     }
+
+                    // &:focus, &:active {
+                    //     background: $tetriary-inactive;
+                    // }
+                    
                 }
 
-                input:not(:focus):invalid {
-                    border-color: var(--color-invalid);
-                  }
-
-                input, .select-messenger {
+                input, select {
                     padding: 2.4rem;
                     border-radius: 1.6rem;
                     border: none;
                     outline: none;
 
-                    max-height: 6.4rem;
-
                     background: $tetriary;
 
-                    &:focus {
-                        background: $tetriary-inactive;
-                    }
-                    
+                    max-height: 6.4rem;
+
                     @media screen and (max-width: 425px) {
                         padding: 1.6rem;
                     }
                 }
             }
 
-            .name-label {
+            .name {
                 margin-bottom: 2.4rem;
 
                 @media screen and (max-width: 425px) {
@@ -248,7 +253,7 @@
                 }
             }
 
-            .messengers-label {
+            .phone {
                 display: flex;
                 flex-direction: row;
                 background: $tetriary;
@@ -260,77 +265,37 @@
                 @media screen and (max-width: 425px) {
                     margin-bottom: 2.4rem;
                 }
-                
-                input {
-                    border-bottom-right-radius: .1rem;
-                    border-top-right-radius: .1rem;
-                }
 
-                .select-messenger {
-                    width: max-content;
-                    
-                    display: flex;
-                    column-gap: .8rem;
-                    align-items: center;
+                select {
+                    // direction: rtl;
+                    min-width: 15%;
 
-                    border-top-left-radius: .1rem;
-                    border-bottom-left-radius: .1rem;
+                    appearance: none;
+                    background-image: url(../../images/content/contact-me/arrow.svg);
+                    background-repeat: no-repeat;
+                    background-position: left 0.7rem top 50%;
+                    background-size: 2rem; 
 
-                    &__open-btn {
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
+                    option {
+                        background-repeat: no-repeat;
+                        background-size: 2rem; 
 
-                    .arrow-transform {
-                        transform: rotate(180deg);
-                    }
-
-                    .list {
-                        position: relative;
-                        z-index: 1;
-
-                        img {
-                            max-width: 2.4rem;
-                            max-height: 2.4rem;
-
-                            &:hover {
-                                cursor: pointer;
-                            }
-                        }
-
-                        &__options {
-                            display: none;
-
-                            padding: 1rem;
-                            z-index: -1;
-
-                            transition: all .5s;
-
-                            background-color: $tetriary;
-                            
-                            position: absolute;
-                            top: 4rem;
-                            right: -1rem;
-
-                            border-radius: 1rem;
-
-                            img:first-child {
-                                margin-bottom: 1rem;
-                            }
-
-                        }
-
-                        .opened {
+                        span {
+                            width: 10rem;
+                            height: 13rem;
                             display: block;
-                            transition: all .5s;
                         }
                     }
                 }
 
-                .gray-bg {
-                    background: $tetriary-inactive;
-                }
+                // input {
+                //     border-bottom-right-radius: .1rem;
+                //     border-top-right-radius: .1rem;
+                // }
+
+                // .gray-bg {
+                //     background: $tetriary-inactive;
+                // }
             }
 
             button {
