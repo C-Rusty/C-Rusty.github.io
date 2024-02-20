@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import telegram from '../../../../images/footer/telegram.svg'
-import viber from '../../../../images/footer/viber.svg'
-import whatsApp from '../../../../images/footer/whats-app.svg'
 
 const ContactForm = () => {
 
@@ -12,7 +9,9 @@ const ContactForm = () => {
     const viber: string = `../../../../images/footer/viber.svg`;
     const whatsApp: string = `../../../../images/footer/whats-app.svg`;
 
-    const options: Array<string> = [telegram, viber, whatsApp];
+    const [selectedMessenger, setSelectedMessenger] = useState<string>(whatsApp);
+    const [options, setOptions] = useState<Array<string>>([viber, telegram]);
+    const allMessengers: Array<string> = [telegram, viber, whatsApp];
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -29,8 +28,19 @@ const ContactForm = () => {
         };
     };
 
-    const handleClickMessenger = (option: string) => {
-
+    const handleSelect = (selectedOption: string) => {
+        if (selectedOption.includes(`telegram`)) {
+            setOptions(allMessengers.filter(messenger => messenger !== selectedOption));
+            setSelectedMessenger(telegram);
+        } 
+        else if (selectedOption.includes(`viber`)) {
+            setSelectedMessenger(viber);
+            setOptions(allMessengers.filter(messenger => messenger !== selectedOption));
+        } 
+        else if (selectedOption.includes(`whats-app`)) {
+            setSelectedMessenger(whatsApp);
+            setOptions(allMessengers.filter(messenger => messenger !== selectedOption));
+        };
     };
 
     useEffect(() => {
@@ -40,25 +50,31 @@ const ContactForm = () => {
 
     const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        const data = {
+            service_id: 'service_ms5x63y',
+            template_id: 'template_9qfcfhf',
+            user_id: '-GnWfbXVoK4IzkfI3',
+            template_params: {
+                name:  nameInput.current!.value,
+                phone: phoneInput.current!.value,
+                messenger: selectedMessenger.split(`/`)[6].split(`.`)[0]
+            }
+        };
         
-        fetch(`https://getform.io/f/38a8aba7-a47e-418e-8c89-c108986d58e4`, {
+        fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
             method: `POST`,
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                name:  nameInput.current!.value,
-                phone: phoneInput.current!.value,
-                messenger: currentMessengerString
-            })
+            body: JSON.stringify(data)
         }).then(response => {
             if (response.ok && response.status === 200) {
                 nameInput.current!.value = ``;
                 phoneInput.current!.value = ``;
-                handleClickMessenger(`WhatsApp`);
             } else {
                 console.log("error");
-            }
+            };
         }).catch(error => {
             console.error("Error:", error);
         });
@@ -82,17 +98,35 @@ const ContactForm = () => {
                         placeholder={t (`Phone No. / Messenger *`)}
                         ref={phoneInput}
                     />
-                    <select>
-                        {options.map(option => 
-                            <option style={{}}>
-                                <span style={{backgroundImage: `url(${option})`}}></span>
-                            </option>
-                        )}
-                    </select>
+                    <div 
+                        className="phone__select-messenger"
+                        onClick={() => setIsOpen(previousState => !previousState)}  
+                    >
+                        <img 
+                            src="../../../images/content/contact-me/arrow.svg" 
+                            alt="arrow"
+                            className="select__open-btn"
+                        />
+                        <div className="list">
+                            <div className="list__selected">
+                                <img 
+                                    src={selectedMessenger} alt="selectedMessenger" 
+                                />
+                            </div>
+                            <div className="list__options">
+                                {options.map(option =>
+                                    <img 
+                                        src={option}
+                                        onClick={() => handleSelect(option)}
+                                    />    
+                                )}
+                            </div>
+                        </div>
+                    </div>
                 </label>
                 <button type="submit">{t (`Contact me`)}</button>
             </form>
-    </div>
+        </div>
     );
 };
 

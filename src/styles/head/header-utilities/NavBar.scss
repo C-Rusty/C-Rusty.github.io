@@ -10,6 +10,9 @@
 
         list-style-type: none;
 
+        @media screen and (max-width: 1150px) {
+            column-gap: 2.4rem;
+        }
         @media screen and (max-width: 991px) {
             column-gap: 0;
         }

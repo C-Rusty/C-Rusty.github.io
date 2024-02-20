@@ -3,6 +3,35 @@
 @import '../global/fonts-mixins/GeorgiaMix.scss';
 @import '../global/fonts-mixins/PTSansMix.scss';
 
+@mixin telegram-logo {
+    path:first-child {
+        fill: #24A1DE;
+    }
+
+    path {
+        fill: white;
+    }
+}
+
+@mixin viber-logo {
+    path:first-child {
+        fill: white;
+    }
+
+    path {
+        fill: #7360F2;
+    }
+}
+
+@mixin whats-app-logo {
+    circle {
+        fill: white;
+    }
+    path {
+        fill: #25D366;
+    }
+}
+
 .contact-me {
     background: $gray-primary;
 
@@ -17,7 +46,15 @@
         padding: 8rem 0;
     }
     @media screen and (max-width: 991px) {
-        min-height: auto
+        min-height: calc(100vh - (8.3rem + 7.2rem));
+    }
+
+    @media screen and (max-width: 768px) {
+        min-height: calc(100vh - (8.3rem + 9.8rem));
+    }
+
+    @media screen and (max-width: 575px) {
+        min-height: calc(100vh - (7.4rem + 14.2rem));
     }
     
     .container {
@@ -134,13 +171,7 @@
                 a:first-child {
                     &:hover {
                         svg {
-                            path:first-child {
-                                fill: white;
-                            }
-
-                            path {
-                                fill: #7360F2;
-                            }
+                            @include viber-logo;
                         }
                     }
                 }
@@ -148,13 +179,7 @@
                 a:nth-child(2) {
                     &:hover {
                         svg {
-                            path:first-child {
-                                fill: #24A1DE;
-                            }
-
-                            path {
-                                fill: white;
-                            }
+                            @include telegram-logo;
                         }
                     }
                 }
@@ -162,12 +187,7 @@
                 a:last-child {
                     &:hover {
                         svg {
-                            circle {
-                                fill: white;
-                            }
-                            path {
-                                fill: #25D366;
-                            }
+                            @include whats-app-logo;
                         }
                     }
                 }
@@ -182,8 +202,6 @@
         @media screen and (max-width: 991px) {
             margin-bottom: 6.4rem;
             min-height: max-content;
-
-            min-height: auto;
         }
 
         @media screen and (max-width: 425px) {
@@ -256,6 +274,7 @@
             .phone {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 background: $tetriary;
 
                 border-radius: 1.6rem;
@@ -266,36 +285,91 @@
                     margin-bottom: 2.4rem;
                 }
 
-                select {
-                    // direction: rtl;
-                    min-width: 15%;
+                &__select-messenger {
+                    display: flex;
+                    column-gap: .8rem;
+                    align-items: center;
 
-                    appearance: none;
-                    background-image: url(../../images/content/contact-me/arrow.svg);
-                    background-repeat: no-repeat;
-                    background-position: left 0.7rem top 50%;
-                    background-size: 2rem; 
+                    border-top-left-radius: .1rem;
+                    border-bottom-left-radius: .1rem;
 
-                    option {
-                        background-repeat: no-repeat;
-                        background-size: 2rem; 
+                    width: 5rem;
+                    margin-right: 5%;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
 
-                        span {
-                            width: 10rem;
-                            height: 13rem;
-                            display: block;
+                    &__open-btn {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .arrow-transform {
+                        transform: rotate(180deg);
+                    }
+
+                    .list {
+                        position: relative;
+                        z-index: 20;
+
+                        width: 5.6rem;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                        
+                        &__options {
+                            display: none;
+
+                            padding: 1rem;
+                            z-index: -1;
+
+                            transition: all .5s;
+
+                            background-color: $tetriary;
+                            
+                            position: absolute;
+                            top: 4.2rem;
+
+                            border-radius: 1rem;
+                        }
+
+                        .opened {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            row-gap: 1.6rem;
+
+                            transition: all .5s;
+
+                            width: 100%;
+                            height: auto;
+
+                            width: 5.6rem;
+                        }
+
+                        .telegram-logo {
+                            @include telegram-logo;
+                        }
+                        
+                        .viber-logo {
+                            @include viber-logo;
+                        }
+                        
+                        .whats-app-logo {
+                            @include whats-app-logo;
                         }
                     }
                 }
-
-                // input {
-                //     border-bottom-right-radius: .1rem;
-                //     border-top-right-radius: .1rem;
-                // }
-
-                // .gray-bg {
-                //     background: $tetriary-inactive;
-                // }
             }
 
             button {
@@ -309,5 +383,27 @@
                 }
             }
         }
+    }
+}
+
+#menu- {
+    ul {
+        padding: 1.6rem 0 !important; 
+
+        li {
+            justify-content: center;
+        }
+    }
+
+    .telegram-logo {
+        @include telegram-logo;
+    }
+    
+    .viber-logo {
+        @include viber-logo;
+    }
+    
+    .whats-app-logo {
+        @include whats-app-logo;
     }
 }
