@@ -4,6 +4,8 @@ import buttonClickReducer from "./ButtonClickReducer";
 import categoryTagReducer from "./CategoryTagReducer";
 import typeTagReducer from "./TypeTagReducer";
 import DeviceTypeReducer from "./DeviceTypeReducer";
+import FormSendReducer from "./FormSendReducer";
+import ModalLegalReducer from "./ModalLegalReducer";
 
 const store = configureStore({
     reducer: {
@@ -11,7 +13,9 @@ const store = configureStore({
         buttonClicked: buttonClickReducer,
         categoryTag: categoryTagReducer,
         typeTag: typeTagReducer,
-        deviceType: DeviceTypeReducer
+        deviceType: DeviceTypeReducer,
+        formReducer: FormSendReducer,
+        modalLegalReducer: ModalLegalReducer
     }
 });
 

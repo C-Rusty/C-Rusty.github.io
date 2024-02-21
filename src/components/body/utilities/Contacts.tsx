@@ -7,6 +7,7 @@ import '../../../styles/main/contacts.scss';
 import ContactForm from "./contacts/ContactForm";
 import { useSelector } from "react-redux";
 import { IRootState } from "../../../store/store";
+import ModalNotice from "./contacts/ModalNotice";
 
 const Contacts = () => {
 
@@ -42,6 +43,7 @@ const Contacts = () => {
                     </div>
                 </div>
                 {deviceType === `desktop` && <ContactForm/>}
+                <ModalNotice/>
             </div>
         </div>
     )

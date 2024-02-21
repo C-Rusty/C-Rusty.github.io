@@ -33,11 +33,15 @@
 @mixin Georgia-18px {
     font-family: "Georgia-Regular";
     font-size: 1.8rem;
-    font-weight: 400;
 }
 
 @mixin Georgia-18px-BoldItalic {
     font-family: "Georgia-BoldItalic";
     font-size: 1.8rem;
     font-weight: 700;
+}
+
+@mixin Georgia-16px {
+    font-family: "Georgia-Regular";
+    font-size: 1.6rem;
 }

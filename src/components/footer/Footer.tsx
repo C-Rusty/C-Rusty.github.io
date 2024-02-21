@@ -4,7 +4,9 @@ import '../../styles/footer/Footer.scss';
 import ViberLogo from "./utilities/ViberLogo";
 import TelegramLogo from "./utilities/TelegramLogo";
 import WhatsAppLogo from "./utilities/WhatsAppLogo";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setModalState, setSelectedDocument } from "../../store/ModalLegalReducer";
 
 const Footer = () => {
 
@@ -12,6 +14,13 @@ const Footer = () => {
     const location = useLocation();
 
     const [isContactPage, setIsContactPage] = useState<boolean>(false);
+
+    const dispatch = useDispatch();
+
+    const handleClick = (selectedDocument: string) => {
+        dispatch(setModalState(true));
+        dispatch(setSelectedDocument(selectedDocument));
+    };
 
     useEffect(() => {
         if (location.pathname.includes(`contacts`)) {
@@ -54,6 +63,14 @@ const Footer = () => {
                     <div className="authors__author">
                         <span>{t (`Programmer`)}:</span>
                         <a href="https://www.linkedin.com/in/rostislavchanov/">{t (`Rostislav Chanov`)}</a>
+                    </div>
+                </div>
+                <div className="legal">
+                    <div className="legal__terms">
+                        <a onClick={() => handleClick(`terms`)}>{t (`Terms of Use`)}</a>
+                    </div>
+                    <div className="legal__privacy">
+                        <a onClick={() => handleClick(`privacy`)}>{t (`Privacy Policy`)}</a>
                     </div>
                 </div>
             </div>

@@ -62,6 +62,8 @@
         justify-content: center;
         align-items: flex-start;
 
+        position: relative;
+
         width: 100%;
     }
 
@@ -231,18 +233,13 @@
                     @include PTSans-18px;
                     color: $gray-secondary-light;
 
-                    &:required:invalid {
-                        border-color: #D30808;
-                        outline: #D30808;
+                    &:focus, &:active {
+                        background: $tetriary-inactive;
                     }
-
-                    // &:focus, &:active {
-                    //     background: $tetriary-inactive;
-                    // }
                     
                 }
 
-                input, select {
+                input {
                     padding: 2.4rem;
                     border-radius: 1.6rem;
                     border: none;
@@ -256,6 +253,31 @@
                         padding: 1.6rem;
                     }
                 }
+
+                .name-input, .phone__select-container {
+                    margin-bottom: .8rem;
+                }
+
+                .error-text {
+                    padding-left: 2.4rem;
+                    color: $error;
+                    @include PTSans-14px-Bold;
+
+                    opacity: 1;
+                }
+
+                .hidden {
+                    opacity: 0;
+                }
+            }
+
+            .error-border {
+                border: 1px solid $error;
+                outline: $error;
+            }
+
+            .active-bg {
+                // background: ;
             }
 
             .name {
@@ -272,17 +294,23 @@
             }
 
             .phone {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background: $tetriary;
-
-                border-radius: 1.6rem;
-
                 margin-bottom: 4.8rem;
 
                 @media screen and (max-width: 425px) {
                     margin-bottom: 2.4rem;
+                }
+
+                &__select-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    background: $tetriary;
+                    border-radius: 1.6rem;
+
+                    &:has(input:focus) {
+                        background: $tetriary-inactive;
+                    }
                 }
 
                 &__select-messenger {
@@ -312,7 +340,7 @@
 
                     .list {
                         position: relative;
-                        z-index: 20;
+                        z-index: 5;
 
                         width: 5.6rem;
 
@@ -335,7 +363,7 @@
 
                             transition: all .5s;
 
-                            background-color: $tetriary;
+                            background-color: $tetriary-inactive;
                             
                             position: absolute;
                             top: 4.2rem;
@@ -386,24 +414,81 @@
     }
 }
 
-#menu- {
-    ul {
-        padding: 1.6rem 0 !important; 
+.modal {
+    &__inner {
+        background: $gray-primary;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-        li {
-            justify-content: center;
+        width: 50%;
+
+        border: none;
+        border-radius: 1.6rem;
+
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+
+        padding: 3.2rem 0;
+        outline: 0;
+
+        @media screen and (max-width: 991px) {
+            width: 70%;
         }
-    }
 
-    .telegram-logo {
-        @include telegram-logo;
-    }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 991px) {
+                padding: 0 2.4rem;
+            }
+
+            .text {
+                margin-bottom: 4.8rem;
+
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 3.2rem;
+                }
+
+                span {
+                    display: block;
+                }
+
+                span:first-child {
+                    @include Merriweather-38px-Bold;
+                    text-align: center;
+                    margin-bottom: 3.2rem;
+
+                    @media screen and (max-width: 425px) {
+                        @include Merriweather-32px-Bold;
+                        margin-bottom: 2.4rem;
+                    }
+                }
+
+                span:nth-child(2) {
+                    margin-bottom: .8rem;
+                }
+
+                span:nth-child(2), span:last-child {
+                    @include Georgia-18px;
+
+                    @media screen and (max-width: 425px) {
+                        @include Georgia-16px;
+                    }
+                }
+            }
     
-    .viber-logo {
-        @include viber-logo;
-    }
-    
-    .whats-app-logo {
-        @include whats-app-logo;
+            button {
+                @include button;
+
+                @media screen and (max-width: 991px) {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

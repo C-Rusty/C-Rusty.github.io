@@ -119,7 +119,7 @@
 
     "Apply": "Применить",
 
-    "To read": "Читать",
+    "Read": "Читать",
     "Filters": "Фильтры",
     "Back to list": "Назад к списку",
 
@@ -173,10 +173,22 @@
     "Maria Shkrabo": "Мария Шкрабо",
     "Programmer": "Программист",
     "Rostislav Chanov": " Ростислав Чанов",
-    "Phone No. / Messenger *": "Телефон / Мессенджер *",
+    "Phone No. / Messenger": "Телефон / Мессенджер",
+    "Please fill in": "Пожалуйста, напишите",
+    "Your name": "ваше имя",
+    "Your contacts": "ваш номер телефона/мессенджер",
+    "Close": "Закрыть",
+    "Thank you!": "Спасибо!",
+    "The form was successfully sent": "Форма была успешно отправлена",
+    "I will contact you shortly": "Я свяжусь с вами в ближайшее время",
+    "Ooops!": "Упс!",
+    "Something went wrong...": "Что-то пошло не так...",
+    "Please try to send the form again or contact me by social media or email indicated on the website": "Пожалуйста, попробуйте отправить форму снова или свяжитесь со мной через социальные сети или электронную почту, указанную на вебсайте.",
 
     "Leave your contacts and I will contact you for a consultation": "Оставьте свои контакты и я свяжусь с Вами для консультации.",
-    "Name": "Имя *",
+    "Name": "Имя",
     "Contact me": "Связаться",
-    "Contact with me": "Свяжитесь со мной"
+    "Contact with me": "Свяжитесь со мной",
+    "Terms of Use": "Условия использования сайта",
+    "Privacy Policy": "Политика конфиденциальности"
 }

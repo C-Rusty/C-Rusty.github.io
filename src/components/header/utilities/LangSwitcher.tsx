@@ -12,6 +12,7 @@ const LangSwitcher = () => {
 
     const { i18n } = useTranslation();
     const { t } = useTranslation();
+    
     const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
     
     const handleLangSwitch = (e: {target: { value: string; }} ) => {

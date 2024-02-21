@@ -119,7 +119,7 @@
 
     "Apply": "Apply",
 
-    "To read": "To read",
+    "Read": "Read",
     "Filters": "Filters",
     "Back to list": "Back to list",
     
@@ -173,12 +173,25 @@
     "Maria Shkrabo": "Maria Shkrabo",
     "Programmer": "Programmer",
     "Rostislav Chanov": " Rostislav Chanov",
-    "Phone No. / Messenger *": "Phone / Messenger *",
+    "Phone No. / Messenger": "Phone / Messenger",
+    "Please fill in": "Please fill in",
+    "Your name": "your name",
+    "Your contacts": "your phone No. / messenger",
+    "Close": "Close",
+    "Thank you!": "Thank you!",
+    "The form was successfully sent": "The form was successfully sent.",
+    "I will contact you shortly": "I will contact you shortly.",
+    "Ooops!": "Ooops!",
+    "Something went wrong...": "Something went wrong...",
+    "Please try to send the form again or contact me by social media or email indicated on the website": "Please try to send the form again or contact me by social media or email indicated on the website.",
+
 
     "Contact me": "Contact me",
     "Contact with me": "Contact with me",
     "Leave your contacts and I will contact you for a consultation": "Leave your contacts and I will contact you for a consultation",
-    "Name": "Name *",
+    "Name": "Name",
     "countries": "countries",
-    "operates in more than": "operates in more than"
+    "operates in more than": "operates in more than",
+    "Terms of Use": "Terms of Use",
+    "Privacy Policy": "Privacy Policy"
 }
