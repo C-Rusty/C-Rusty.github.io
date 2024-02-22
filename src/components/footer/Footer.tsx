@@ -4,9 +4,9 @@ import '../../styles/footer/Footer.scss';
 import ViberLogo from "./utilities/ViberLogo";
 import TelegramLogo from "./utilities/TelegramLogo";
 import WhatsAppLogo from "./utilities/WhatsAppLogo";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setModalState, setSelectedDocument } from "../../store/ModalLegalReducer";
+import { setModalState } from "../../store/ModalLegalReducer";
 
 const Footer = () => {
 
@@ -17,9 +17,8 @@ const Footer = () => {
 
     const dispatch = useDispatch();
 
-    const handleClick = (selectedDocument: string) => {
+    const openLegalModal = () => {
         dispatch(setModalState(true));
-        dispatch(setSelectedDocument(selectedDocument));
     };
 
     useEffect(() => {
@@ -35,9 +34,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="container">
-                {isContactPage ?
-                    <></> 
-                    :
+                {!isContactPage &&
                     <div className="contacts">
                         <div className="contacts__email">
                             <a href="mailto:bfchanoff@gmail.com">bfchanoff@gmail.com</a>
@@ -65,15 +62,14 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/in/rostislavchanov/">{t (`Rostislav Chanov`)}</a>
                     </div>
                 </div>
-                <div className="legal">
-                    <div className="legal__terms">
-                        <a onClick={() => handleClick(`terms`)}>{t (`Terms of Use`)}</a>
-                    </div>
-                    <div className="legal__privacy">
-                        <a onClick={() => handleClick(`privacy`)}>{t (`Privacy Policy`)}</a>
+            </div>
+            {!isContactPage && 
+               <div className="container">
+                    <div className="legal">
+                        <a className="legal__link" onClick={openLegalModal}>{t (`Privacy And Data Protection Policy`)}</a>
                     </div>
                 </div>
-            </div>
+            }
         </footer>
     )
 };

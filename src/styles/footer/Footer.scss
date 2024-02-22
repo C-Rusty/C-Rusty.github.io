@@ -6,6 +6,7 @@ footer {
 
     .container {
         display: flex;
+        flex-wrap: wrap;
         border-top: 1px solid $gray-secondary-light-ultra;
 
         @media screen and (max-width: 1150px) {
@@ -14,7 +15,7 @@ footer {
         }
         
 
-        .contacts, .authors {
+        .contacts, .authors, .legal {
             display: flex;
             align-items: center;
 
@@ -27,12 +28,23 @@ footer {
                 padding: 0;
             }
 
-            &__email, &__author, &__icons {
+            &__email, &__author, &__icons, &__link {
                 @media screen and (max-width: 1150px) {
                     padding: 2.5rem 5.6rem;
                 }
                 @media screen and (max-width: 575px) {
                     padding: 2.5rem 2.4rem;
+                }
+            }
+        }
+
+        .legal {
+            a {
+                @include Georgia-18px;
+                color: $gray-secondary-light-ultra;
+
+                @media screen and (max-width: 425px) {
+                    font-size: 1.6rem;
                 }
             }
         }

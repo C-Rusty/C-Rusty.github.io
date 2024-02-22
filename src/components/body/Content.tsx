@@ -7,7 +7,6 @@ import { Route, Routes} from "react-router-dom";
 import { api } from "../../api/ApiPosts";
 import { IPost } from "../../interface/Interface";
 import FullPost from "./utilities/post/FullPost";
-import Legal from "../../components/footer/utilities/Legal";
 
 const Content = () => {
 
@@ -36,7 +35,6 @@ const Content = () => {
             {posts.map(post =>
                 <Route path={`articles-and-cases/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`} element={<FullPost/>}/>    
             )}
-            <Route path="/legal" element={<Legal/>}/>
         </Routes>
     )
 };

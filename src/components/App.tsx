@@ -11,6 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 import Footer from "./footer/Footer";
 import { Provider } from "react-redux";
 import store from "../store/store";
+import LegalDocsModal from "./footer/utilities/Legal";
 
 const resources  = {
     en: {
@@ -43,6 +44,7 @@ const App = () => {
             <Provider store={store}>
                 <Header/>
                 <Content/>
+                <LegalDocsModal/>
                 <Footer/>
             </Provider>
         </BrowserRouter>
