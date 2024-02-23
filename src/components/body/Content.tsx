@@ -33,7 +33,7 @@ const Content = () => {
             <Route path="/articles-and-cases" element={<ArticlesAndCases/>}/>
             <Route path="/contacts" element={<Contacts/>}/>
             {posts.map(post =>
-                <Route path={`articles-and-cases/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`} element={<FullPost/>}/>    
+                <Route path={`/articles-and-cases/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`} element={<FullPost/>}/>    
             )}
         </Routes>
     )

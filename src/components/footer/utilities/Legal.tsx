@@ -32,7 +32,7 @@ const Legal = () => {
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Introduction`)}</p>
-                        <p className="text">{t ("Welcome to [Your Website/Company Name] (`we`, `our`, or `us`).  This Privacy and data protection policy (hereinafter – Privacy Policy, Policy) sets out the basis of your personal data processing.")}</p>
+                        <p className="text">{t (`Welcome to [Your Website/Company Name] (we, our, or us). This Privacy and data protection policy (hereinafter – Privacy Policy, Policy) sets out the basis of your personal data processing.`)}</p>
                         <p className="text">{t (`This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information. By using our website (“Website”), you agree to the terms outlined in this Privacy Policy.`)}</p>
                     </div>
                     <div className="paragraph">
@@ -47,11 +47,10 @@ const Legal = () => {
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Purpose of Data Collection`)}</p>
-                        <p className="text">{t (`We collect your personal information for the following purposes, but not limited to:`)}</p>
+                        <p className="text">{t (`We collect your personal information for the following purposes, including but not limited to:`)}</p>
                         <ul className="list">
                            <li>{t (`To communicate with you, including responding to your inquiries`)};</li>
                            <li>{t (`To comply with legal and regulatory obligations`)};</li>
-                           <li>{t (`Social media account information (phone number and/or your social media account`)};</li>
                         </ul>
                         <p className="text">{t (`Personal data may consist of data kept on paper, computer or other electronic media, all of which is protected under the applicable personal data protection laws.`)}</p>
                         <p className="text">{t (`You have a choice when you are asked to provide personal data. You may agree or refuse to provide us with your personal data. You also entitled to make us erase your personal data, cease further dissemination of your personal data and potentially have third parties halt processing of the data. The withdrawal of consent does not affect the lawfulness of processing based on consent before its withdrawal. However, if you choose not to provide us with your personal data necessary for our services provision or to withdraw the data that is still relevant to original purposes of processing, you may not be able to use our services.`)}</p>
@@ -59,7 +58,7 @@ const Legal = () => {
                     <div className="paragraph">
                         <p className="header">{t (`Legal Basis for Processing`)}</p>
                         <p className="text">{t (`We process your personal information based on the legal grounds provided by the General Data Protection Regulation (GDPR), including the necessity of processing for the performance of a contract and compliance with legal obligations.`)}</p>
-                        <p className="text">{t (`"All personal data is`)}</p>
+                        <p className="text">{t (`All personal data is`)}:</p>
                         <ul className="list">
                            <li>{t (`fairly and lawfully processed`)};</li>
                            <li>{t (`processed for a specified purpose`)};</li>
@@ -67,7 +66,7 @@ const Legal = () => {
                            <li>{t (`not kept for longer than necessary`)};</li>
                            <li>{t (`accurate`)};</li>
                            <li>{t (`secured`)};</li>
-                           <li>{t (`not transferred to other countries without adequate protection.": "not transferred to other countries without adequate protection.`)};</li>
+                           <li>{t (`not transferred to other countries without adequate protection.`)}</li>
                         </ul>
                     </div>
                     <div className="paragraph">
@@ -88,11 +87,11 @@ const Legal = () => {
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Restriction of responsibility`)}</p>
-                        <p className="text">{t (`If at any time you choose to purchase a product or service offered by third party, any personal data you share with that third party will no longer be controlled under our Privacy Policy. We are not responsible for the privacy policies or the content of sites we link to and have no control of the use or protection of information provided by you or collected by those sites. Whenever you elect to link to a co-branded website or to a linked website, you may be asked to provide registration or other information. Please note that the information you are providing is going to a third party, and you should familiarize yourself with the privacy policy provided by that third party.`)}</p>
+                        <p className="text">{t (`If at any time you choose to purchase a product or service offered by a third party, any personal data you share with that third party will no longer be controlled under our Privacy Policy. We are not responsible for the privacy policies or the content of sites we link to and have no control of the use or protection of information provided by you or collected by those sites. Whenever you elect to link to a website, you may be asked to provide registration or other information. Please note that the information you are providing is going to a third party, and you should familiarize yourself with the privacy policy provided by that third party.`)}</p>
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Your Rights`)}</p>
-                        <p className="text">{t (`You have the right to:`)}</p>
+                        <p className="text">{t (`You have the right to`)}:</p>
                         <ul className="list">
                             <li>{t (`ask what information we hold about them and why`)};</li>
                             <li>{t (`be informed how to keep it up to date`)};</li>
@@ -102,7 +101,7 @@ const Legal = () => {
                             <li>{t (`require us to ensure that no decision which significantly affects an individual is solely based on an automated process for the purposes of evaluating matters relating to him/her, such as to conduct or performance`)};</li>
                             <li>{t (`be informed of what we are doing to comply with our obligations under the applicable data protection laws.`)};</li>
                         </ul>
-                        <p className="text">{t (`If you cannot access certain information and personal data collected by us, you can always contact us by using our contact form. We will respond to requests to access or delete your personal data within 30 (thirty) calendar days.`)}</p>
+                        <p className="text">{t (`If you cannot access certain information and personal data collected by us, you can always contact us by using email address bfchanoff@gmail. We will respond to requests to access or delete your personal data within 30 (thirty) calendar days.`)}</p>
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Cookies and Similar Technologies`)}</p>
@@ -111,11 +110,15 @@ const Legal = () => {
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Changes to the Privacy Policy`)}</p>
-                        <p className="text">{t (`From time to time, we may update this Privacy Policy. In case we change this Privacy Policy materially, the revised Privacy Policy will be posted promptly on our Website as well as and a notice on our Website informing about such changes. You agree to accept the posting of a revised Privacy Policy electronically on the Website as actual notice to you. Any dispute over our Privacy Policy is subject to this notice, our Customer Agreement. We encourage you to check back periodically and review this Policy so that you will always know what personal data we collect, how we use it, and to whom we disclose it. If you have any questions that this statement does not address, please contact us via our contact form.`)}</p>
+                        <p className="text">{t (`From time to time, we may update this Privacy Policy. In case we change this Privacy Policy materially, the revised Privacy Policy will be posted promptly on our Website. You agree to accept the posting of a revised Privacy Policy electronically on the Website as actual notice to you. We encourage you to check back periodically and review this Policy so that you will always know what personal data we collect, how we use it, and to whom we disclose it. If you have any questions that this statement does not address, please contact us via email bfchanoff@gmail.com`)}</p>
                     </div>
                     <div className="paragraph">
                         <p className="header">{t (`Contact Information`)}</p>
                         <p className="text">{t (`For questions or concerns regarding this Privacy Policy, please contact us at bfchanoff@gmail.com.`)}</p>
+                    </div>
+                    <div className="paragraph">
+                        <p className="header">{t (`Translation`)}</p>
+                        <p className="text">{t (`This Privacy Policy has been drawn up in the English language. In case of discrepancies between the English text version and any translation, the English version shall prevail.`)}</p>
                     </div>
                     <button onClick={handleClose}>{t (`Close`)}</button>
                 </div>

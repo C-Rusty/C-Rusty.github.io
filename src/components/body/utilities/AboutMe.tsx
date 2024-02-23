@@ -2,10 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import photo from '../../../images/content/about-me/oleg-chanov.webp';
-import educationSvg from '../../../images/content/about-me/education.svg';
 import approachBg from '../../../images/content/about-me/approach.webp';
 import achieve from '../../../images/content/about-me/achieve.webp';
-import ticking from '../../../images/content/about-me/ticking.svg';
 import '../../../styles/main/about-me.scss';
 
 const AboutMe = () => {
@@ -69,7 +67,7 @@ const AboutMe = () => {
                     <h3 className="headline">{t (`Education`)}</h3>
                     <div className="text">
                         <div className="svg">
-                            <img src={educationSvg} alt="education" />
+                            <img src="../../../images/content/about-me/education.svg" alt="education" />
                         </div>
                         <div className="main">
                             <span>{t (`Europa-Universität Viadrina Frankfurt`)}</span>
@@ -229,26 +227,26 @@ const AboutMe = () => {
                         </div>
                         <div className="text">
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`I myself am the director of strategic management in a rapidly and successfully growing company. I understand`)}
                                     &laquo;{t (`how it works in practice, not in theory`)}&raquo;
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client`)}
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`At each stage of cooperation I provide feedback on the process and the result`)}
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>{t (`I maintain confidentiality of information`)}</p>
                             </div>
                         </div>

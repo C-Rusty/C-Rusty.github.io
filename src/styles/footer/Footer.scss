@@ -43,6 +43,10 @@ footer {
                 @include Georgia-18px;
                 color: $gray-secondary-light-ultra;
 
+                &:hover {
+                    cursor: pointer;
+                }
+
                 @media screen and (max-width: 425px) {
                     font-size: 1.6rem;
                 }
