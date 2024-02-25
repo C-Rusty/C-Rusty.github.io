@@ -13,15 +13,7 @@ export interface IImage {
 
 export interface IFullPost {
     _id?: string, 
-    block: {
-        img?: {
-            imageCloudPath: string,
-            imageUrl?: string, 
-        },
-        p?: string,  
-        list?: string, 
-        headline?: string,
-    },
     types: [string],
-    categories: [string]
+    categories: [string],
+    htmlContent: [string]
 }

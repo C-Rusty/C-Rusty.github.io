@@ -9,7 +9,7 @@
     padding: 8rem 0;
 
     .container {
-        .header-post {
+        .head {
             display: flex;
             justify-content: space-between;
 
@@ -69,83 +69,6 @@
                     font-weight: 700;
                 }
             }
-        }
-
-        .main {
-            padding: 0 8.6rem;
-
-            h1 {
-                @include Merriweather-38px;
-                color: $articles-header;
-
-                margin-bottom: 4.8rem;
-            }
-
-            h2 {
-                @include Georgia-18px;
-                color: $articles-header;
-
-                margin-bottom: 3.2rem;
-            }
-
-            .img-container {
-                display: flex;
-                flex-direction: column;
-
-                img {
-                    width: 70%;
-                    max-height: 65rem;
-
-                    margin-bottom: .8rem;
-                }
-
-                p {
-                    @include Georgia-18px;
-                    color: $articles-header;
-                }
-            }
-        }
-
-        .article {
-            margin-top: 4rem;
-
-            h3 {
-                @include Merriweather-32px;
-                color: $articles-header;
-                font-weight: 700;
-
-                margin-bottom: 2.4rem;
-            }
-
-            .elements-with-text {
-                @include Georgia-18px;
-                color: $articles-header;
-
-                display: flex;
-                flex-direction: column;
-                row-gap: 2.4rem;
-
-                ul, li, p {
-                    @include Georgia-18px;
-                    color: $articles-header;
-                    text-align: justify;
-                }
-            }
-
-            ul, li, p {
-                @include Georgia-18px;
-                color: $articles-header;
-                text-align: justify;
-            }
-
-            ul {
-                padding-left: 2rem;
-                @include Georgia-18px;
-            }
-        }
-
-        .img-container-2 {
-            margin-top: 4rem;
         }
     }
 }

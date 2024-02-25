@@ -3,7 +3,7 @@ import AboutMe from "./utilities/AboutMe";
 import Trainings from "./utilities/Trainings";
 import ArticlesAndCases from "./utilities/ArticlesAndCases";
 import Contacts from "./utilities/Contacts";
-import { Route, Routes} from "react-router-dom";
+import { Outlet, Route, Routes} from "react-router-dom";
 import { api } from "../../api/ApiPosts";
 import { IPost } from "../../interface/Interface";
 import FullPost from "./utilities/post/FullPost";
@@ -13,7 +13,7 @@ const Content = () => {
     const [posts, setPosts] = useState<IPost[] | []>([]);
 
     const getPosts = async (pageLang: string) => {
-        const posts: IPost[] | undefined = await api.getPosts(pageLang);
+        const posts: IPost[] | undefined = await api.getShortPosts(pageLang);
 
         if (posts) {
             setPosts(posts);
@@ -29,12 +29,15 @@ const Content = () => {
     return(
         <Routes>
             <Route path="/" element={<AboutMe/>}/>
-            <Route path="/trainings" element={<Trainings/>}/>
-            <Route path="/articles-and-cases" element={<ArticlesAndCases/>}/>
-            <Route path="/contacts" element={<Contacts/>}/>
-            {posts.map(post =>
-                <Route path={`/articles-and-cases/${post.imageCloudPath.split(`/`)[1].split(`.`)[0]}`} element={<FullPost/>}/>    
-            )}
+            <Route path="trainings" element={<Trainings/>}/>
+            <Route path="articles-and-cases" element={<ArticlesAndCases/>}>
+                {posts.map(post =>
+                    <Route 
+                        path={post.imageCloudPath.split(`/`)[1].split(`.`)[0]} element={<FullPost/>}
+                    />    
+                )}
+            </Route>
+            <Route path="contacts" element={<Contacts/>}/>
         </Routes>
     )
 };

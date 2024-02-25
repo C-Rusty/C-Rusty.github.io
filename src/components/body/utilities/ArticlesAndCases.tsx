@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
-import { apiImg } from "../../../api/ApiImg";
 import '../../../styles/main/articles-cases.scss';
 import ShortPost from "./post/ShortPost";
 import { useSelector } from "react-redux";
 import FiltersBar from "./menu/FiltersBar";
 import { IRootState } from "store/store";
 import MobileFilterBtn from "./filtersMobile/MobileFilterBtn";
+import { Outlet, useLocation } from "react-router-dom";
+import { apiImg } from "../../../api/ApiImg";
 
 const ArticlesAndCases = () => {
 
@@ -21,7 +22,7 @@ const ArticlesAndCases = () => {
     };
 
     const getPosts = async (pageLang: string) => {
-        const posts: IPost[] | undefined = await api.getPosts(pageLang);
+        const posts: IPost[] | undefined = await api.getShortPosts(pageLang);
 
         if (posts) {
 
@@ -92,22 +93,39 @@ const ArticlesAndCases = () => {
 
     const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
+    const currentUrlPath = useLocation(); 
+    const [showAllPosts, setShowAllPosts] = useState<boolean>(true);
+
+    useEffect(() => {
+        if (currentUrlPath.pathname.split(`/`)[2]) {
+            setShowAllPosts(false);
+        } else {
+            setShowAllPosts(true);
+        }
+    }, [currentUrlPath.pathname]);
+
     return(
-        <div className="articles-cases">
-            {/* <button onClick={handleClickBtn}>Create Post</button> */}
-            <div className="container">
-                {deviceType === `desktop` ? 
-                    <FiltersBar />
-                    :
-                    <MobileFilterBtn/>
-                }
-                <div className="articles-cases-container">
-                    {posts.map(post => 
-                        <ShortPost key={post._id} post={post}/>
-                    )}
+        <>
+            {showAllPosts ?
+                <div className="articles-cases">
+                {/* <button onClick={handleClickBtn}>Create Post</button> */}
+                <div className="container">
+                    {deviceType === `desktop` ? 
+                        <FiltersBar />
+                        :
+                        <MobileFilterBtn/>
+                    }
+                    <div className="articles-cases-container">
+                        {posts.map(post => 
+                            <ShortPost key={post._id} post={post}/>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </div>
+                </div>
+                :
+                <Outlet/>
+            }
+        </>
     );
 };
 

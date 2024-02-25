@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { collection, doc, setDoc, addDoc, getDocs  } from "firebase/firestore"; 
+import { collection, doc, setDoc, getDocs, getDoc  } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
-import { IPost} from "../interface/Interface";
+import { IFullPost, IPost} from "../interface/Interface";
 import { firebaseConfig } from "./dbConfig";
 
 const app = initializeApp(firebaseConfig);
@@ -55,21 +55,25 @@ const createCollectionPostsFull = async (pageLang: string, link: string) => {
     };
 };
 
-const getFullPost = async (language: string, link: string) => {
+const getFullPost = async (language: string, postName: string) => {
   let collectionName: string = ``;
 
   if (language === `ru`) {
-    collectionName = collections.postsRuShort;
+    collectionName = collections.postsRuFull;
   } else if (language === `en`) {
-    collectionName = collections.postsEnShort;
+    collectionName = collections.postsEnFull;
   } else {
     throw new Error (`Something wrong. Language is ${language}`);
   };
 
-  const docRef = doc(db, `posts`)
-}
+  const docRef = await doc(db, collectionName, postName);
+  const fullPost = (await getDoc(docRef)).data();
+  console.log(fullPost);
+  
+  return fullPost as IFullPost;
+};
 
-const getPosts = async (language: string) => {
+const getShortPosts = async (language: string) => {
   let collectionName: string = ``;
 
   if (language === `ru`) {
@@ -97,6 +101,7 @@ const getPosts = async (language: string) => {
 };
 
 export const api = {
-  getPosts,
+  getShortPosts,
+  getFullPost,
   // createCollection
 }

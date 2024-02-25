@@ -10,7 +10,7 @@ const ShortPost = ({post} : {post: IPost}) => {
     const postUrlPath = post.imageCloudPath.split(`/`)[1].split(`.`)[0];
 
     return (
-        <Link to={`/articles-and-cases/${postUrlPath}`} className="post">
+        <Link to={postUrlPath} className="post">
             <div className="post__img">
                 <img src={post.imageUrl} loading="lazy" alt={postUrlPath} />
                 <div className="img__read-hover">
