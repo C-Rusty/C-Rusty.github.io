@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { collection, doc, setDoc, getDocs, getDoc  } from "firebase/firestore"; 
+import { collection, doc, setDoc, getDocs, getDoc, query, limit, startAfter  } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
 import { IFullPost, IPost} from "../interface/Interface";
-import { firebaseConfig } from "./dbConfig";
+import { firebaseConfig } from "./DbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -86,6 +86,19 @@ const getShortPosts = async (language: string) => {
   
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));
+
+    // For limit posts amount requests
+    // const first = query(collection(db, collectionName), limit(7));
+    // const documentSnapshots = await getDocs(first);
+
+    // console.log(`first`, documentSnapshots);
+
+    // const lastVisible = documentSnapshots.docs[documentSnapshots.docs.length-1];
+
+    // const next = query(collection(db, collectionName), startAfter(lastVisible), limit(7));
+
+    // const docsNext = await getDocs(next); 
+    // console.log(`next`, docsNext);
 
     const posts: IPost[] = querySnapshot.docs.map(postDoc => {
       const post = postDoc.data() as IPost;

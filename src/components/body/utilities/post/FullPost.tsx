@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import '../../../../styles/main/FullPost/FullPostItem.scss';
+import '../../../../styles/main/PostItem/FullPost.scss';
 import { Link } from "react-router-dom";
 import ArrowBack from "../../../../images/content/articles-cases/ArrowBack";
 import { api } from "../../../../api/ApiPosts";
@@ -23,16 +23,16 @@ const FullPost = () => {
     }, []);
 
     return (
-        <div className="post">
+        <div className="post-full">
             <div className="container">
                 <div className="head">
-                    <div className="back">
+                    <div className="head__back-btn">
                         <Link to="/articles-and-cases">
                             <ArrowBack/>
                             {t (`Back to list`)}
                         </Link>
                     </div>
-                    <div className="tags">
+                    <div className="head__tags">
                         {postContent?.categories.map(category => 
                             <span>{t (`${category}`)}</span>
                         )}
@@ -40,11 +40,11 @@ const FullPost = () => {
                             <span>{t (`${type}`)}</span>
                         )}
                     </div>
-                    <div className="empty"></div>
+                    <div className="head__empty"></div>
                 </div>
                 <div className="container">
-                    {postContent?.htmlContent.map(htmlElement => 
-                        <>{parse(htmlElement)}</>
+                    {postContent?.htmlContent.map(post => 
+                        <>{parse(post)}</>
                     )}
                 </div>
             </div>

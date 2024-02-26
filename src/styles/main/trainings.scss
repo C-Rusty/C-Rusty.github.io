@@ -196,7 +196,7 @@
 
             h3 {
                 @include Merriweather-32px;
-                color: $tetriary;
+                color: $tertiary;
                 text-align: center;
 
                 margin-bottom: 4.8rem;
@@ -223,7 +223,7 @@
                 
                 p {
                     @include Georgia-24px;
-                    color: $tetriary-inactive;
+                    color: $tertiary-inactive;
 
                     @media screen and (max-width: 991px) {
                         text-align: center;

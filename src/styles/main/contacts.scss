@@ -234,7 +234,7 @@
                     color: $gray-secondary-light;
 
                     &:focus, &:active {
-                        background: $tetriary-inactive;
+                        background: $tertiary-inactive;
                     }
                     
                 }
@@ -245,7 +245,7 @@
                     border: none;
                     outline: none;
 
-                    background: $tetriary;
+                    background: $tertiary;
 
                     max-height: 6.4rem;
 
@@ -305,11 +305,11 @@
                     flex-direction: row;
                     align-items: center;
 
-                    background: $tetriary;
+                    background: $tertiary;
                     border-radius: 1.6rem;
 
                     &:has(input:focus) {
-                        background: $tetriary-inactive;
+                        background: $tertiary-inactive;
                     }
                 }
 
@@ -363,7 +363,7 @@
 
                             transition: all .5s;
 
-                            background-color: $tetriary-inactive;
+                            background-color: $tertiary-inactive;
                             
                             position: absolute;
                             top: 4.2rem;
@@ -402,7 +402,7 @@
 
             button {
                 @include button;
-                color: $tetriary;
+                color: $tertiary;
 
                 max-width: 35%;
 

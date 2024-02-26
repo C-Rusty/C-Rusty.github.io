@@ -9,6 +9,8 @@ import { IRootState } from "store/store";
 import MobileFilterBtn from "./filtersMobile/MobileFilterBtn";
 import { Outlet, useLocation } from "react-router-dom";
 import { apiImg } from "../../../api/ApiImg";
+import ShortPostSkeleton from "./post/ShortPostSkeleton";
+import { postsLoadLimit } from "../../../api/ApiPostConfig";
 
 const ArticlesAndCases = () => {
 
@@ -17,24 +19,27 @@ const ArticlesAndCases = () => {
 
     const [initialPosts, setInitialPosts] = useState<IPost[] | []>([]);
 
+    const [postsLoaded, setPostsLoaded] = useState<boolean>(false);
+
     const getImg = async (imageCloudPath: string) => {
         return apiImg.downloadImage(imageCloudPath);
     };
 
     const getPosts = async (pageLang: string) => {
-        const posts: IPost[] | undefined = await api.getShortPosts(pageLang);
+        const postsData: IPost[] | undefined = await api.getShortPosts(pageLang);
 
-        if (posts) {
-
-            for (let post of posts) {
+        if (postsData) {
+            for (let post of postsData) {
                 const imgUrl = await getImg(post.imageCloudPath);
                 post.imageUrl = imgUrl;
             };
 
-            setPosts(posts);
-            setInitialPosts(posts);
+            setPosts(postsData);
+            setInitialPosts(postsData);
+
+            setPostsLoaded(true);
         } else {
-            throw new Error (`Something wrong with posts API response. Posts API returned value ${posts}`);
+            throw new Error (`Something wrong with posts API response. Posts API returned value ${postsData}`);
         };
     };
     
@@ -101,26 +106,36 @@ const ArticlesAndCases = () => {
             setShowAllPosts(false);
         } else {
             setShowAllPosts(true);
-        }
+        };
     }, [currentUrlPath.pathname]);
 
     return(
         <>
             {showAllPosts ?
                 <div className="articles-cases">
-                {/* <button onClick={handleClickBtn}>Create Post</button> */}
-                <div className="container">
-                    {deviceType === `desktop` ? 
-                        <FiltersBar />
-                        :
-                        <MobileFilterBtn/>
-                    }
-                    <div className="articles-cases-container">
-                        {posts.map(post => 
-                            <ShortPost key={post._id} post={post}/>
-                        )}
+                    {/* <button onClick={handleClickBtn}>Create Post</button> */}
+                    <div className="container">
+                        {deviceType === `desktop` ? 
+                            <FiltersBar/>
+                            :
+                            <MobileFilterBtn/>
+                        }
+                        <div className="articles-cases-container">
+                            {postsLoaded ?
+                                <>
+                                    {posts.map(post => 
+                                        <ShortPost key={post._id} post={post}/>
+                                    )}
+                                </>
+                                :
+                                <>
+                                    {Array(postsLoadLimit).fill(true).map((_item, index: number) =>
+                                        <ShortPostSkeleton key={index}/>
+                                    )}
+                                </>  
+                            }
+                        </div>
                     </div>
-                </div>
                 </div>
                 :
                 <Outlet/>

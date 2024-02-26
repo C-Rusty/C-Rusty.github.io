@@ -3,7 +3,7 @@
 @import '../../global/fonts-mixins/GeorgiaMix.scss';
 @import '../../global/fonts-mixins/MerriweatherMix.scss';
 
-.post {
+.post-full {
     background: $gray-primary;
 
     padding: 8rem 0;
@@ -15,7 +15,7 @@
 
             margin-bottom: 7.2rem;
 
-            .back {
+            &__back-btn {
                 @include PTSans-18px;
                 color: $gray-secondary-light-ultra;
 
@@ -55,11 +55,11 @@
 
             }
 
-            .back, .empty {
-                width: 15rem;
+            &__back-btn, &__empty {
+                width: 15%;
             }
 
-            .tags {
+            &__tags {
                 display: flex;
                 column-gap: 8rem;
 

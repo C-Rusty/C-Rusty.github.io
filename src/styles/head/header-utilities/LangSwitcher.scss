@@ -2,7 +2,7 @@
 
 @mixin svg-white {
     svg path {
-        fill: $tetriary; 
+        fill: $tertiary; 
     }
 }
 
@@ -29,7 +29,7 @@
         }
 
         .select {
-            color: $tetriary;
+            color: $tertiary;
         }
 
         @include svg-white;
@@ -38,7 +38,7 @@
 
 .select-active {
     @include svg-white;
-    color: $tetriary !important;
+    color: $tertiary !important;
 }
 
 

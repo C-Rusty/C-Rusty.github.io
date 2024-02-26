@@ -335,7 +335,7 @@
         .headline {
             @include Merriweather-38px;
             font-weight: 400;
-            color: $tetriary;
+            color: $tertiary;
 
             text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
 
@@ -353,7 +353,7 @@
             text-align: right;
 
             @include Georgia-24px;
-            color: $tetriary;
+            color: $tertiary;
 
             @media screen and (max-width: 425px) {
                 @include textMobile-16px;
@@ -453,7 +453,7 @@
         .headline {
             @include Merriweather-38px;
             font-weight: 400;
-            color: $tetriary;
+            color: $tertiary;
 
             @media screen and (max-width: 425px) {
                 @include headlineMobile-22px;
@@ -601,7 +601,7 @@
         }
 
         .credo-headline, .credo-quote {
-            color: $tetriary;
+            color: $tertiary;
             text-shadow: 0px 0px 85px rgba(0, 0, 0, 0.25);
         }
     }
@@ -700,7 +700,7 @@
             justify-content: center;
 
             @include Merriweather-38px;
-            color: $tetriary;
+            color: $tertiary;
 
             margin-bottom: 4.8rem;
 
@@ -742,7 +742,7 @@
 
                     @include Georgia-24px;
 
-                    color: $tetriary;
+                    color: $tertiary;
 
                     @media screen and (max-width: 1600px) {
                         max-width: 95%;
@@ -764,7 +764,7 @@
                     max-width: 70%;
 
                     @include Georgia-18px;
-                    color: $tetriary;
+                    color: $tertiary;
 
                     @media screen and (max-width: 1600px) {
                         max-width: 95%;
