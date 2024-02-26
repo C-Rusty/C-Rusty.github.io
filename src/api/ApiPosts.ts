@@ -3,7 +3,7 @@ import { collection, doc, setDoc, getDocs, getDoc, query, limit, startAfter  } f
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
 import { IFullPost, IPost} from "../interface/Interface";
-import { firebaseConfig } from "./DbConfig";
+import { firebaseConfig } from "./dbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -68,7 +68,6 @@ const getFullPost = async (language: string, postName: string) => {
 
   const docRef = await doc(db, collectionName, postName);
   const fullPost = (await getDoc(docRef)).data();
-  console.log(fullPost);
   
   return fullPost as IFullPost;
 };
