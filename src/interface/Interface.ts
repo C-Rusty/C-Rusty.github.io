@@ -17,3 +17,7 @@ export interface IFullPost {
     categories: [string],
     htmlContent: [string]
 }
+
+export interface IPostsUrlPath {
+    paths: [string]
+}

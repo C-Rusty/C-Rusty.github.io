@@ -16,7 +16,7 @@ const FullPost = () => {
     const [postContent, setPostContent] = useState<IFullPost | undefined>(undefined);
 
     const getPostContent = async () => {
-        const response: IFullPost | undefined = await api.getFullPost(`ru`, `kia-strategy`);
+        const response: IFullPost | undefined = await api.getFullPost(document.documentElement.lang, cloudPath);
         if (response) setPostContent(response);
     };
 
@@ -37,6 +37,10 @@ const FullPost = () => {
         getPostContent();
         getImages();
     }, []);
+
+    useEffect(() => {
+        getPostContent();
+    }, [document.documentElement.lang]);
 
     useEffect(() => {
         insertImagesInHtmlContent();

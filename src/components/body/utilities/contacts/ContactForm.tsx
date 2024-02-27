@@ -62,35 +62,35 @@ const ContactForm = () => {
         dispatch(setFormSentStatus(`ok`));
 
 
-        // const data = {
-        //     service_id: 'service_ms5x63y',
-        //     template_id: 'template_9qfcfhf',
-        //     user_id: '-GnWfbXVoK4IzkfI3',
-        //     template_params: {
-        //         name:  nameInput.current!.value,
-        //         phone: phoneInput.current!.value,
-        //         messenger: selectedMessenger.split(`/`)[6].split(`.`)[0]
-        //     }
-        // };
+        const data = {
+            service_id: 'service_ms5x63y',
+            template_id: 'template_9qfcfhf',
+            user_id: '-GnWfbXVoK4IzkfI3',
+            template_params: {
+                name:  nameInput.current!.value,
+                phone: phoneInput.current!.value,
+                messenger: selectedMessenger.split(`/`)[6].split(`.`)[0]
+            }
+        };
         
-        // fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
-        //     method: `POST`,
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // }).then(response => {
-        //     if (response.ok && response.status === 200) {
-        //         nameInput.current!.value = ``;
-        //         phoneInput.current!.value = ``;
-        //         dispatch(setFormSentStatus(`ok`));
-        //     } else {
-        //         console.log("error");
-        //     };
-        // }).catch(error => {
-        //     console.error("Error:", error);
-        //     dispatch(setFormSentStatus(`error`));
-        // });
+        fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
+            method: `POST`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            if (response.ok && response.status === 200) {
+                nameInput.current!.value = ``;
+                phoneInput.current!.value = ``;
+                dispatch(setFormSentStatus(`ok`));
+            } else {
+                console.log("error");
+            };
+        }).catch(error => {
+            console.error("Error:", error);
+            dispatch(setFormSentStatus(`error`));
+        });
     };
 
     function handleFormErrors () {
@@ -174,6 +174,7 @@ const ContactForm = () => {
                                     {options.map(option =>
                                         <img 
                                             src={option}
+                                            key={option}
                                             onClick={() => handleMessengerSelect(option)}
                                         />    
                                     )}

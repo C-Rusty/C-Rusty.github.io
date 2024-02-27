@@ -8,7 +8,7 @@ const Trainings = () => {
     const { t } = useTranslation();
 
     return(
-        <div className="container-page">
+        <div className="trainings-list">
             <section className="mba-trainings">
                 <div className="mba-trainings__description">
                     <div className="container">

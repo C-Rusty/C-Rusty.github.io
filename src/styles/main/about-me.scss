@@ -25,6 +25,19 @@
     }
 }
 
+@mixin headline {
+    @include Merriweather-38px;
+    font-weight: 700;
+    color: $black-secondary;
+
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+    @media screen and (max-width: 425px) {
+        @include headlineMobile-34px;
+    }
+}
+
 .intro {
     background: $gray-primary;
 
@@ -77,6 +90,7 @@
 
                 h1 {
                     @include Merriweather-32px;
+                    color: $black-secondary;
 
                     @media screen and (max-width: 425px) {
                         @include headlineMobile-30px;
@@ -93,24 +107,25 @@
             }
 
             &__supporting-headline {
-                @include Merriweather-38px;
+                @include headline;
+
                 max-width: 85%;
                 margin-bottom: 3.2rem;
-
 
                 @media screen and (max-width: 991px) {
                     max-width: 100%;
                 }
 
                 @media screen and (max-width: 575px) {
-                    @include headlineMobile-34px;
                     margin-bottom: 2.4rem;
-                    text-align: center;
                 }
             }
 
             &__description-headline {
                 @include Georgia-20px;
+                font-weight: 400;
+                color: $gray-secondary-light;
+
                 max-width: 93%;
 
                 margin-bottom: 7.2rem;
@@ -158,11 +173,9 @@
 
             margin-bottom: 4.8rem;
 
-            @include Merriweather-38px;
+            @include headline;
 
             @media screen and (max-width: 425px) {
-                @include headlineMobile-30px;
-                text-align: center;
                 margin-bottom: 4rem;
             }
         }
@@ -223,6 +236,9 @@
 
                 .card-headline {
                     @include Merriweather-38px;
+                    font-weight: 700;
+                    color: $black-secondary;
+
                     margin-bottom: 1.6rem;
 
                     @media screen and (max-width: 425px) {
@@ -232,6 +248,7 @@
 
                 .card-text {
                     @include Georgia-18px;
+                    color: $gray-secondary-light;
 
                     @media screen and (max-width: 425px) {
                         text-align: center;
@@ -252,11 +269,10 @@
         align-items: center;
 
         .headline {
-            @include Merriweather-38px;
+            @include headline;
             margin-bottom: 4.8rem;
 
             @media screen and (max-width: 425px) {
-                @include headlineMobile-34px;
                 margin-bottom: 4rem;
             }
         }
@@ -288,7 +304,9 @@
                 flex-direction: column;
 
                 span:first-child {
-                    @include Merriweather-28px-Bold;
+                    @include Merriweather-20px-Bold;
+                    color: $black-secondary;
+
                     margin-bottom: .4rem;
 
                     @media screen and (max-width: 768px) {
@@ -298,6 +316,7 @@
 
                 span:last-child {
                     @include Georgia-20px;
+                    color: $gray-secondary-light;
                 }
 
                 span {
@@ -381,6 +400,7 @@
 
             @include Merriweather-38px;
             font-weight: 400;
+            color: $black-secondary;
 
             @media screen and (max-width: 991px) {
                 min-width: 100%;
@@ -404,6 +424,7 @@
                 border-bottom: .2rem solid $black-secondary;
 
                 @include Georgia-18px;
+                color: $black-secondary;
 
                 @media screen and (max-width: 425px) {
                     @include textMobile-16px;
@@ -473,14 +494,13 @@
     }
 
     h3 {
-        @include Merriweather-38px;
+        @include headline;
         display: flex;
         justify-content: center;
 
         margin-bottom: 5.5rem;
 
         @media screen and (max-width: 425px) {
-            @include headlineMobile-34px;
             margin-bottom: 3.6rem;
         }
     }
@@ -616,14 +636,12 @@
             display: flex;
             justify-content: center;
 
-            @include Merriweather-38px;
+            @include headline;
 
             margin-bottom: 4.8rem;
 
             @media screen and (max-width: 425px) {
-                @include headlineMobile-34px;
                 margin-bottom: 4rem;
-                text-align: center;
             }
         }
 
@@ -652,6 +670,7 @@
                 box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.10);
 
                 @include Georgia-18px;
+                color: $gray-secondary-light;
                 text-align: center;
 
                 @media screen and (max-width: 1150px) {
@@ -699,17 +718,13 @@
             display: flex;
             justify-content: center;
 
-            @include Merriweather-38px;
+            @include headline;
+            font-weight: 400;
             color: $tertiary;
 
             margin-bottom: 4.8rem;
 
-            @media screen and (max-width: 575px) {
-                text-align: center;
-            }
-
             @media screen and (max-width: 425px) {
-                @include headlineMobile-34px;
                 margin-bottom: 6.4rem;
             }
         }
@@ -806,17 +821,12 @@
             display: flex;
             justify-content: center;
             
-            @include Merriweather-38px;
+            @include headline;
 
             margin-bottom: 4.8rem;
 
-            @media screen and (max-width: 575px) {
-                text-align: center;
-            }
-
             @media screen and (max-width: 425px) {
                 margin-bottom: 4rem;
-                @include headlineMobile-34px;
             }
         }
 

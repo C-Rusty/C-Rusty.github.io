@@ -1,6 +1,16 @@
 @import '../global/mixins.scss';
 
-header {
+@keyframes smoothScroll {
+    0% {
+      transform: translateY(-142px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+}
+
+.header {
     width: 100%;
     padding: 2.4rem 0;
 
@@ -83,4 +93,15 @@ header {
         }
     
     }
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+
+    transition: all .5s ease;
+    animation: smoothScroll 1s forwards;
 }

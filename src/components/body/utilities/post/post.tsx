@@ -4,156 +4,156 @@ const post = () => {
     return (
         <div className='main'>
             <h1 className="main__headline">
-                Разработка маркетинговой стратегии KIA Motors
+                Development of a marketing strategy for KIA Motors
             </h1>
             <h2 className="main__subheadline">
-                Как совместная работа консультантов и команды заказчика помогла дилеру выйти на лидирующие позиции на рынке РБ.
+                How the joint work of consultants and the customer’s team helped the dealer achieve a leading position in the Belarusian market.
             </h2>
             <section className="main__img-block">
                 <img src="" alt="kia" />
                 <p className="text">
-                    Фото — 
-                        <a className="text__link" href="https://www.facebook.com/kiabelarus/"> группа компании </a>
-                    на Facebook.
+                    Photo — 
+                        <a className="text__link" href="https://www.facebook.com/kiabelarus/"> company group </a>
+                    on Facebook.
                 </p>
             </section>
             <section className="main__text-block">
                 <h3 className="headline">
-                    Задача
+                    Task
                 </h3>
                 <p className="text">
-                    Дилер планировал резкий рывок в продажах и охват большой доли авторынка. Команда активно обсуждала, на что делать ставку, как выстраивать маркетинговую политику и расставлять приоритеты. К работе над проектом привлекли внешнего консультанта – Олега Чанова. Главная задача – увеличить долю рынка.
+                    The dealer planned a sharp breakthrough in sales and coverage of a large share of the car market. The team actively discussed what to bet on, how to build a marketing policy and set priorities. An external consultant, Oleg Chanov, was hired to work on the project. The main task is to increase market share.
                 </p>
             </section>
             <section className="main__text-block">
                 <h3 className="headline">
-                    Решение
+                    Solution
                 </h3>
                 <p className="text">
-                    На старте проекта мы с клиентом обозначили цели в долгосрочной перспективе:
+                    At the start of the project, the client and I outlined our long-term goals:
                 </p>
                 <ul className="list">
                     <li>
-                        азработка маркетинговой стратегии по всем направлениям (продажа авто, сервисное и техническое обслуживание);
+                        Development of a marketing strategy in all areas (car sales, service and maintenance);
                     </li>
                     <li>
-                        постоянное сопровождение.
+                        constant support.
                     </li>
                 </ul>
                 <div className="text-highlighted">
                     <div className="text-highlighted__vertical-line"></div>
                     <p className="text-highlighted__text">
-                        Готовая стратегия – это не волшебная таблетка, которая даст свои результаты уже завтра. Чтобы все работало, выполнение стратегических задач нужно контролировать (обеспечивать сопровождение).
+                        A ready-made strategy is not a magic pill that will give results tomorrow. For everything to work, the implementation of strategic tasks must be monitored (provided support).
                     </p>
                 </div>
             </section>
             <section className="main__text-block">
                 <h3 className="headline">
-                    1 этап. Разработка маркетинговой стратегии для автосалона
+                    Stage 1. Development of a marketing strategy for a car dealership
                 </h3>
                 <p className="text">
-                    Стратегия продвижения зависит от емкости рынка и конкурентоспособности продукта. Для начала мы собрали информацию и проанализировали белорусский рынок автомобилей, потребности и пожелания покупателей, сравнили маркетинг клиента с маркетингом конкурентов. Это исследование помогло сформировать маркетинговый фундамент и структуру, которая впоследствии повлияла на увеличение доли рынка KIA за счет продвижения, позиционирования и грамотного развития дилерской сети.
+                    The promotion strategy depends on the market capacity and competitiveness of the product. To begin with, we collected information and analyzed the Belarusian car market, the needs and wishes of customers, and compared the client’s marketing with the marketing of competitors. This research helped form a marketing foundation and structure, which subsequently influenced the increase in KIA's market share through promotion, positioning and competent development of the dealer network.
                 </p>
             </section>
             <section className="main__text-block">
                 <h3 className="headline">
-                    2 этап. Реорганизация отдела маркетинга
+                    Stage 2. Reorganization of the marketing department
                 </h3>
                 <p className="text">
-                    Для эффективной работы и распределения ответственности между участниками мы провели реорганизацию отдела маркетинга:
+                    To ensure effective work and distribution of responsibilities between participants, we reorganized the marketing department:
                 </p>
                 <ul className="list">
                     <li>
-                        провели тестирование среди сотрудников;
+                        conducted testing among employees;
                     </li>
                     <li>
-                        перераспределили функциональные обязанности согласно новым целям и задачам;
+                        redistributed functional responsibilities according to new goals and objectives;
                     </li>
                     <li>
-                        с новым PR-менеджером разработали концепцию PR KIA;
+                        together with a new PR manager, we developed a PR concept for KIA;
                     </li>
                     <li>
-                        составили годовой план действий по реализации стратегических задач для каждого сотрудника.
+                        we drew up an annual action plan to implement strategic objectives for each employee.
                     </li>
                 </ul>
                 <p className="text italic">
-                    Продолжительность 1 и 2 этапа: год.
+                    Duration of stages 1 and 2: one year.
                 </p>
             </section>
             <section className="main__text-block">
-                <head className="headline">
-                    3 этап. Проведение стратегической сессии
-                </head>
+                <h3 className="headline">
+                    Stage 3. Conducting a Strategic Session
+                </h3>
                 <p className="text">
-                    Стратегическая сессия помогла ТОП-менеджерам сервисного и технического обслуживания определить цели и задачи по развитию своих направлений. В сессии принимали участие:
+                    The strategic session helped top managers of service and technical maintenance define goals and tasks for the development of their areas. The following participated in the session:
                 </p>
                 <ul className="list">
                     <li>
-                        финансовый директор,
+                        Financial Director,
                     </li>
                     <li>
-                        заместитель директора по внешним связям,
+                        Deputy Director for External Relations,
                     </li>
                     <li>
-                        заместитель директора по логистике,
+                        Deputy Director for Logistics,
                     </li>
                     <li>
-                        начальник отдела маркетинга,
+                        Head of the Marketing Department,
                     </li>
                     <li>
-                        руководители отделов сбыта авто, станций технического обслуживания, продажи запчастей и дополнительного оборудования.
+                        Heads of the departments of car sales, technical maintenance stations, spare parts sales, and additional equipment.
                     </li>
                 </ul>
                 <p className="text italic">
-                    Продолжительность этапа: 2 дня.
+                    Duration of the stage: 2 days.
                 </p>
             </section>
             <section className="main__img-block">
                 <img src="" alt="kia" />
                 <p className="text">
-                    Сергей Федоренко, директор Атлант-М (KIA). Фото — 
+                    Sergey Fedorenko, Director of Atlant-M (KIA). Photo — 
                     <a className="text__link" href="http://job.atlantm.com/plan/success_history/~news__m20=144">atlantm.com</a>.
                 </p>
             </section>
             <section className="main__text-block">
                 <h3 className="headline">
-                    3 этап. Проведение стратегической сессии
+                    Stage 3. Conducting a Strategic Session
                 </h3>
                 <p className="text">
-                    После трех этапов проекта продажи KIA выросли, и команда запланировала последующий рост. Они постоянно проводили сессии по оптимизации стратегии: ставили новые задачи и показатели роста, актуализировали данные по рынку и конкурентам.
+                    After three stages of the KIA sales project, growth was achieved, and the team planned for further expansion. They consistently conducted sessions to optimize the strategy: setting new goals and growth indicators, updating market and competitor data.
                 </p>
                 <div className="text-highlighted">
                     <div className="text-highlighted__vertical-line"></div>
                     <p className="text-highlighted__text">
-                        Участники не просто планировали, а сразу назначали исполнителей для каждой задачи, разрабатывали KPI. Сотрудники научились брать ответственность за задачи своего направления и устанавливать объективные дедлайны.
+                        Participants didn't just plan but immediately assigned responsible individuals for each task, developed KPIs. Employees learned to take responsibility for tasks in their respective areas and set realistic deadlines.
                     </p>
                 </div>
                 <p className="text">
-                    Олег Чанов как консультант проекта сопровождал внедрение маркетинговой стратегии, помогал провести рекламную компанию. В течение всего проекта он проводил для KIA маркетинговые исследования целевой аудитории, рисовал портреты реальных клиентов, выбирал новые приоритетные покупательские сегменты для продвижения.
+                    Oleg Chanov, as a project consultant, accompanied the implementation of the marketing strategy and assisted in conducting advertising campaigns. Throughout the project, he conducted marketing research on KIA's target audience, created profiles of real customers, and selected new priority buyer segments for promotion.
                 </p>
                 <p className="text italic">
-                    Продолжительность этапа: 2 года.
+                    Duration of the stage: 2 years.
                 </p>
             </section>
             <section className="main__text-block">
                 <h3 className="headline">
-                    Результат
+                    Results
                 </h3>
                 <ul>
                     <li>
-                        За три года совместной работы доля рынка KIA увеличилась c 3% до 11%.
+                        Over three years of collaboration, KIA's market share increased from 3% to 11%.
                     </li>
                     <li>
-                        Из 20 автодилеров в РБ автоцентр KIA вышел на 7 место.
+                        Among the 20 car dealerships in the Republic of Belarus, the KIA auto center rose to the 7th position.
                     </li>
                     <li>
-                        За счет увеличения объема продаж команда стала не просто дилерами, а импортерами автомобилей KIA в РБ.
+                        Due to the increase in sales volume, the team transitioned from being just dealers to becoming importers of KIA cars in the Republic of Belarus.
                     </li>
                 </ul>
             </section>
             <section className="main__text-block">
                 <p className="text">
-                    Сергей Федоренко, директор Атлант-М (KIA), заказчик проекта: “У Олега огромный опыт работы, и это для меня означало доверие к вырабатываемым решениям. С ним приятно и легко работать, он готов к задачам любого уровня. По итогам проекта мы зафиксировали отличные результаты, благодарю за сотрудничество”.
+                    Sergey Fedorenko, Director of Atlant-M (KIA), the project client: "Oleg has extensive work experience, and for me, this meant trust in the solutions developed. It is pleasant and easy to work with him; he is ready for tasks of any level. As a result of the project, we achieved excellent results. Thank you for the cooperation."
                 </p>
             </section>
         </div>

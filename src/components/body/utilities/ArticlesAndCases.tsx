@@ -89,7 +89,7 @@ const ArticlesAndCases = () => {
     }, [document.documentElement.lang]);
 
     useEffect(() => {
-        getPosts(pageLang);
+        if (!currentUrlPath.split(`/`)[2]) getPosts(pageLang);
     }, [pageLang]);
 
     useEffect(() => {
@@ -98,16 +98,16 @@ const ArticlesAndCases = () => {
 
     const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
-    const currentUrlPath = useLocation(); 
+    const currentUrlPath = useLocation().pathname; 
     const [showAllPosts, setShowAllPosts] = useState<boolean>(true);
 
     useEffect(() => {
-        if (currentUrlPath.pathname.split(`/`)[2]) {
+        if (currentUrlPath.split(`/`)[2]) {
             setShowAllPosts(false);
         } else {
             setShowAllPosts(true);
         };
-    }, [currentUrlPath.pathname]);
+    }, [currentUrlPath]);
 
     return(
         <>
@@ -124,7 +124,7 @@ const ArticlesAndCases = () => {
                             {postsLoaded ?
                                 <>
                                     {posts.map(post => 
-                                        <ShortPost key={post._id} post={post}/>
+                                        <ShortPost key={post.headline} post={post}/>
                                     )}
                                 </>
                                 :

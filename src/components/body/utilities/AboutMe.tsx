@@ -11,7 +11,7 @@ const AboutMe = () => {
     const { t } = useTranslation();
 
     return(
-        <>
+        <div className="about-me">
             <section className="intro">
                 <div className="container">
                     <Link to="/contacts" className="mobile-btn">
@@ -256,7 +256,7 @@ const AboutMe = () => {
                     </Link>
                 </div>
             </section>
-        </>
+        </div>
     )
 };
 

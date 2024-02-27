@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { collection, doc, setDoc, getDocs, getDoc, query, limit, startAfter  } from "firebase/firestore"; 
+import { collection, doc, setDoc, getDocs, getDoc, query, limit, startAfter, DocumentData  } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
-import { IFullPost, IPost} from "../interface/Interface";
-import { firebaseConfig } from "./dbConfig";
+import { IFullPost, IPost, IPostsUrlPath} from "../interface/Interface";
+import { firebaseConfig } from "./DbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -109,11 +109,20 @@ const getShortPosts = async (language: string) => {
   } catch (error) {
     console.log(error);
   };
+};
 
+const getPostsUrl = async () => {
+  const collectionName: string = `posts-url-paths`;
+  const querySnapshot: DocumentData[] = (await getDocs(collection(db, collectionName))).docs.map(data => { return data.data() });
+
+  const urlPaths = querySnapshot as Array<IPostsUrlPath>;
+
+  return urlPaths[0].paths;
 };
 
 export const api = {
   getShortPosts,
   getFullPost,
+  getPostsUrl
   // createCollection
 }
