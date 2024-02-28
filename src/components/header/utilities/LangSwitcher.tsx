@@ -7,11 +7,14 @@ import '../../../styles/head/header-utilities/LangSwitcher.scss';
 import { FormControl} from "@mui/material";
 import { useSelector } from "react-redux";
 import { IRootState } from "../../../store/store";
+import { useDispatch } from "react-redux";
+import { setMobileState } from "../../../store/MenuOpenReducer";
 
 const LangSwitcher = () => {
 
     const { i18n } = useTranslation();
     const { t } = useTranslation();
+    const dispatch = useDispatch();
     
     const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
     
@@ -29,10 +32,7 @@ const LangSwitcher = () => {
         const navItemClicked = e.currentTarget;
         document.getElementById(`${navItemClicked.id}`)?.classList.add(`active-lang`);
 
-        document.querySelector('.mobile-menu')?.classList.toggle(`opened`);
-        document.querySelector(`.hamburger`)?.classList.toggle(`hamburger-active`);
-
-        document.body.style.overflowY = `auto`;
+        dispatch(setMobileState(false));
     };
 
     const handleSelectOpen = () => {

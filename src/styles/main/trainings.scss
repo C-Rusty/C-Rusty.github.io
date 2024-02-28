@@ -47,6 +47,7 @@
 
             h2 {
                 @include Merriweather-38px;
+                font-weight: 700;
                 margin-bottom: 3.2rem;
 
                 @media screen and (max-width: 991px) {
@@ -79,6 +80,7 @@
 
             .aim-text {
                 @include Georgia-24px;
+                color: $gray-secondary-light;
                 margin-bottom: 4rem;
 
                 @media screen and (max-width: 768px) {
@@ -126,6 +128,7 @@
 
                     p, span {
                         @include Georgia-20px;
+                        color: $gray-secondary-light;
                         font-weight: 700;
 
                         @media screen and (max-width: 768px) {
@@ -223,6 +226,7 @@
                 
                 p {
                     @include Georgia-24px;
+                    // font-weight: 400;
                     color: $tertiary-inactive;
 
                     @media screen and (max-width: 991px) {
@@ -330,6 +334,7 @@
 
                     p {
                         @include Georgia-18px;
+                        color: $gray-secondary-light;
 
                         @media screen and (max-width: 425px) {
                             @include textMobile-16px;
@@ -354,6 +359,8 @@
                     h3 {
                         @include Merriweather-32px;
                         font-weight: 700;
+                        color: $gray-secondary-light;
+
                         margin-bottom: 1rem;
 
                         @media screen and (max-width: 425px) {
@@ -364,6 +371,7 @@
 
                     h4 {
                         @include Georgia-24px;
+                        color: $gray-secondary-light;
 
                         @media screen and (max-width: 425px) {
                             @include textMobile-18px;
@@ -391,6 +399,7 @@
 
                         h5, .country {
                             max-width: 65%;
+                            color: $gray-secondary-light;
 
                             @media screen and (max-width: 991px) {
                                 max-width: 100%;

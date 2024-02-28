@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
 
-    overflow: auto;
+    overflow-y: auto;
 
     position: absolute;
     left: 0;
@@ -21,7 +21,7 @@
     margin: auto;
 
     width: 100%;
-    height: 100%;
+    min-height: calc(100% - 8.3rem);
 
     background: $gray-primary;
 
@@ -31,6 +31,10 @@
 
     @media screen and (max-width: 576px) {
         padding: 0;
+    }
+
+    @media screen and (max-width: 425px) {
+        min-height: calc(100% - 7.4rem);
     }
 
     .nav-mobile {
@@ -168,8 +172,6 @@
     transition: all 1s;
     top: 0;
     z-index: 10;
-
-    overflow: hidden;
 }
 
 .active-lang {

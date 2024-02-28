@@ -7,27 +7,34 @@ import { IRootState } from "../../../../store/store";
 const MobileMenuContainer = () => {
 
     const buttonClicked = useSelector<IRootState, string>((state) => state.buttonClicked.button);
-    const isMobileMenuOpened = useSelector<IRootState>((state) => state.MenuStateReducer.isOpened);
+    const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
-    const [openedMenuComponent, setOpenedMenuComponent] = useState<string>(``);
+    const [openedMenuComponent, setOpenedMenuComponent] = useState<`mobileMenu` | `mobileFilters` | `none`>(`none`);
 
     useEffect(() => {
-        isMobileMenuOpened ? document.body.style.overflowY = `hidden` : document.body.style.overflowY = `auto`; 
-
-        const menu = document.querySelector(`.mobile-menu`);
-        menu?.classList.toggle(`opened`);
-
         if (buttonClicked === `mobileMenu`) {
             setOpenedMenuComponent(`mobileMenu`);
         } else if (buttonClicked === `mobileFilters`) {
             setOpenedMenuComponent(`mobileFilters`);
         };
-    }, [isMobileMenuOpened]);
+    }, [buttonClicked]);
 
     useEffect(() => {
-        console.log(buttonClicked);
-        
-    }, [buttonClicked])
+        if (screen === `mobile`) setHiddenMenuPositionBehavior();
+    }, [screen]);
+
+    function setHiddenMenuPositionBehavior() {
+        const menu: HTMLDivElement | null = document.querySelector(`.mobile-menu`);
+
+        if (menu) {
+            const header = document.querySelector(`.header`)!.getBoundingClientRect();
+            window.addEventListener(`scroll`, () => setHiddenMenuPosition(window.scrollY, window.screen.height, header.height, menu));
+        };
+    };
+
+    function setHiddenMenuPosition (windowScrollPosition: number, windowHeight: number, headerHeight: number, menu: HTMLDivElement) {
+        menu.style.top = `${windowScrollPosition - windowHeight + headerHeight}px`;
+    };
 
     return (
         <div className="mobile-menu">

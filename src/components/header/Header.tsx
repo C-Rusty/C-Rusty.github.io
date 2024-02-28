@@ -25,7 +25,7 @@ const Header = () => {
       const header = document.querySelector(`.header`);
       const headerPosition = header?.getBoundingClientRect();
       const handleScrollEvent = () => {
-        handleScroll(headerPosition!.top, headerPosition!.height, header)
+        handleScroll(headerPosition!.top, headerPosition!.height, header);
       };
   
       window.addEventListener('scroll', handleScrollEvent);

@@ -6,6 +6,7 @@ import typeTagReducer from "./TypeTagReducer";
 import DeviceTypeReducer from "./DeviceTypeReducer";
 import FormSendReducer from "./FormSendReducer";
 import ModalLegalReducer from "./ModalLegalReducer";
+import MobilePositionReducer from "./MobileMenuPositionReducer";
 
 const store = configureStore({
     reducer: {
@@ -15,8 +16,13 @@ const store = configureStore({
         typeTag: typeTagReducer,
         deviceType: DeviceTypeReducer,
         formReducer: FormSendReducer,
-        modalLegalReducer: ModalLegalReducer
-    }
+        modalLegalReducer: ModalLegalReducer,
+        mobilePositionReducer: MobilePositionReducer
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false
+    }),
 });
 
 export type IRootState = ReturnType<typeof store.getState>;

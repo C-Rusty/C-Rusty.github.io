@@ -4,17 +4,18 @@ import '../../../styles/head/header-utilities/NavBar.scss'
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IRootState } from "store/store";
+import { useDispatch } from "react-redux";
+import { setMobileState } from "../../../store/MenuOpenReducer";
 
 const Navigation = () => {
 
     const { t } = useTranslation();
     const deviceType: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
-    const handleClick = () => {
-        document.querySelector('.mobile-menu')?.classList.toggle(`opened`);
-        document.querySelector(`.hamburger`)?.classList.toggle(`hamburger-active`);
+    const dispatch = useDispatch();
 
-        document.body.style.overflowY = `auto`;
+    const handleClick = () => {
+        dispatch(setMobileState(false));
     };
 
     const removeClassFromActiveItem = () => {
