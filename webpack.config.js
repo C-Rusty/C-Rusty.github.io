@@ -3,6 +3,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require(`html-webpack-plugin`);
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     mode: `production`,
@@ -59,6 +60,10 @@ module.exports = {
                 test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 type: 'asset/resource',
             }
-        ]
-    }
+        ],
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
 }

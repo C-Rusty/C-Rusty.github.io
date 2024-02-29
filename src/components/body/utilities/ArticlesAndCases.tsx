@@ -101,7 +101,7 @@ const ArticlesAndCases = () => {
     const [showAllPosts, setShowAllPosts] = useState<boolean>(true);
 
     useEffect(() => {
-        if (currentUrlPath.split(`/`)[2]) {
+        if (currentUrlPath.split(`/`).length === 3) {
             setShowAllPosts(false);
         } else {
             setShowAllPosts(true);
