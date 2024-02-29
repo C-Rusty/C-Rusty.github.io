@@ -194,14 +194,48 @@
                         @include headlineMobile-22px;
                     }
                 }
+
+                .headline-support-section {
+                    @include Merriweather-32px-Bold;
+                    margin-bottom: calc($elements-gap - .8rem);
+
+                    @media screen and (max-width: 768px) {
+                        @include textMobile-18px;
+                    }
+                }
             
-                .text, .italic {
+                .text, .italic, .bold-text  {
                     @include Georgia-18px;
                     text-align: justify;
                     color: $black-secondary;
 
                     @media screen and (max-width: 768px) {
                         @include textMobile-16px;
+                    }
+                }
+
+                .bold-text {
+                    font-weight: 700;
+                }
+
+                .text {
+                    &__link {
+                        text-decoration: underline;
+                        color: $black-secondary;
+                    }
+                    &__bold {
+                        font-weight: 700;
+                    }
+                    &__italic {
+                        font-style: italic;
+
+                        @include Georgia-18px;
+                        text-align: justify;
+                        color: $black-secondary;
+    
+                        @media screen and (max-width: 768px) {
+                            @include textMobile-16px;
+                        }
                     }
                 }
 

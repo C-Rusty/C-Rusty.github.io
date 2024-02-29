@@ -11,11 +11,11 @@ import { Outlet, useLocation } from "react-router-dom";
 import { apiImg } from "../../../api/ApiImg";
 import ShortPostSkeleton from "./post/ShortPostSkeleton";
 import { postsLoadLimit } from "../../../api/ApiPostConfig";
+import { useTranslation } from "react-i18next";
 
 const ArticlesAndCases = () => {
 
     const [posts, setPosts] = useState<IPost[] | []>([]);
-    const [pageLang, setPageLang] = useState<string>(document.documentElement.lang);
 
     const [initialPosts, setInitialPosts] = useState<IPost[] | []>([]);
 
@@ -24,6 +24,9 @@ const ArticlesAndCases = () => {
     const getImg = async (imageCloudPath: string) => {
         return apiImg.downloadImage(imageCloudPath);
     };
+
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language;
 
     const getPosts = async (pageLang: string) => {
         const postsData: IPost[] | undefined = await api.getShortPosts(pageLang);
@@ -85,12 +88,8 @@ const ArticlesAndCases = () => {
     };
 
     useEffect(() => {
-        setPageLang(document.documentElement.lang);
-    }, [document.documentElement.lang]);
-
-    useEffect(() => {
-        if (!currentUrlPath.split(`/`)[2]) getPosts(pageLang);
-    }, [pageLang]);
+        if (!currentUrlPath.split(`/`)[2]) getPosts(currentLang);
+    }, [currentLang]);
 
     useEffect(() => {
         filterPosts(typeTag, categoryTag);

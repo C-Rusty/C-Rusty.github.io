@@ -20,30 +20,28 @@
 
         background: $gray-primary-light;
 
+        @media screen and (min-width: 1024px) {
+            &:hover {
+                cursor: pointer;
+    
+                img {
+                    filter: brightness(65%);
+                    transition: all .3s;
+                }
+    
+                .img__read-hover {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    z-index: 20;
+                    transition: all .3s
+    
+                }
+            }
+        }
+        
         @media screen and (max-width: 768px) {
-            max-width: 47%;
-        }
-        @media screen and (max-width: 576px) {
-            max-width: 100%;
-        }
-
-        &:hover {
-            cursor: pointer;
-
-            img {
-                filter: brightness(65%);
-                transition: all .3s;
-            }
-
-            .img__read-hover {
-                display: block;
-                position: absolute;
-                top: 45%;
-                z-index: 20;
-                left: 40%;
-                transition: all .3s
-
-            }
+            width: 100%;
         }
 
         &__img, .post-short-skeleton-image {
@@ -51,6 +49,16 @@
             margin-bottom: 1.6rem;
 
             height: 30rem;
+
+            @media screen and (max-width: 768px) {
+                height: 40rem;
+            }
+            @media screen and (max-width: 576px) {
+                height: 35rem;
+            }
+            @media screen and (max-width: 475px) {
+                height: 25rem;
+            }
 
             img {
                 width: 100%;
@@ -65,9 +73,9 @@
                 color: $tertiary;
 
                 position: absolute;
-                top: 68%;
-                z-index: -1;
+                top: 90%;
                 left: 40%;
+                z-index: -1;
 
                 transition: all .25s
             }
@@ -76,7 +84,7 @@
         &__info {
             h2 {
                 @include Merriweather-24px;
-                color: $articles-header;
+                color: $black-secondary;
                 padding: 0 .8rem;
 
                 margin-bottom: 1.6rem;
@@ -91,6 +99,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 column-gap: .8rem;
+                row-gap: .8rem;
 
                 h3 {
                     display: flex;
@@ -133,7 +142,7 @@
             }
         }
 
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 768px) {
             flex-direction: column;
         }
 
@@ -141,6 +150,10 @@
             margin-bottom: 0;
             min-width: 50%;
             max-width: 50%;
+
+            @media screen and (max-width: 768px) {
+                min-width: 100%;
+            }
 
             img {
                 height: 100%;
@@ -154,6 +167,10 @@
         .post-short__info {
             padding: 1.6rem 0;
 
+            @media screen and (max-width: 768px) {
+                padding-bottom: 0;
+            }
+
             h2 {
                 max-width: 75%;
 
@@ -165,7 +182,7 @@
 
     .post-short, .post-short:nth-child(5n + 1) {
         @media screen and (max-width: 576px) {
-            height: 48rem;
+            height: auto;
             max-width: 100%;
 
             padding: .8rem .8rem 1.6rem;

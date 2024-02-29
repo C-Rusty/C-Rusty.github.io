@@ -63,13 +63,11 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            {!isContactPage && 
-               <div className="container">
-                    <div className="legal">
-                        <a className="legal__link" onClick={openLegalModal}>{t (`Privacy And Data Protection Policy`)}</a>
-                    </div>
+            <div className="container">
+                <div className="legal">
+                    <a className="legal__link" onClick={openLegalModal}>{t (`Privacy And Data Protection Policy`)}</a>
                 </div>
-            }
+            </div>
         </footer>
     )
 };

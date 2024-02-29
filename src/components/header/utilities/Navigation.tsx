@@ -49,6 +49,10 @@ const Navigation = () => {
         };
     };
 
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: `smooth`});
+    };
+
     useEffect(() => {
         handlePathChange();
     }, [currentUrlPath]);
@@ -63,6 +67,7 @@ const Navigation = () => {
             <ul>
                 <li onClick={() => {
                         if (deviceType === `mobile`) handleClick();
+                        scrollToTop();
                     }} 
                     id="about-me"
                 >
@@ -70,6 +75,7 @@ const Navigation = () => {
                 </li>
                 <li onClick={() => { 
                         if (deviceType === `mobile`) handleClick();
+                        scrollToTop();
                     }} 
                     id="trainings"
                 >
@@ -77,6 +83,7 @@ const Navigation = () => {
                 </li>
                 <li onClick={() => { 
                         if (deviceType === `mobile`) handleClick();
+                        scrollToTop();
                     }} 
                     id="articles-cases"
                 >
@@ -84,6 +91,7 @@ const Navigation = () => {
                 </li>
                 <li onClick={() => { 
                         if (deviceType === `mobile`) handleClick();
+                        scrollToTop();
                     }} 
                     id="contacts"
                 >

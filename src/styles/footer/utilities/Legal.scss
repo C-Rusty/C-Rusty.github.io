@@ -71,7 +71,7 @@
                     }
                 }
 
-                .header {
+                &__header {
                     @include Merriweather-32px-Bold;
                     color: $black-secondary;
                     margin-bottom: 3.2rem;
@@ -82,7 +82,7 @@
                     }
                 }
 
-                .text, .list {
+                &__text, &__list {
                     margin-bottom: 1.6rem;
 
                     @media screen and (max-width: 425px) {
@@ -90,12 +90,12 @@
                     }
                 }
 
-                .list {
+                &__list {
                     list-style-type: upper-roman;
                     padding-left: 5%;
                 }
 
-                .text, .list > li {
+                &__text, &__list > li {
                     @include Georgia-18px;
 
                     @media screen and (max-width: 425px) {
@@ -105,7 +105,7 @@
             }
 
             .paragraph:nth-child(13) {
-                .text {
+                .paragraph__text {
                     margin-bottom: 0;
                 }
             }

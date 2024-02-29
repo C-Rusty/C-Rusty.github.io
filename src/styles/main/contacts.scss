@@ -276,13 +276,7 @@
                 outline: $error;
             }
 
-            .active-bg {
-                // background: ;
-            }
-
             .name {
-                margin-bottom: 2.4rem;
-
                 @media screen and (max-width: 425px) {
                     margin-bottom: 1.6rem;
                 }
@@ -294,8 +288,6 @@
             }
 
             .phone {
-                margin-bottom: 4.8rem;
-
                 @media screen and (max-width: 425px) {
                     margin-bottom: 2.4rem;
                 }
