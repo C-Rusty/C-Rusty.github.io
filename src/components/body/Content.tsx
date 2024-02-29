@@ -6,6 +6,7 @@ import Contacts from "./utilities/Contacts";
 import { Route, Routes} from "react-router-dom";
 import { api } from "../../api/ApiPosts";
 import FullPost from "./utilities/post/FullPost";
+import NoPage from "./utilities/NoPage";
 
 const Content = () => {
 
@@ -35,6 +36,7 @@ const Content = () => {
                 )}
             </Route>
             <Route path="contacts" element={<Contacts/>}/>
+            <Route path="*" element={<NoPage/>} />
         </Routes>
     )
 };
