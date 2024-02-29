@@ -3,7 +3,7 @@ import { collection, doc, setDoc, getDocs, getDoc, query, limit, startAfter, Doc
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
 import { IFullPost, IPost, IPostsUrlPath} from "../interface/Interface";
-import { firebaseConfig } from "./DbConfig";
+import { firebaseConfig } from "./dbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
