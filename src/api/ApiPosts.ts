@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { collection, doc, setDoc, addDoc, getDocs  } from "firebase/firestore"; 
+import { collection, doc, setDoc, getDocs, getDoc, query, limit, startAfter, DocumentData  } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 import collections from "../collections/collections";
-import { IPost} from "../interface/Interface";
-import { firebaseConfig } from "./dbConfig";
+import { IFullPost, IPost, IPostsUrlPath} from "../interface/Interface";
+import { firebaseConfig } from "./DbConfig";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -55,21 +55,24 @@ const createCollectionPostsFull = async (pageLang: string, link: string) => {
     };
 };
 
-const getFullPost = async (language: string, link: string) => {
+const getFullPost = async (language: string, postName: string) => {
   let collectionName: string = ``;
 
   if (language === `ru`) {
-    collectionName = collections.postsRuShort;
+    collectionName = collections.postsRuFull;
   } else if (language === `en`) {
-    collectionName = collections.postsEnShort;
+    collectionName = collections.postsEnFull;
   } else {
     throw new Error (`Something wrong. Language is ${language}`);
   };
 
-  const docRef = doc(db, `posts`)
-}
+  const docRef = await doc(db, collectionName, postName);
+  const fullPost = (await getDoc(docRef)).data();
+  
+  return fullPost as IFullPost;
+};
 
-const getPosts = async (language: string) => {
+const getShortPosts = async (language: string) => {
   let collectionName: string = ``;
 
   if (language === `ru`) {
@@ -83,6 +86,19 @@ const getPosts = async (language: string) => {
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));
 
+    // For limit posts amount requests
+    // const first = query(collection(db, collectionName), limit(7));
+    // const documentSnapshots = await getDocs(first);
+
+    // console.log(`first`, documentSnapshots);
+
+    // const lastVisible = documentSnapshots.docs[documentSnapshots.docs.length-1];
+
+    // const next = query(collection(db, collectionName), startAfter(lastVisible), limit(7));
+
+    // const docsNext = await getDocs(next); 
+    // console.log(`next`, docsNext);
+
     const posts: IPost[] = querySnapshot.docs.map(postDoc => {
       const post = postDoc.data() as IPost;
       return post;
@@ -93,10 +109,20 @@ const getPosts = async (language: string) => {
   } catch (error) {
     console.log(error);
   };
+};
 
+const getPostsUrl = async () => {
+  const collectionName: string = `posts-url-paths`;
+  const querySnapshot: DocumentData[] = (await getDocs(collection(db, collectionName))).docs.map(data => { return data.data() });
+
+  const urlPaths = querySnapshot as Array<IPostsUrlPath>;
+
+  return urlPaths[0].paths;
 };
 
 export const api = {
-  getPosts,
+  getShortPosts,
+  getFullPost,
+  getPostsUrl
   // createCollection
 }

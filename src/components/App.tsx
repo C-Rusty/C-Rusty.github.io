@@ -9,6 +9,9 @@ import i18next from "i18next";
 import Content from "./body/Content";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "./footer/Footer";
+import { Provider } from "react-redux";
+import store from "../store/store";
+import LegalDocsModal from "./footer/utilities/Legal";
 
 const resources  = {
     en: {
@@ -19,9 +22,11 @@ const resources  = {
     }
 };
 
+const browserLang = navigator.language.split(`-`)[0];
+
 i18n.use(initReactI18next).init({
     resources,
-    lng: `en`,
+    lng: browserLang,
     fallbackLng: `en`,
     interpolation: {
         escapeValue: false
@@ -36,9 +41,12 @@ const App = () => {
     
     return (
         <BrowserRouter>
-            <Header/>
-            <Content/>
-            <Footer/>
+            <Provider store={store}>
+                <Header/>
+                <Content/>
+                <LegalDocsModal/>
+                <Footer/>
+            </Provider>
         </BrowserRouter>
     );
 };

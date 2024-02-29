@@ -2,13 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import photo from '../../../images/content/about-me/oleg-chanov.webp';
-import educationSvg from '../../../images/content/about-me/education.svg';
-import quoteBg from '../../../images/content/about-me/quote-bg.webp'
 import approachBg from '../../../images/content/about-me/approach.webp';
-import credoBg from '../../../images/content/about-me/credo-bg.webp';
-import bringBenefitsBg from '../../../images/content/about-me/bring-benefits-bg.webp';
 import achieve from '../../../images/content/about-me/achieve.webp';
-import ticking from '../../../images/content/about-me/ticking.svg';
 import '../../../styles/main/about-me.scss';
 
 const AboutMe = () => {
@@ -16,22 +11,31 @@ const AboutMe = () => {
     const { t } = useTranslation();
 
     return(
-        <>
+        <div className="about-me">
             <section className="intro">
                 <div className="container">
-                    <div className="img">
+                    <Link to="/contacts" className="mobile-btn">
+                        {t (`Contact me`)}
+                    </Link>
+                    <div className="img-container">
                         <img src={photo} alt="oleg-chanov" />
                     </div>
                     <div className="text">
                         <div className="text__headline">
                             <h1>{t (`Aleg Chanov`)}</h1>
-                            <div className="underline"></div>
+                            <div className="underline-container">
+                                <div className="underline"></div>
+                            </div>
                         </div>
-                        <h2>{t (`Strategic management consultant`)}</h2>
-                        <h3>{t ('Strategy development in offline and online sessions. Holding strategic sessions using AI (Artificial Intelligence)')}</h3>
-                        <button>
-                            <Link to="/contacts">{t (`Contact me`)}</Link>
-                        </button>
+                        <h2 className="text__supporting-headline">{t (`Strategic management consultant`)}</h2>
+                        <h3 className="text__description-headline">
+                            {t ('Strategy development in offline and online sessions')}
+                            {window.innerWidth < 1150 && <br />}
+                            {t (`Holding strategic sessions using AI (Artificial Intelligence)`)}   
+                        </h3>
+                        <Link to="/contacts" className="desktop-btn">
+                            {t (`Contact me`)}
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -40,30 +44,30 @@ const AboutMe = () => {
                     <h3 className="headline">{t (`In numbers`)}</h3>
                     <div className="cards">
                         <div className="cards__card">
-                            <h4>{t (`Since 2005`)}</h4>
-                            <p>{t (`in consulting business`)}</p>
+                            <h4 className="card-headline">{t (`Since 2005`)}</h4>
+                            <p className="card-text">{t (`in consulting business`)}</p>
                         </div>
                         <div className="cards__card">
-                            <h4>11 {t (`years`)}</h4>
-                            <p>{t (`in a large automobile holding Volkswagen from an employee to a marketing director`)}</p>
+                            <h4 className="card-headline">11 {t (`years`)}</h4>
+                            <p className="card-text">{t (`in a large automobile holding Volkswagen from an employee to a marketing director`)}</p>
                         </div>
                         <div className="cards__card">
-                            <h4>&gt; 100</h4>
-                            <p>{t (`of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc`)}</p>
+                            <h4 className="card-headline">&gt; 100</h4>
+                            <p className="card-text">{t (`of strategies and marketing strategies in various sectors of an economy: road construction, retail, banking, car business, light manufacturing, car engineering, industrial sector etc`)}</p>
                         </div>
                         <div className="cards__card">
-                            <h4>&gt; 70</h4>
-                            <p>{t (`strategic sessions held`)}</p>
+                            <h4 className="card-headline">&gt; 70</h4>
+                            <p className="card-text">{t (`strategic sessions held`)}</p>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="education">
                 <div className="container">
-                    <h3>{t (`Education`)}</h3>
+                    <h3 className="headline">{t (`Education`)}</h3>
                     <div className="text">
                         <div className="svg">
-                            <img src={educationSvg} alt="education" />
+                            <img src="../../../images/content/about-me/education.svg" alt="education" />
                         </div>
                         <div className="main">
                             <span>{t (`Europa-Universität Viadrina Frankfurt`)}</span>
@@ -73,88 +77,91 @@ const AboutMe = () => {
                 </div>
             </section>
             <section className="quote">
-                <div className="img">
-                    <img src={quoteBg} alt="" />
-                </div>
                 <div className="container">
-                    <h4>{t (`The best way to predict the future is to create it...`)}</h4>
-                    <h5>{t (`Peter Drucker`)}</h5>
+                    <span className="headline">{t (`The best way to predict the future is to create it...`)}</span>
+                    <span className="headline-support">{t (`Peter Drucker`)}</span>
                 </div>
             </section>
             <section className="system">
                 <div className="container">
-                    <h3>&laquo;{t ("It's better to have any system than no system at all")}&raquo;</h3>
+                    {innerWidth > 991 && 
+                        <h3>&laquo;{t ("It's better to have any system than no system at all")}&raquo;</h3>
+                    }
                     <div className="quotes">
                         <p>{t ('I believe that ideas move the world. If you look around, you can easily see this')}</p>
                         <p>{t ('I love and know how to help companies and owners build healthy, successful businesses and do something useful for people')}</p>
                         <p>
-                            <span>
-                                {t ('If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need')}
-                            </span>
+                            {t ('If you have an idea to build a large successful business, then, in addition to the vision of what it should be, the energy, dedication and good business model necessary for this, you need')}
                             <span className="highlight">
                                 {t ('a system for moving')}
                             </span>
-                            <span>
-                                {t ('towards your goals and dreams')}
-                            </span>
+                            {t ('towards your goals and dreams')}
                         </p>
                         <p>
-                            <span>
-                                {t ('My job is to help the company create a strategy and strategic management system')}
-                            </span>
+                            {t ('My job is to help the company create a strategy and strategic management system')}
                             <br />
-                            <span>
-                                {t ('I structure my work in such a way as to take into account the nuances of the company, the specifics of the business and relationships in the team. After all, there are no identical people and identical companies')}
-                            </span>
+                            {t ('I structure my work in such a way as to take into account the nuances of the company, the specifics of the business and relationships in the team. After all, there are no identical people and identical companies')}
                         </p>
                     </div>
                 </div>
             </section>
+            {innerWidth < 991 &&
+                <section className="quote-system">
+                    <div className="container">
+                        <span className="headline">
+                            &laquo;{t ("It's better to have any system than no system at all")}&raquo;
+                        </span>
+                    </div>
+                </section>
+            }
             <section className="approach">
                 <div className="container">
                     <h3>{t ('Approach')}</h3>
                     <div className="main">
                         <div className="main__plan">
                             <div className="item">
-                                <span>1</span>
-                                <p>{t (`First, it is determined what competencies the company has and what experience it has in strategic planning and management`)}</p>
+                                <span className="item__number">1</span>
+                                <p className="item__text">{t (`First, it is determined what competencies the company has and what experience it has in strategic planning and management`)}</p>
                             </div>
                             <div className="item">
-                                <span>2</span>
-                                <p>{t ('An introduction to the company and diagnostics are carried out')}</p>
+                                <span className="item__number">2</span>
+                                <p className="item__text">{t ('An introduction to the company and diagnostics are carried out')}</p>
                             </div>
                             <div className="item">
-                                <span>3</span>
-                                <p>{t ('Depending on the team’s competencies, it is determined and the strategy development format most suitable for the company is selected')}</p>
+                                <span className="item__number">3</span>
+                                <p className="item__text">{t ('Depending on the team’s competencies, it is determined and the strategy development format most suitable for the company is selected')}</p>
                             </div>
                             <div className="item">
-                                <span>4</span>
-                                <p>{t ('If necessary, the team is trained at the stage of preparation for developing a strategy')}</p>
+                                <span className="item__number">4</span>
+                                <p className="item__text">{t ('If necessary, the team is trained at the stage of preparation for developing a strategy')}</p>
                             </div>
                             <div className="item">
-                                <span>5</span>
-                                <p>{t ('A work scenario is created during the strategic session and after it in order for the strategy to be implemented')}</p>
+                                <span className="item__number">5</span>
+                                <p className="item__text">{t ('A work scenario is created during the strategic session and after it in order for the strategy to be implemented')}</p>
                             </div>
                             <div className="item">
-                                <span>6</span>
-                                <p>{t ('A strategy is being developed')}</p>
+                                <span className="item__number">6</span>
+                                <p className="item__text">{t ('A strategy is being developed')}</p>
                             </div>
                             <div className="item">
-                                <span>7</span>
-                                <p>{t ('The strategy is being successfully implemented')}</p>
+                                <span className="item__number">7</span>
+                                <p className="item__text">{t ('The strategy is being successfully implemented')}</p>
                             </div>
                         </div>
-                        <img src={approachBg} alt="my-approach" />
+                        {window.innerWidth > 991 &&
+                            <div className="main__img-container">
+                                <img src={approachBg} alt="my-approach" />
+                            </div>
+                        }
                     </div>
                 </div>
             </section>
             <section className="credo">
-                <div className="img">
-                    <img src={credoBg} alt="my-credo" />
-                </div>
                     <div className="container">
-                        <h4>{t (`My credo`)}:</h4>
-                        <h5>&laquo;{t (`Understand how it works, and then apply it to yourself`)}&raquo;</h5>
+                        <span className="credo-headline">{t (`My credo`)}:</span>
+                        <span className="credo-quote">
+                            &laquo;{t (`Understand how it works, and then apply it to yourself`)}&raquo;
+                        </span>
                     </div>
             </section>
             <section className="benefits">
@@ -186,9 +193,6 @@ const AboutMe = () => {
                 </div>
             </section>
             <section className="bring-benefits">
-                <div className="img">
-                    <img src={bringBenefitsBg} alt="my-credo" />
-                </div>
                 <div className="container">
                     <h3>{t (`How do I bring benefit`)}</h3>
                     <div className="text">
@@ -218,39 +222,41 @@ const AboutMe = () => {
                 <div className="container">
                     <h3>{t (`How do I achieve this`)}&#63;</h3>
                     <div className="main">
-                        <img src={achieve} alt="achieve-session" />
+                        <div className="main__img-container">
+                            <img src={achieve} alt="achieve-session" />
+                        </div>
                         <div className="text">
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`I myself am the director of strategic management in a rapidly and successfully growing company. I understand`)}
                                     &laquo;{t (`how it works in practice, not in theory`)}&raquo;
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client`)}
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`At each stage of cooperation I provide feedback on the process and the result`)}
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src={ticking} alt="achieve" />
+                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>{t (`I maintain confidentiality of information`)}</p>
                             </div>
                         </div>
                     </div>
-                    <button>
-                        <Link to="/contacts">{t (`Contact me`)}</Link>
-                    </button>
+                    <Link to="/contacts" className="mobile-btn">
+                        {t (`Contact me`)}
+                    </Link>
                 </div>
             </section>
-        </>
+        </div>
     )
 };
 

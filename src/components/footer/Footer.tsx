@@ -5,6 +5,8 @@ import ViberLogo from "./utilities/ViberLogo";
 import TelegramLogo from "./utilities/TelegramLogo";
 import WhatsAppLogo from "./utilities/WhatsAppLogo";
 import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setModalState } from "../../store/ModalLegalReducer";
 
 const Footer = () => {
 
@@ -12,6 +14,12 @@ const Footer = () => {
     const location = useLocation();
 
     const [isContactPage, setIsContactPage] = useState<boolean>(false);
+
+    const dispatch = useDispatch();
+
+    const openLegalModal = () => {
+        dispatch(setModalState(true));
+    };
 
     useEffect(() => {
         if (location.pathname.includes(`contacts`)) {
@@ -26,11 +34,11 @@ const Footer = () => {
     return (
         <footer>
             <div className="container">
-                {isContactPage ?
-                    <></> 
-                    :
+                {!isContactPage &&
                     <div className="contacts">
-                        <a href="mailto:bfchanoff@gmail.com">bfchanoff@gmail.com</a>
+                        <div className="contacts__email">
+                            <a href="mailto:bfchanoff@gmail.com">bfchanoff@gmail.com</a>
+                        </div>
                         <div className="contacts__icons">
                             <a href="viber://chat?number=%2B3752961019786">
                                 <ViberLogo/>
@@ -53,6 +61,11 @@ const Footer = () => {
                         <span>{t (`Programmer`)}:</span>
                         <a href="https://www.linkedin.com/in/rostislavchanov/">{t (`Rostislav Chanov`)}</a>
                     </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="legal">
+                    <a className="legal__link" onClick={openLegalModal}>{t (`Privacy And Data Protection Policy`)}</a>
                 </div>
             </div>
         </footer>

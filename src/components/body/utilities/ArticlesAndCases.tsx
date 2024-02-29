@@ -1,46 +1,53 @@
-import React, { useEffect, useState, Suspense} from "react";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from "react";
 import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
-import { apiImg } from "../../../api/ApiImg";
-import Loading from "./Loading";
 import '../../../styles/main/articles-cases.scss';
+import ShortPost from "./post/ShortPost";
+import { useSelector } from "react-redux";
+import FiltersBar from "./menu/FiltersBar";
+import { IRootState } from "store/store";
+import MobileFilterBtn from "./filtersMobile/MobileFilterBtn";
+import { Outlet, useLocation } from "react-router-dom";
+import { apiImg } from "../../../api/ApiImg";
+import ShortPostSkeleton from "./post/ShortPostSkeleton";
+import { postsLoadLimit } from "../../../api/ApiPostConfig";
+import { useTranslation } from "react-i18next";
 
 const ArticlesAndCases = () => {
 
-    const { t } = useTranslation();
-
     const [posts, setPosts] = useState<IPost[] | []>([]);
-    const [img, setImg] = useState<string>(`no-img`);
-    const [pageLang, setPageLang] = useState<string>(`ru`);
 
     const [initialPosts, setInitialPosts] = useState<IPost[] | []>([]);
 
-    const [typesTagsSelected, setTypesTagsSelected] = useState<string>(`All`);
-    const [categoryTagsSelected, setCategoryTagsSelected] = useState<string>(`All`);
-
-    const PostItemsContainer = React.lazy(() => import('./post-item/PostItemsContainer'));
+    const [postsLoaded, setPostsLoaded] = useState<boolean>(false);
 
     const getImg = async (imageCloudPath: string) => {
         return apiImg.downloadImage(imageCloudPath);
     };
 
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language;
+
     const getPosts = async (pageLang: string) => {
-        const posts: IPost[] | undefined = await api.getPosts(pageLang);
+        const postsData: IPost[] | undefined = await api.getShortPosts(pageLang);
 
-        if (posts) {
-
-            for (let post of posts) {
+        if (postsData) {
+            for (let post of postsData) {
                 const imgUrl = await getImg(post.imageCloudPath);
                 post.imageUrl = imgUrl;
             };
 
-            setPosts(posts);
-            setInitialPosts(posts);
+            setPosts(postsData);
+            setInitialPosts(postsData);
+
+            setPostsLoaded(true);
         } else {
-            throw new Error (`Something wrong with posts API response. Posts API returned value ${posts}`);
+            throw new Error (`Something wrong with posts API response. Posts API returned value ${postsData}`);
         };
     };
+    
+    const categoryTag = useSelector<IRootState, string>((state) => state.categoryTag.chosen);
+    const typeTag = useSelector<IRootState, string>((state) => state.typeTag.chosen);
 
     // const handleClickBtn = () => {
     //     api.createCollection(document.documentElement.lang);
@@ -52,127 +59,87 @@ const ArticlesAndCases = () => {
     //     };
     // };
 
-    const filterPosts = (typesTagsSelected: string, categoryTagsSelected : string) => {
+    const filterPosts = (typeTag: string, categoryTag : string) => {
         let filteredPosts: IPost[] = [];
 
-        if (typesTagsSelected === `All` && categoryTagsSelected === `All`) {
+        if (typeTag === `All` && categoryTag === `All`) {
             setPosts(initialPosts);
         } 
-        else if (typesTagsSelected !== `All` && categoryTagsSelected !== `All`) {
-            filteredPosts = initialPosts.filter(post => post.types.find(type => type === typesTagsSelected) && post.categories.find(category => category === categoryTagsSelected));
+        else if (typeTag !== `All` && categoryTag !== `All`) {
+            filteredPosts = initialPosts.filter((post) => 
+                post.types.find(type => type === typeTag) && 
+                post.categories.find(category => category === categoryTag)
+            );
             setPosts(filteredPosts);
         } 
-        else if ((typesTagsSelected !== `All` && categoryTagsSelected === `All`)) {
-            filteredPosts = initialPosts.filter(post => post.types.find(type => type === typesTagsSelected));
+        else if ((typeTag !== `All` && categoryTag === `All`)) {
+            filteredPosts = initialPosts.filter((post) => 
+                post.types.find(type => type === typeTag)
+            );
             setPosts(filteredPosts);
         }
-        else if ((typesTagsSelected === `All` && categoryTagsSelected !== `All`)) {
-            filteredPosts = initialPosts.filter(post => post.categories.find(category => category === categoryTagsSelected));
+        else if ((typeTag === `All` && categoryTag !== `All`)) {
+            filteredPosts = initialPosts.filter((post) => 
+                post.categories.find(category => category === categoryTag));
             setPosts(filteredPosts);
         } else {
-            throw new Error(`Somtheing wrong with the filtration`);
-        }
-    };
-
-    const handleClickTag = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-
-        if (e.currentTarget.parentElement?.classList.contains(`types-list`)) {
-            const currentActiveTypeTag = document.querySelector(`.active-type-tag`);
-
-            currentActiveTypeTag?.classList.remove(`active-type-tag`);
-            const navItemClicked = e.currentTarget;
-
-            document.getElementById(`${navItemClicked.id}`)!.classList.add(`active-type-tag`);
-
-        } else if (e.currentTarget.parentElement?.classList.contains(`categories-list`)) {
-            const currentActiveCategoryTag = document.querySelector(`.active-category-tag`);
-            currentActiveCategoryTag?.classList.remove(`active-category-tag`);
-            const navItemClicked = e.currentTarget;
-
-            document.getElementById(`${navItemClicked.id}`)?.classList.add(`active-category-tag`);
+            throw new Error(`Something wrong with the filtration`);
         };
     };
 
     useEffect(() => {
-        setPageLang(document.documentElement.lang);
-    }, [document.documentElement.lang]);
+        if (!currentUrlPath.split(`/`)[2]) getPosts(currentLang);
+    }, [currentLang]);
 
     useEffect(() => {
-        getPosts(pageLang);
-    }, [pageLang]);
+        filterPosts(typeTag, categoryTag);
+    }, [typeTag, categoryTag]);
+
+    const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
+
+    const currentUrlPath = useLocation().pathname; 
+    const [showAllPosts, setShowAllPosts] = useState<boolean>(true);
 
     useEffect(() => {
-        filterPosts(typesTagsSelected, categoryTagsSelected);
-    }, [typesTagsSelected, categoryTagsSelected]);
+        if (currentUrlPath.split(`/`)[2]) {
+            setShowAllPosts(false);
+        } else {
+            setShowAllPosts(true);
+        };
+    }, [currentUrlPath]);
 
     return(
-        <div className="articles-cases">
-            {/* <button onClick={handleClickBtn}>Create Post</button> */}
-            <div className="container">
-                <nav className="nav-bar">
-                    <div className="nav-bar__types">
-                        <span>{t (`Type`)}</span>
-                        {/* <input type="file" name="" id=""
-                            onChange={ (e) => handleUpload(e.target.files![0])}
-                        /> */}
-                        <ul className="list types-list">
-                            <li
-                                onClick={(e) => {
-                                    setTypesTagsSelected(`All`);
-                                    handleClickTag(e)
-                                }}
-                                id="all-types"
-                                className="active-type-tag"
-                            >{t (`All`)}</li>
-                            <li
-                                onClick={(e) => {
-                                    setTypesTagsSelected(`Articles`);
-                                    handleClickTag(e)
-                                }}
-                                id="articles"
-                            >{t (`Articles`)}</li>
-                            <li
-                                onClick={(e) => {
-                                    setTypesTagsSelected(`Cases`);
-                                    handleClickTag(e)
-                                }}
-                                id="cases"
-                            >{t (`Cases`)}</li>
-                        </ul>
+        <>
+            {showAllPosts ?
+                <div className="articles-cases">
+                    {/* <button onClick={handleClickBtn}>Create Post</button> */}
+                    <div className="container">
+                        {deviceType === `desktop` ? 
+                            <FiltersBar/>
+                            :
+                            <MobileFilterBtn/>
+                        }
+                        <div className="articles-cases-container">
+                            {postsLoaded ?
+                                <>
+                                    {posts.map(post => 
+                                        <ShortPost key={post.headline} post={post}/>
+                                    )}
+                                </>
+                                :
+                                <>
+                                    {Array(postsLoadLimit).fill(true).map((_item, index: number) =>
+                                        <ShortPostSkeleton key={index}/>
+                                    )}
+                                </>  
+                            }
+                        </div>
                     </div>
-                    <div className="nav-bar__categories">
-                        <span>{t (`Category`)}</span>
-                        <ul className="list categories-list">
-                            <li
-                                onClick={(e) => {
-                                    setCategoryTagsSelected(`All`);
-                                    handleClickTag(e)
-                                }}
-                                id="all-categories"
-                                className="active-category-tag"
-                            >{t (`All`)}</li>
-                            <li
-                                onClick={(e) => {
-                                    setCategoryTagsSelected(`Marketing`);
-                                    handleClickTag(e)
-                                }}
-                                id="marketing"
-                            >{t (`Marketing`)}</li>
-                            <li
-                                onClick={(e) => {
-                                    setCategoryTagsSelected(`Strategy`);
-                                    handleClickTag(e)
-                                }}
-                                id="strategy"
-                            >{t (`Strategy development`)}</li>
-                        </ul>
-                    </div>
-                </nav>
-                <Suspense fallback={<Loading/>}>
-                    <PostItemsContainer posts={posts}/>
-                </Suspense>
-            </div>
-        </div>
+                </div>
+                :
+                <Outlet/>
+            }
+        </>
     );
 };
 

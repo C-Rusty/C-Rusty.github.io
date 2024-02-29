@@ -1,41 +1,111 @@
-@import '../global.scss';
+@import '../global/mixins.scss';
+@import '../global/fonts-mixins/MerriweatherMix.scss';
+@import '../global/fonts-mixins/GeorgiaMix.scss';
+@import '../global/fonts-mixins/PTSansMix.scss';
+
+@mixin telegram-logo {
+    path:first-child {
+        fill: #24A1DE;
+    }
+
+    path {
+        fill: white;
+    }
+}
+
+@mixin viber-logo {
+    path:first-child {
+        fill: white;
+    }
+
+    path {
+        fill: #7360F2;
+    }
+}
+
+@mixin whats-app-logo {
+    circle {
+        fill: white;
+    }
+    path {
+        fill: #25D366;
+    }
+}
 
 .contact-me {
-    background: $gray;
+    background: $gray-primary;
 
-    min-height: 90vh;
-    min-width: 98vw;
-
-    position: relative;
-    z-index: 2;
+    min-height: calc(100vh - (10.32rem + 3.6rem));
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1150px) {
+        min-height: calc(100vh - (10.32rem + 7.16rem));
+        padding: 8rem 0;
+    }
+    @media screen and (max-width: 991px) {
+        min-height: calc(100vh - (8.3rem + 7.2rem));
+    }
+
+    @media screen and (max-width: 768px) {
+        min-height: calc(100vh - (8.3rem + 9.8rem));
+    }
+
+    @media screen and (max-width: 575px) {
+        min-height: calc(100vh - (7.4rem + 14.2rem));
+    }
     
     .container {
         display: flex;
         justify-content: center;
         align-items: flex-start;
 
+        position: relative;
+
         width: 100%;
     }
 
-    .text {
+    &__inner {
         max-width: 40%;
 
+        @media screen and (max-width: 991px) {
+            max-width: 100%;
+        }
+
         h1 {
-            @include headlineMerriweather-38px;
-            color: $text-gray;
+            @include Merriweather-38px;
+            color: $gray-secondary-light;
 
             margin-bottom: 3.2rem;
+
+            @media screen and (max-width: 425px) {
+                @include headlineMobile-30px;
+                margin-bottom: 2.4rem;
+            }
         }
 
         p {
-            @include textGeorgia-18px;
+            @include Georgia-18px;
             margin-bottom: 6.4rem;
 
             max-width: 60%;
+
+            @media screen and (max-width: 991px) {
+                max-width: 100%;
+            }
+
+            @media screen and (max-width: 425px) {
+                @include textMobile-16px;
+                margin-bottom: 3.2rem;
+            }
+        }
+
+        h1, p {
+            @media screen and (max-width: 991px) {
+                text-align: center;
+            }
         }
 
         a {
@@ -48,66 +118,78 @@
             margin-bottom: 3.2rem;
         
             span {
-                @include textGeorgia-18px;
+                @include Georgia-18px;
             }
         }
 
-        .social-logos {
-            display: flex;
-            align-items: center;
+        .contacts {
+            @media screen and (max-width: 991px) {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+            }
 
-            column-gap: 2.4rem;
+            &__mail {
+                @media screen and (max-width: 991px) {
+                    margin-bottom: 0;
+                }
 
-            a {
-                svg {
-                    path, circle {
-                        transition: all .3s;
-                    }
+                span {
+                    color: $gray-secondary-light;
+                }
+            }
 
-                    &:hover {
+            &__social-logos {
+                display: flex;
+                align-items: center;
+
+                column-gap: 2.4rem;
+
+                @media screen and (max-width: 991px) {
+                    column-gap: 4.8rem;
+                    margin-bottom: 3.2rem;
+                }
+
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 1.6rem;
+                }
+
+                a {
+                    margin-bottom: 0;
+
+                    svg {
                         path, circle {
                             transition: all .3s;
                         }
-                    }
-                }
-            }
 
-            a:first-child {
-                &:hover {
-                    svg {
-                        path:first-child {
-                            fill: white;
-                        }
-
-                        path {
-                            fill: #7360F2;
+                        &:hover {
+                            path, circle {
+                                transition: all .3s;
+                            }
                         }
                     }
                 }
-            }
 
-            a:nth-child(2) {
-                &:hover {
-                    svg {
-                        path:first-child {
-                            fill: #24A1DE;
-                        }
-
-                        path {
-                            fill: white;
+                a:first-child {
+                    &:hover {
+                        svg {
+                            @include viber-logo;
                         }
                     }
                 }
-            }
 
-            a:last-child {
-                &:hover {
-                    svg {
-                        circle {
-                            fill: white;
+                a:nth-child(2) {
+                    &:hover {
+                        svg {
+                            @include telegram-logo;
                         }
-                        path {
-                            fill: #25D366;
+                    }
+                }
+
+                a:last-child {
+                    &:hover {
+                        svg {
+                            @include whats-app-logo;
                         }
                     }
                 }
@@ -115,9 +197,19 @@
         }
     }
 
-    .form {
+    .form-container {
         min-width: 50%;
         min-height: 28.8rem;
+
+        @media screen and (max-width: 991px) {
+            margin-bottom: 6.4rem;
+            min-height: max-content;
+        }
+
+        @media screen and (max-width: 425px) {
+            margin-bottom: 4.8rem;
+            min-height: auto;
+        }
 
         form {
             display: flex;
@@ -127,6 +219,11 @@
             min-height: 28.8rem;
             width: 100%;
 
+            @media screen and (max-width: 425px) {
+                min-height: auto;
+                justify-content: normal;
+            }
+
             label {
                 width: 100%;
 
@@ -134,36 +231,55 @@
                     width: 100%;
 
                     @include PTSans-18px;
-                    color: $text-gray;
+                    color: $gray-secondary-light;
 
-                    &:required:invalid {
-                        border-color: #D30808;
-                        outline: #D30808;
+                    &:focus, &:active {
+                        background: $tertiary-inactive;
                     }
+                    
                 }
 
-                input:not(:focus):invalid {
-                    border-color: var(--color-invalid);
-                  }
-
-                input, .select-messenger {
+                input {
                     padding: 2.4rem;
                     border-radius: 1.6rem;
                     border: none;
                     outline: none;
 
+                    background: $tertiary;
+
                     max-height: 6.4rem;
 
-                    background: $white;
-
-                    &:focus {
-                        background: $white-additional;
+                    @media screen and (max-width: 425px) {
+                        padding: 1.6rem;
                     }
+                }
+
+                .name-input, .phone__select-container {
+                    margin-bottom: .8rem;
+                }
+
+                .error-text {
+                    padding-left: 2.4rem;
+                    color: $error;
+                    @include PTSans-14px-Bold;
+
+                    opacity: 1;
+                }
+
+                .hidden {
+                    opacity: 0;
                 }
             }
 
-            .name-label {
-                margin-bottom: 2.4rem;
+            .error-border {
+                border: 1px solid $error;
+                outline: $error;
+            }
+
+            .name {
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 1.6rem;
+                }
 
                 input {
                     width: 100%;
@@ -171,29 +287,38 @@
                 }
             }
 
-            .messengers-label {
-                display: flex;
-                flex-direction: row;
-                background: $white;
-
-                border-radius: 1.6rem;
-
-                margin-bottom: 4.8rem;
-                
-                input {
-                    border-bottom-right-radius: .1rem;
-                    border-top-right-radius: .1rem;
+            .phone {
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 2.4rem;
                 }
 
-                .select-messenger {
-                    width: max-content;
-                    
+                &__select-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    background: $tertiary;
+                    border-radius: 1.6rem;
+
+                    &:has(input:focus) {
+                        background: $tertiary-inactive;
+                    }
+                }
+
+                &__select-messenger {
                     display: flex;
                     column-gap: .8rem;
                     align-items: center;
 
                     border-top-left-radius: .1rem;
                     border-bottom-left-radius: .1rem;
+
+                    width: 5rem;
+                    margin-right: 5%;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
 
                     &__open-btn {
                         &:hover {
@@ -207,17 +332,21 @@
 
                     .list {
                         position: relative;
-                        z-index: 20;
+                        z-index: 5;
+
+                        width: 5.6rem;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
 
                         img {
-                            max-width: 2.4rem;
-                            max-height: 2.4rem;
-
                             &:hover {
                                 cursor: pointer;
                             }
                         }
-
+                        
                         &__options {
                             display: none;
 
@@ -226,37 +355,131 @@
 
                             transition: all .5s;
 
-                            background-color: $white;
+                            background-color: $tertiary-inactive;
                             
                             position: absolute;
-                            top: 4rem;
-                            right: -1rem;
+                            top: 4.2rem;
 
                             border-radius: 1rem;
-
-                            img:first-child {
-                                margin-bottom: 1rem;
-                            }
-
                         }
 
                         .opened {
-                            display: block;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            row-gap: 1.6rem;
+
                             transition: all .5s;
+
+                            width: 100%;
+                            height: auto;
+
+                            width: 5.6rem;
+                        }
+
+                        .telegram-logo {
+                            @include telegram-logo;
+                        }
+                        
+                        .viber-logo {
+                            @include viber-logo;
+                        }
+                        
+                        .whats-app-logo {
+                            @include whats-app-logo;
                         }
                     }
-                }
-
-                .gray-bg {
-                    background: $white-additional;
                 }
             }
 
             button {
                 @include button;
-                color: $white;
+                color: $tertiary;
 
                 max-width: 35%;
+
+                @media screen and (max-width: 991px) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    &__inner {
+        background: $gray-primary;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 50%;
+
+        border: none;
+        border-radius: 1.6rem;
+
+        box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+
+        padding: 3.2rem 0;
+        outline: 0;
+
+        @media screen and (max-width: 991px) {
+            width: 70%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 991px) {
+                padding: 0 2.4rem;
+            }
+
+            .text {
+                margin-bottom: 4.8rem;
+
+                @media screen and (max-width: 425px) {
+                    margin-bottom: 3.2rem;
+                }
+
+                span {
+                    display: block;
+                }
+
+                span:first-child {
+                    @include Merriweather-38px-Bold;
+                    text-align: center;
+                    margin-bottom: 3.2rem;
+
+                    @media screen and (max-width: 425px) {
+                        @include Merriweather-32px-Bold;
+                        margin-bottom: 2.4rem;
+                    }
+                }
+
+                span:nth-child(2) {
+                    margin-bottom: .8rem;
+                }
+
+                span:nth-child(2), span:last-child {
+                    @include Georgia-18px;
+
+                    @media screen and (max-width: 425px) {
+                        @include Georgia-16px;
+                    }
+                }
+            }
+    
+            button {
+                @include button;
+
+                @media screen and (max-width: 991px) {
+                    width: 100%;
+                }
             }
         }
     }

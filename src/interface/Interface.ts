@@ -10,3 +10,14 @@ export interface IPost {
 export interface IImage {
     image: string
 }
+
+export interface IFullPost {
+    _id?: string, 
+    types: [string],
+    categories: [string],
+    htmlContent: [string]
+}
+
+export interface IPostsUrlPath {
+    paths: [string]
+}
