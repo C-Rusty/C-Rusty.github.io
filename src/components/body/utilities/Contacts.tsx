@@ -1,19 +1,20 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import ViberLogo from "../../../components/footer/utilities/ViberLogo";
-import TelegramLogo from "../../../components/footer/utilities/TelegramLogo";
-import WhatsAppLogo from "../../../components/footer/utilities/WhatsAppLogo";
 import '../../../styles/main/contacts.scss';
-import ContactForm from "./contacts/ContactForm";
 import { useSelector } from "react-redux";
 import { IRootState } from "../../../store/store";
-import ModalNotice from "./contacts/ModalNotice";
 
 const Contacts = () => {
 
     const { t } = useTranslation();
 
     const deviceType = useSelector<IRootState, string>((state) => state.deviceType.screen);
+
+    const ViberLogo = React.lazy(() => import('../../../components/footer/utilities/ViberLogo'));
+    const TelegramLogo = React.lazy(() => import('../../../components/footer/utilities/TelegramLogo'));
+    const WhatsAppLogo = React.lazy(() => import('../../../components/footer/utilities/WhatsAppLogo'));
+    const ContactForm = React.lazy(() => import('./contacts/ContactForm'));
+    const ModalNotice = React.lazy(() => import('./contacts/ModalNotice'));
 
     return(
         <div className="contact-me">
@@ -26,7 +27,7 @@ const Contacts = () => {
                     {deviceType === `mobile` && <ContactForm/>}
                     <div className="contacts">
                         <a href="mailto:bfchanoff@gmail.com" className="contacts__mail">
-                            <img src="../../../images/content/contact-me/mail-icon.svg" alt="mail" />
+                            <img loading="lazy" src="../../../images/content/contact-me/mail-icon.svg" alt="mail" />
                             <span>bfchanoff@gmail.com</span>
                         </a>
                         <div className="contacts__social-logos">

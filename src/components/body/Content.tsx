@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import AboutMe from "./utilities/AboutMe";
-import Trainings from "./utilities/Trainings";
-import ArticlesAndCases from "./utilities/ArticlesAndCases";
-import Contacts from "./utilities/Contacts";
 import { Route, Routes} from "react-router-dom";
 import { api } from "../../api/ApiPosts";
-import FullPost from "./utilities/post/FullPost";
-import NoPage from "./utilities/NoPage";
 
 const Content = () => {
-
+    
+    const AboutMe = React.lazy(() => import('./utilities/AboutMe'));
+    const Trainings = React.lazy(() => import('./utilities/Trainings'));
+    const ArticlesAndCases = React.lazy(() => import('./utilities/ArticlesAndCases'));
+    const Contacts = React.lazy(() => import('./utilities/Contacts'));
+    const FullPost = React.lazy(() => import('./utilities/post/FullPost'));
+    const NoPage = React.lazy(() => import('./utilities/NoPage'));
+    
     const [postsRouteNames, setPostsRouteNames] = useState<Array<string> | []>([]);
 
     const getPostsRoutes = async () => {
