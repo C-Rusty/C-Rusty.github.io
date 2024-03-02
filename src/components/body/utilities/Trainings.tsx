@@ -48,7 +48,7 @@ const Trainings = () => {
                                     </p>
                                 </div>
                             </div>
-                            <Link to="/contacts">{t (`Contact me`)}</Link>
+                            <a href="/contacts">{t (`Contact me`)}</a>
                         </div>
                         {window.innerWidth >= 1151 &&
                             <div className="img-container-desktop">
@@ -151,7 +151,7 @@ const Trainings = () => {
                                     </p>
                                 </div>
                             </div>
-                            <Link to="/contacts">{t (`Contact me`)}</Link>
+                            <a href="/contacts">{t (`Contact me`)}</a>
                         </div>
                         {window.innerWidth >= 1151 &&
                             <div className="img-container-desktop">

@@ -14,9 +14,9 @@ const AboutMe = () => {
         <div className="about-me">
             <section className="intro">
                 <div className="container">
-                    <Link to="/contacts" className="mobile-btn">
+                    <a href="/contacts" className="mobile-btn">
                         {t (`Contact me`)}
-                    </Link>
+                    </a>
                     <div className="img-container">
                         <img src={photo} alt="oleg-chanov" />
                     </div>
@@ -33,9 +33,9 @@ const AboutMe = () => {
                             {window.innerWidth < 1150 && <br />}
                             {t (`Holding strategic sessions using AI (Artificial Intelligence)`)}   
                         </h3>
-                        <Link to="/contacts" className="desktop-btn">
+                        <a href="/contacts" className="desktop-btn">
                             {t (`Contact me`)}
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -251,9 +251,9 @@ const AboutMe = () => {
                             </div>
                         </div>
                     </div>
-                    <Link to="/contacts" className="mobile-btn">
+                    <a href="/contacts" className="mobile-btn">
                         {t (`Contact me`)}
-                    </Link>
+                    </a>
                 </div>
             </section>
         </div>
