@@ -32,44 +32,46 @@ const Footer = () => {
     }, [location]);
 
     return (
-        <footer>
-            <div className="container">
-                {!isContactPage &&
-                    <div className="contacts">
-                        <div className="contacts__email">
-                            <a href="mailto:bfchanoff@gmail.com">bfchanoff@gmail.com</a>
+        <React.Suspense>
+            <footer>
+                <div className="container">
+                    {!isContactPage &&
+                        <div className="contacts">
+                            <div className="contacts__email">
+                                <a href="mailto:bfchanoff@gmail.com">bfchanoff@gmail.com</a>
+                            </div>
+                            <div className="contacts__icons">
+                                <a href="viber://chat?number=%2B3752961019786">
+                                    <ViberLogo/>
+                                </a>
+                                <a href="https://t.me/Aleg_Ch">
+                                    <TelegramLogo/>
+                                </a>                        
+                                <a href="https://wa.me/48505025186">
+                                    <WhatsAppLogo/>
+                                </a>
+                            </div>
                         </div>
-                        <div className="contacts__icons">
-                            <a href="viber://chat?number=%2B3752961019786">
-                                <ViberLogo/>
-                            </a>
-                            <a href="https://t.me/Aleg_Ch">
-                                <TelegramLogo/>
-                            </a>                        
-                            <a href="https://wa.me/48505025186">
-                                <WhatsAppLogo/>
-                            </a>
+                    }
+                    <div className="authors">
+                        <div className="authors__author">
+                            <span>{t (`Designer`)}:</span>
+                            <a href="https://www.behance.net/mariashkrabo">{t (`Maria Shkrabo`)}</a>
                         </div>
-                    </div>
-                }
-                <div className="authors">
-                    <div className="authors__author">
-                        <span>{t (`Designer`)}:</span>
-                        <a href="https://www.behance.net/mariashkrabo">{t (`Maria Shkrabo`)}</a>
-                    </div>
-                    <div className="authors__author">
-                        <span>{t (`Programmer`)}:</span>
-                        <a href="https://www.linkedin.com/in/rostislavchanov/">{t (`Rostislav Chanov`)}</a>
+                        <div className="authors__author">
+                            <span>{t (`Programmer`)}:</span>
+                            <a href="https://www.linkedin.com/in/rostislavchanov/">{t (`Rostislav Chanov`)}</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="container">
-                <div className="legal">
-                    <a className="legal__link" onClick={openLegalModal}>{t (`Privacy And Data Protection Policy`)}</a>
+                <div className="container">
+                    <div className="legal">
+                        <a className="legal__link" onClick={openLegalModal}>{t (`Privacy And Data Protection Policy`)}</a>
+                    </div>
                 </div>
-            </div>
-        </footer>
-    )
+            </footer>
+        </React.Suspense>
+    );
 };
 
 export default Footer;

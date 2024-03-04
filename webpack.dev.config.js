@@ -4,23 +4,24 @@ const HTMLWebpackPlugin = require(`html-webpack-plugin`);
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+    mode: `development`,
     entry: `./src/index.tsx`,
     output: {
-        filename: `./[name].bundle.js`,
-        path: path.join(__dirname, `public`),
-        publicPath: '/',
+        filename: `[name].[chunkhash:8].js`,
+        path: path.resolve(__dirname, `dist/`),
+        uniqueName: 'main',
+        clean: true,
     },
     resolve: {
         extensions: ['.js', `.tsx`, `.ts`]
     },
+    bail: true,
     devServer : {
         port: 8080,
         open: true,
         hot: true,
-        static: './public',
         compress: true,
         historyApiFallback: { index: "/", disableDotRule: true },
     },
@@ -54,6 +55,7 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             template: `./src/view/index.html`,
+            filename: `index.html`,
             favicon: './src/view/favicon.svg',
         }),
         new CopyWebpackPlugin({
@@ -63,12 +65,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: `main.css`
+            filename: '[name].[contenthash:8].css',
         }),
-        // new BundleAnalyzerPlugin(),
     ],
-    optimization: {
-        minimize: true,
-        mergeDuplicateChunks: true,
-    },
 }

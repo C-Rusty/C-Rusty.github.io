@@ -50,9 +50,13 @@
                 justify-content: center;
                 text-decoration: none;
 
+                @include button;
+                max-width: 50%;
+
                 transition: all .3s;
 
                 @media screen and (max-width: 1200px) {
+                    max-width: 100%;
                 }
 
                 &:hover {

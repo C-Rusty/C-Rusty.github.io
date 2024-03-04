@@ -8,6 +8,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { apiImg } from "../../../api/ApiImg";
 import { postsLoadLimit } from "../../../api/ApiPostConfig";
 import { useTranslation } from "react-i18next";
+import Loading from "./Loading";
 
 const ArticlesAndCases = () => {
 
@@ -110,7 +111,7 @@ const ArticlesAndCases = () => {
     // }, [currentUrlPath]);
 
     return(
-        <>
+        <React.Suspense fallback={<Loading/>}>
             {showAllPosts ?
                 <div className="articles-cases">
                     {/* <button onClick={handleClickBtn}>Create Post</button> */}
@@ -140,7 +141,7 @@ const ArticlesAndCases = () => {
                 :
                 <Outlet/>
             }
-        </>
+        </React.Suspense>
     );
 };
 
