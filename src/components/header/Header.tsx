@@ -11,10 +11,6 @@ import MobileMenuContainer from "../body/utilities/menu/MobileMenuContainer";
 
 const Header = () => {
 
-    // const Logo =import('./utilities/Logo'));
-    // const Navigation =import('./utilities/Navigation'));
-    // const LangSwitcher =import('./utilities/LangSwitcher'));
-    // const MobileHamburger =import('./utilities/MobileHamburger'));
     const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     const handleScroll = (elTopOffset: number, elHeight: number, header: Element | null) => {
