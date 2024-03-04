@@ -7,6 +7,7 @@ import { api } from "../../../../api/ApiPosts";
 import { IFullPost } from "interface/Interface";
 import parse from 'html-react-parser';
 import { apiImg } from "../../../../api/ApiImg";
+import Loading from "../Loading";
 
 const FullPost = () => {
 
@@ -47,35 +48,37 @@ const FullPost = () => {
     }, [imagesDownloadLinks]);
 
     return (
-        <div className="post-full">
-            <div className="container">
-                <div className="head">
-                    <div className="head__back-btn">
-                        <Link to="/articles-and-cases">
-                            <ArrowBack/>
-                            {t (`Back to list`)}
-                        </Link>
-                    </div>
-                    <div className="head__tags">
-                        {postContent?.categories.map(category => 
-                            <span key={category}>{t (`${category}`)}</span>
-                        )}
-                        {postContent?.types.map(type => 
-                            <span key={type}>{t (`${type}`)}</span>
-                        )}
-                    </div>
-                    <div className="head__empty"></div>
-                </div>
+        <React.Suspense fallback={<Loading/>}>
+            <div className="post-full">
                 <div className="container">
-                    <div className="main">
-                        {postContent?.htmlContent.map(postItem => 
-                            <>{parse(postItem)}</>
-                        )}
+                    <div className="head">
+                        <div className="head__back-btn">
+                            <Link to="/articles-and-cases">
+                                <ArrowBack/>
+                                {t (`Back to list`)}
+                            </Link>
+                        </div>
+                        <div className="head__tags">
+                            {postContent?.categories.map(category => 
+                                <span key={category}>{t (`${category}`)}</span>
+                            )}
+                            {postContent?.types.map(type => 
+                                <span key={type}>{t (`${type}`)}</span>
+                            )}
+                        </div>
+                        <div className="head__empty"></div>
+                    </div>
+                    <div className="container">
+                        <div className="main">
+                            {postContent?.htmlContent.map(postItem => 
+                                <>{parse(postItem)}</>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        </React.Suspense>
+    );
 };
 
 export default FullPost;

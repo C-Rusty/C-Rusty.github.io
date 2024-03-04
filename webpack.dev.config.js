@@ -3,39 +3,28 @@ const path = require('path');
 const HTMLWebpackPlugin = require(`html-webpack-plugin`);
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    mode: `production`,
+    mode: `development`,
     entry: `./src/index.tsx`,
     output: {
-        path: path.join(__dirname, `public`),
-        filename: `./bundle.js`,
-        publicPath: '/',
+        filename: `[name].[chunkhash:8].js`,
+        path: path.resolve(__dirname, `dist/`),
+        uniqueName: 'main',
+        clean: true,
     },
     resolve: {
         extensions: ['.js', `.tsx`, `.ts`]
     },
+    bail: true,
     devServer : {
         port: 8080,
         open: true,
         hot: true,
-        static: './public',
         compress: true,
         historyApiFallback: { index: "/", disableDotRule: true },
     },
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: `./src/view/index.html`,
-            favicon: './src/view/favicon.svg',
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                {from: `./src/images`, to: `images`}
-            ]
-        }),
-        new CleanWebpackPlugin(),
-    ],
     module: {
         rules: [
             {
@@ -48,10 +37,11 @@ module.exports = {
                     }
                 }
             },
-            {
-                test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
+			{
+				test: /\.(sa|sc|c)ss$/,
+				exclude: /node_modules/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+			},
             {
                 test: /\.(png|jpe?g|svg|webp)(\?.*)?$/,
                 type: 'asset/resource',
@@ -62,8 +52,20 @@ module.exports = {
             }
         ],
     },
-    optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin()],
-    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: `./src/view/index.html`,
+            filename: `index.html`,
+            favicon: './src/view/favicon.svg',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: `./src/images`, to: `images`}
+            ]
+        }),
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash:8].css',
+        }),
+    ],
 }

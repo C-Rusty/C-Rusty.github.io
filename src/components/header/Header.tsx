@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
-import Logo from "./utilities/Logo";
-import Navigation from "./utilities/Navigation";
-import LangSwitcher from "./utilities/LangSwitcher";
 import { Link } from "react-router-dom";
 import '../../styles/head/header.scss';
 import { useSelector } from "react-redux";
 import { IRootState } from "../../store/store";
-import MobileHamburger from "./utilities/MobileHamburger";
-import MobileMenuContainer from "../../components/body/utilities/menu/MobileMenuContainer";
+import Logo from "./utilities/Logo";
+import Navigation from './utilities/Navigation';
+import LangSwitcher from './utilities/LangSwitcher';
+import MobileHamburger from './utilities/MobileHamburger';
+import MobileMenuContainer from "../body/utilities/menu/MobileMenuContainer";
 
 const Header = () => {
 
+    // const Logo =import('./utilities/Logo'));
+    // const Navigation =import('./utilities/Navigation'));
+    // const LangSwitcher =import('./utilities/LangSwitcher'));
+    // const MobileHamburger =import('./utilities/MobileHamburger'));
     const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 
     const handleScroll = (elTopOffset: number, elHeight: number, header: Element | null) => {
@@ -32,26 +36,27 @@ const Header = () => {
     }, []);
 
     return (
-        <>
-            <header className="header">
-                <div className="container">
-                    <Link to="/">
-                        <Logo/>
-                    </Link>
-                    {screen === `desktop` ? 
-                        <>
-                            <Navigation/>
-                            <LangSwitcher/>
-                        </>
-                        :
-                        <MobileHamburger/>
-                    }
-                </div>
-            </header>
-            {screen === `mobile` && <MobileMenuContainer/>}
-        </>
-
-    )
+        <React.Suspense fallback={<h1>f</h1>}>
+            <>
+                <header className="header">
+                    <div className="container">
+                        <Link to="/">
+                            <Logo/>
+                        </Link>
+                        {screen === `desktop` ? 
+                            <>
+                                    <Navigation/>
+                                    <LangSwitcher/>
+                            </>
+                            :
+                            <MobileHamburger/>
+                        }
+                    </div>
+                </header>
+                {screen === `mobile` && <MobileMenuContainer/>}
+            </>
+        </React.Suspense>
+    );
 };
 
 export default Header;
