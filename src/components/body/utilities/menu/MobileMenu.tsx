@@ -1,7 +1,7 @@
 import React  from "react";
 import NavBar from "../../../header/utilities/Navigation";
 import LangSwitcher from "../../../header/utilities/LangSwitcher";
-import '../../../../styles/main/MobileMenu.scss';
+import '../../../../styles/head/header-utilities/mobile-menu.scss';
 
 const MobileMenu = () => {
 

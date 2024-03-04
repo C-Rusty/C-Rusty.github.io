@@ -12,6 +12,7 @@ import { apiImg } from "../../../api/ApiImg";
 import ShortPostSkeleton from "./post/ShortPostSkeleton";
 import { postsLoadLimit } from "../../../api/ApiPostConfig";
 import { useTranslation } from "react-i18next";
+import Loading from "./Loading";
 
 const ArticlesAndCases = () => {
 
@@ -109,7 +110,7 @@ const ArticlesAndCases = () => {
     }, [currentUrlPath]);
 
     return(
-        <>
+        <React.Suspense fallback={<Loading/>}>
             {showAllPosts ?
                 <div className="articles-cases">
                     {/* <button onClick={handleClickBtn}>Create Post</button> */}
@@ -139,7 +140,7 @@ const ArticlesAndCases = () => {
                 :
                 <Outlet/>
             }
-        </>
+        </React.Suspense>
     );
 };
 

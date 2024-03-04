@@ -5,11 +5,17 @@ import ArticlesAndCases from "./utilities/ArticlesAndCases";
 import Contacts from "./utilities/Contacts";
 import { Route, Routes} from "react-router-dom";
 import { api } from "../../api/ApiPosts";
-import FullPost from "./utilities/post/FullPost";
-import NoPage from "./utilities/NoPage";
+import Loading from "./utilities/Loading";
 
 const Content = () => {
-
+    
+    const AboutMe = React.lazy(() => import('./utilities/AboutMe'));
+    const Trainings = React.lazy(() => import('./utilities/Trainings'));
+    const ArticlesAndCases = React.lazy(() => import('./utilities/ArticlesAndCases'));
+    const Contacts = React.lazy(() => import('./utilities/Contacts'));
+    const FullPost = React.lazy(() => import('./utilities/post/FullPost'));
+    const NoPage = React.lazy(() => import('./utilities/404'));
+    
     const [postsRouteNames, setPostsRouteNames] = useState<Array<string> | []>([]);
 
     const getPostsRoutes = async () => {
@@ -27,17 +33,19 @@ const Content = () => {
     }, []);
 
     return(
-        <Routes>
-            <Route path="/" element={<AboutMe/>}/>
-            <Route path="trainings" element={<Trainings/>}/>
-            <Route path="articles-and-cases" element={<ArticlesAndCases/>}>
-                {postsRouteNames.map(pathName =>
-                    <Route path={pathName} element={<FullPost/>} key={pathName} />   
-                )}
-            </Route>
-            <Route path="contacts" element={<Contacts/>}/>
-            <Route path="*" element={<NoPage/>} />
-        </Routes>
+        <React.Suspense fallback={<Loading/>}>
+            <Routes>
+                <Route path="/" element={<AboutMe/>}/>
+                <Route path="trainings" element={<Trainings/>}/>
+                <Route path="articles-and-cases" element={<ArticlesAndCases/>}>
+                    {postsRouteNames.map(pathName =>
+                        <Route path={pathName} element={<FullPost/>} key={pathName} />   
+                    )}
+                </Route>
+                <Route path="contacts" element={<Contacts/>}/>
+                <Route path="*" element={<NoPage/>} />
+            </Routes>
+        </React.Suspense>
     )
 };
 
