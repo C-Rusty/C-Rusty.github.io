@@ -1,7 +1,6 @@
 import React from "react";
 import '../../../styles/main/no-page.scss';
 import { useTranslation } from "react-i18next";
-import ArrowBack from "../../../images/content/articles-cases/ArrowBack";
 
 const NoPage = () => {
 
@@ -13,8 +12,7 @@ const NoPage = () => {
                 <div className="error">
                     <p className="error__text">{t (`Uh-oh. Sorry, but there's no such page.`)}</p>
                     <a href="/" className="error__link">
-                        <ArrowBack/>
-                        <p>{t (`Return`)}</p>
+                        {t (`Return`)}
                     </a>
                 </div>
                 <div className="img">
