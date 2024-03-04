@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import FiltersBar from "./FiltersBar";
+import MobileMenu from "./MobileMenu";
 import { IRootState } from "../../../../store/store";
 
 const MobileMenuContainer = () => {
-
-    const FiltersBar = React.lazy(() => import('./FiltersBar'));
-    const MobileMenu = React.lazy(() => import('./MobileMenu'));
 
     const buttonClicked = useSelector<IRootState, string>((state) => state.buttonClicked.button);
     const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);

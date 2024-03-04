@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import '../../../styles/main/trainings.scss';
 
 const Trainings = () => {
@@ -47,7 +48,7 @@ const Trainings = () => {
                                     </p>
                                 </div>
                             </div>
-                            <a href="/contacts">{t (`Contact me`)}</a>
+                            <Link to="/contacts">{t (`Contact me`)}</Link>
                         </div>
                         {window.innerWidth >= 1151 &&
                             <div className="img-container-desktop">
@@ -150,7 +151,7 @@ const Trainings = () => {
                                     </p>
                                 </div>
                             </div>
-                            <a href="/contacts">{t (`Contact me`)}</a>
+                            <Link to="/contacts">{t (`Contact me`)}</Link>
                         </div>
                         {window.innerWidth >= 1151 &&
                             <div className="img-container-desktop">

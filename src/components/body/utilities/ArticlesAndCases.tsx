@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import { api } from "../../../api/ApiPosts";
 import { IPost } from "interface/Interface";
 import '../../../styles/main/articles-cases.scss';
+import ShortPost from "./post/ShortPost";
 import { useSelector } from "react-redux";
+import FiltersBar from "./menu/FiltersBar";
 import { IRootState } from "store/store";
+import MobileFilterBtn from "./filtersMobile/MobileFilterBtn";
 import { Outlet, useLocation } from "react-router-dom";
 import { apiImg } from "../../../api/ApiImg";
+import ShortPostSkeleton from "./post/ShortPostSkeleton";
 import { postsLoadLimit } from "../../../api/ApiPostConfig";
 import { useTranslation } from "react-i18next";
 
 const ArticlesAndCases = () => {
-
-    const ShortPost = React.lazy(() => import('./post/ShortPost'));
-    const FiltersBar = React.lazy(() => import('../../header/utilities/mobile-menu/FiltersBar'));
-    const MobileFilterBtn = React.lazy(() => import('./filtersMobile/MobileFilterBtn'));
-    const ShortPostSkeleton = React.lazy(() => import('./post/ShortPostSkeleton'));
 
     const [posts, setPosts] = useState<IPost[] | []>([]);
 
@@ -101,13 +100,13 @@ const ArticlesAndCases = () => {
     const currentUrlPath = useLocation().pathname; 
     const [showAllPosts, setShowAllPosts] = useState<boolean>(true);
 
-    // useEffect(() => {
-    //     if (currentUrlPath.split(`/`).length === 3) {
-    //         setShowAllPosts(false);
-    //     } else {
-    //         setShowAllPosts(true);
-    //     };
-    // }, [currentUrlPath]);
+    useEffect(() => {
+        if (currentUrlPath.split(`/`).length === 3) {
+            setShowAllPosts(false);
+        } else {
+            setShowAllPosts(true);
+        };
+    }, [currentUrlPath]);
 
     return(
         <>

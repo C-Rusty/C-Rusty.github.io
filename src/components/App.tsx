@@ -4,10 +4,14 @@ import { initReactI18next} from 'react-i18next';
 import LangEn from '../locales/en.json';
 import LangRu from '../locales/ru.json';
 import '../styles/App.scss';
+import Header from "./header/Header";
 import i18next from "i18next";
+import Content from "./body/Content";
 import { BrowserRouter } from "react-router-dom";
+import Footer from "./footer/Footer";
 import { Provider } from "react-redux";
 import store from "../store/store";
+import LegalDocsModal from "./footer/utilities/Legal";
 
 const resources  = {
     en: {
@@ -32,11 +36,6 @@ i18n.use(initReactI18next).init({
 i18next.on('languageChanged', (lng) => {
     document.documentElement.setAttribute('lang', lng);
 });
-
-const Header = React.lazy(() => import('./header/Header'));
-const Content = React.lazy(() => import('./body/Content'));
-const LegalDocsModal = React.lazy(() => import('./footer/utilities/Legal'));
-const Footer = React.lazy(() => import('./footer/Footer'));
 
 const App = () => {
     

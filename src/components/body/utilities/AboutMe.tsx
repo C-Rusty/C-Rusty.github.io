@@ -1,6 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import photo from '../../../images/content/about-me/oleg-chanov.webp';
+import approachBg from '../../../images/content/about-me/approach.webp';
+import achieve from '../../../images/content/about-me/achieve.webp';
 import '../../../styles/main/about-me.scss';
 
 const AboutMe = () => {
@@ -11,11 +14,11 @@ const AboutMe = () => {
         <div className="about-me">
             <section className="intro">
                 <div className="container">
-                    <a href="/contacts" className="mobile-btn">
+                    <Link to="/contacts" className="mobile-btn">
                         {t (`Contact me`)}
-                    </a>
+                    </Link>
                     <div className="img-container">
-                        <img loading="lazy" src="../../../images/content/about-me/oleg-chanov.webp" alt="oleg-chanov" />
+                        <img loading="lazy" src={photo} alt="oleg-chanov" />
                     </div>
                     <div className="text">
                         <div className="text__headline">
@@ -30,9 +33,9 @@ const AboutMe = () => {
                             {window.innerWidth < 1150 && <br />}
                             {t (`Holding strategic sessions using AI (Artificial Intelligence)`)}   
                         </h3>
-                        <a href="/contacts" className="desktop-btn">
+                        <Link to="/contacts" className="desktop-btn">
                             {t (`Contact me`)}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -147,7 +150,7 @@ const AboutMe = () => {
                         </div>
                         {window.innerWidth > 991 &&
                             <div className="main__img-container">
-                                <img loading="lazy" src="../../../images/content/about-me/approach.webp" alt="my-approach" />
+                                <img loading="lazy" src={approachBg} alt="my-approach" />
                             </div>
                         }
                     </div>
@@ -220,7 +223,7 @@ const AboutMe = () => {
                     <h3>{t (`How do I achieve this`)}&#63;</h3>
                     <div className="main">
                         <div className="main__img-container">
-                            <img loading="lazy" src="../../../images/content/about-me/achieve.webp" alt="achieve-session" />
+                            <img loading="lazy" src={achieve} alt="achieve-session" />
                         </div>
                         <div className="text">
                             <div className="text__item">
@@ -248,9 +251,9 @@ const AboutMe = () => {
                             </div>
                         </div>
                     </div>
-                    <a href="/contacts" className="mobile-btn">
+                    <Link to="/contacts" className="mobile-btn">
                         {t (`Contact me`)}
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>
