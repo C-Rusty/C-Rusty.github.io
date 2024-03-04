@@ -1,26 +1,24 @@
 import React from "react";
 import '../../../styles/main/no-page.scss';
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import ArrowBack from "../../../images/content/articles-cases/ArrowBack";
 
 const NoPage = () => {
-
-    const ArrowBack = React.lazy(() => import('../../../images/content/articles-cases/ArrowBack'));
 
     const { t } = useTranslation();
 
     return(
         <div className="no-page">
             <div className="container">
-                <div className="error">z
+                <div className="error">
                     <p className="error__text">{t (`Uh-oh. Sorry, but there's no such page.`)}</p>
-                    <Link to="/" className="error__link">
+                    <a href="/" className="error__link">
                         <ArrowBack/>
                         <p>{t (`Return`)}</p>
-                    </Link>
+                    </a>
                 </div>
                 <div className="img">
-                    <img loading="lazy" src="../../../images\content\no-page\404.webp" alt="404-error" />
+                    <img src="../../../images\content\no-page\404.webp" alt="404-error" />
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ const MobileFilterBtn = () => {
                 className="filters__inner" 
                 onClick={handleFilterClick}
             >
-                <img loading="lazy" src="../../../images/content/articles-cases/filter-menu.svg" alt="filters" />
+                <img src="../../../images/content/articles-cases/filter-menu.svg" alt="filters" />
                 <span>{t (`Filters`)}</span>
             </button>
     </div>

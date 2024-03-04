@@ -13,7 +13,7 @@ const ShortPost = ({post} : {post: IPost}) => {
     return (
         <Link to={postUrlPath} className="post-short">
             <div className="post-short__img">
-                <img loading="lazy" src={post.imageUrl} alt={postUrlPath} />
+                <img src={post.imageUrl} loading="lazy" alt={postUrlPath} />
                 <div className="img__read-hover">
                     <span>{t (`Read`)}</span>
                 </div>

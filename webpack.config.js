@@ -3,14 +3,14 @@ const path = require('path');
 const HTMLWebpackPlugin = require(`html-webpack-plugin`);
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
+    mode: `production`,
     entry: `./src/index.tsx`,
     output: {
-        filename: `./[name].bundle.js`,
         path: path.join(__dirname, `public`),
+        filename: `./bundle.js`,
         publicPath: '/',
     },
     resolve: {
@@ -24,6 +24,18 @@ module.exports = {
         compress: true,
         historyApiFallback: { index: "/", disableDotRule: true },
     },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: `./src/view/index.html`,
+            favicon: './src/view/favicon.svg',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: `./src/images`, to: `images`}
+            ]
+        }),
+        new CleanWebpackPlugin(),
+    ],
     module: {
         rules: [
             {
@@ -36,11 +48,10 @@ module.exports = {
                     }
                 }
             },
-			{
-				test: /\.(sa|sc|c)ss$/,
-				exclude: /node_modules/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-			},
+            {
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
             {
                 test: /\.(png|jpe?g|svg|webp)(\?.*)?$/,
                 type: 'asset/resource',
@@ -51,24 +62,8 @@ module.exports = {
             }
         ],
     },
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: `./src/view/index.html`,
-            favicon: './src/view/favicon.svg',
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-                {from: `./src/images`, to: `images`}
-            ]
-        }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: `main.css`
-        }),
-        // new BundleAnalyzerPlugin(),
-    ],
     optimization: {
         minimize: true,
-        mergeDuplicateChunks: true,
+        minimizer: [new TerserPlugin()],
     },
 }

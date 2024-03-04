@@ -7,7 +7,7 @@ const post = () => {
                 Разработка Customer Journey Map
             </h1>
             <section className="main__img-block">
-                <img loading="lazy" src="" alt="cjm" />
+                <img src="" alt="cjm" />
                 <p className="text">
                     Фото c cайта
                         <a className="text__link" href="https://finance.tut.by/news654197.html"> tut.by </a>
@@ -120,7 +120,7 @@ const post = () => {
                 </p>
             </section>
             <section className="main__img-block">
-                <img loading="lazy" src="" alt="contact-points" />
+                <img src="" alt="contact-points" />
                 <p className="text">
                     Пример: основные точки контакта действующих клиентов (физ. лица)
                 </p>

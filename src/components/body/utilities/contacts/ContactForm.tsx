@@ -159,20 +159,20 @@ const ContactForm = () => {
                             className="phone__select-messenger"
                             onClick={() => setIsOpen(previousState => !previousState)}  
                         >
-                            <img loading="lazy" 
+                            <img 
                                 src="../../../images/content/contact-me/arrow.svg" 
                                 alt="arrow"
                                 className="select__open-btn"
                             />
                             <div className="list">
                                 <div className="list__selected">
-                                    <img loading="lazy" 
+                                    <img 
                                         src={selectedMessenger} alt="selectedMessenger" 
                                     />
                                 </div>
                                 <div className="list__options">
                                     {options.map(option =>
-                                        <img loading="lazy" 
+                                        <img 
                                             src={option}
                                             key={option}
                                             onClick={() => handleMessengerSelect(option)}

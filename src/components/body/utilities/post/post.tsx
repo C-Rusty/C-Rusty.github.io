@@ -7,7 +7,7 @@ const post = () => {
                 Внедрение дизайн-мышления в HR-процессы ISsoft
             </h1>
             <section className="main__img-block">
-                <img loading="lazy" loading="lazy" src="" alt="isSoft" />
+                <img loading="lazy" src="" alt="isSoft" />
                 <p className="text">
                     Фото —
                     <a className="text__link" href="https://issoft.by/"> сайт </a>
@@ -79,7 +79,7 @@ const post = () => {
                 </p>
             </section>
             <section className="main__img-block">
-                <img loading="lazy" loading="lazy" src="" alt="isSoft" />
+                <img loading="lazy" src="" alt="isSoft" />
                 <p className="text">
                     Фото —
                     <a className="text__link" href="https://issoft.by/"> сайт </a>
@@ -108,7 +108,7 @@ const post = () => {
                 </p>
             </section>
             <section className="main__img-block">
-                <img loading="lazy" loading="lazy" src="" alt="isSoft" />
+                <img loading="lazy" src="" alt="isSoft" />
                     <p className="text">
                         Построение прототипа с помощью Lego Serious Play.
                     </p>
