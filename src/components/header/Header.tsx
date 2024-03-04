@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
-import Logo from "./utilities/Logo";
-import Navigation from "./utilities/Navigation";
-import LangSwitcher from "./utilities/LangSwitcher";
 import { Link } from "react-router-dom";
 import '../../styles/head/header.scss';
 import { useSelector } from "react-redux";
 import { IRootState } from "../../store/store";
-import MobileHamburger from "./utilities/MobileHamburger";
-import MobileMenuContainer from "../../components/body/utilities/menu/MobileMenuContainer";
 
 const Header = () => {
+
+    const Logo = React.lazy(() => import('./utilities/Logo'));
+    const Navigation = React.lazy(() => import('./utilities/Navigation'));
+    const LangSwitcher = React.lazy(() => import('./utilities/LangSwitcher'));
+    const MobileHamburger = React.lazy(() => import('./utilities/MobileHamburger'));
+    const MobileMenuContainer = React.lazy(() => import('./utilities/mobile-menu/MobileMenuContainer'));
 
     const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
 

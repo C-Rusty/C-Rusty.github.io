@@ -1,9 +1,10 @@
 import React  from "react";
-import NavBar from "../../../header/utilities/Navigation";
-import LangSwitcher from "../../../header/utilities/LangSwitcher";
 import '../../../../styles/main/MobileMenu.scss';
 
 const MobileMenu = () => {
+
+    const NavBar = React.lazy(() => import('../Navigation'));
+    const LangSwitcher = React.lazy(() => import('../LangSwitcher'));
 
     return (
         <>

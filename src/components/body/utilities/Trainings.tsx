@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import '../../../styles/main/trainings.scss';
 
 const Trainings = () => {
@@ -20,7 +19,7 @@ const Trainings = () => {
                             </h2>
                             {window.innerWidth < 1151 &&
                                 <div className="img-container-mobile">
-                                    <img src={'../../../images/content/trainings/introImg.webp'} alt="intro-img" />
+                                    <img loading="lazy" src={'../../../images/content/trainings/introImg.webp'} alt="intro-img" />
                                 </div>
                             }
                             <p className="aim-text">
@@ -52,7 +51,7 @@ const Trainings = () => {
                         </div>
                         {window.innerWidth >= 1151 &&
                             <div className="img-container-desktop">
-                                <img src={'../../../images/content/trainings/introImg.webp'} alt="intro-img" />
+                                <img loading="lazy" src={'../../../images/content/trainings/introImg.webp'} alt="intro-img" />
                             </div>
                         }
                     </div>
@@ -135,7 +134,7 @@ const Trainings = () => {
                             </h2>
                             {window.innerWidth < 1151 &&
                             <div className="img-container-mobile">
-                                <img src={'../../../images/content/trainings/cjm.webp'} alt="intro-img" />
+                                <img loading="lazy" src={'../../../images/content/trainings/cjm.webp'} alt="intro-img" />
                             </div>
                         }
                             <p className="aim-text">
@@ -155,7 +154,7 @@ const Trainings = () => {
                         </div>
                         {window.innerWidth >= 1151 &&
                             <div className="img-container-desktop">
-                                <img src={'../../../images/content/trainings/cjm.webp'} alt="intro-img" />
+                                <img loading="lazy" src={'../../../images/content/trainings/cjm.webp'} alt="intro-img" />
                             </div>
                         }
                     </div>
