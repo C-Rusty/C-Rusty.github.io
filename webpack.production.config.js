@@ -70,11 +70,11 @@ module.exports = {
             maxInitialRequests: 30,
             enforceSizeThreshold: 50000,
             cacheGroups: {
-                vendor: {
-                    name: "node_vendors",
+                defaultVendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    chunks: "all",
-                },
+                    priority: -10,
+                    reuseExistingChunk: true,
+                  },
               default: {
                 minChunks: 2,
                 priority: -20,
