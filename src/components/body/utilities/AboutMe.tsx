@@ -18,7 +18,7 @@ const AboutMe = () => {
                         {t (`Contact me`)}
                     </Link>
                     <div className="img-container">
-                        <img src={photo} alt="oleg-chanov" />
+                        <img loading="lazy" src={photo} alt="oleg-chanov" />
                     </div>
                     <div className="text">
                         <div className="text__headline">
@@ -67,7 +67,7 @@ const AboutMe = () => {
                     <h3 className="headline">{t (`Education`)}</h3>
                     <div className="text">
                         <div className="svg">
-                            <img src="../../../images/content/about-me/education.svg" alt="education" />
+                            <img loading="lazy" src="../../../images/content/about-me/education.svg" alt="education" />
                         </div>
                         <div className="main">
                             <span>{t (`Europa-Universität Viadrina Frankfurt`)}</span>
@@ -150,7 +150,7 @@ const AboutMe = () => {
                         </div>
                         {window.innerWidth > 991 &&
                             <div className="main__img-container">
-                                <img src={approachBg} alt="my-approach" />
+                                <img loading="lazy" src={approachBg} alt="my-approach" />
                             </div>
                         }
                     </div>
@@ -223,30 +223,30 @@ const AboutMe = () => {
                     <h3>{t (`How do I achieve this`)}&#63;</h3>
                     <div className="main">
                         <div className="main__img-container">
-                            <img src={achieve} alt="achieve-session" />
+                            <img loading="lazy" src={achieve} alt="achieve-session" />
                         </div>
                         <div className="text">
                             <div className="text__item">
-                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
+                                <img loading="lazy" src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`I myself am the director of strategic management in a rapidly and successfully growing company. I understand`)}
                                     &laquo;{t (`how it works in practice, not in theory`)}&raquo;
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
+                                <img loading="lazy" src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`I always do the full cycle work myself. I conduct preliminary consultation, diagnosis, adaptation, or develop an approach that is most effective and applicable for the client`)}
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
+                                <img loading="lazy" src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>
                                     {t (`At each stage of cooperation I provide feedback on the process and the result`)}
                                 </p>
                             </div>
                             <div className="text__item">
-                                <img src="../../../images/content/about-me/ticking.svg" alt="achieve" />
+                                <img loading="lazy" src="../../../images/content/about-me/ticking.svg" alt="achieve" />
                                 <p>{t (`I maintain confidentiality of information`)}</p>
                             </div>
                         </div>

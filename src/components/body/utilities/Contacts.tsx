@@ -26,7 +26,7 @@ const Contacts = () => {
                     {deviceType === `mobile` && <ContactForm/>}
                     <div className="contacts">
                         <a href="mailto:bfchanoff@gmail.com" className="contacts__mail">
-                            <img src="../../../images/content/contact-me/mail-icon.svg" alt="mail" />
+                            <img loading="lazy" src="../../../images/content/contact-me/mail-icon.svg" alt="mail" />
                             <span>bfchanoff@gmail.com</span>
                         </a>
                         <div className="contacts__social-logos">

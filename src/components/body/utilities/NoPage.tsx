@@ -16,7 +16,7 @@ const NoPage = () => {
                     </a>
                 </div>
                 <div className="img">
-                    <img src="../../../images\content\no-page\404.webp" alt="404-error" />
+                    <img loading="lazy" src="../../../images\content\no-page\404.webp" alt="404-error" />
                 </div>
             </div>
         </div>
