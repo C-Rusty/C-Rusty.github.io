@@ -30,9 +30,9 @@ const AboutMe = () => {
                             {window.innerWidth < 1150 && <br />}
                             {t (`Holding strategic sessions using AI (Artificial Intelligence)`)}   
                         </h3>
-                        <Link to="/contacts" className="desktop-btn">
+                        <a href="/contacts" className="desktop-btn">
                             {t (`Contact me`)}
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>
