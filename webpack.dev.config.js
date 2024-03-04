@@ -13,6 +13,7 @@ module.exports = {
         path: path.resolve(__dirname, `public/`),
         uniqueName: 'main',
         clean: true,
+        publicPath: '/',
     },
     resolve: {
         extensions: ['.js', `.tsx`, `.ts`]

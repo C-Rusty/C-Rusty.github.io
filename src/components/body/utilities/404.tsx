@@ -6,15 +6,13 @@ import Loading from "./Loading";
 
 const NoPage = () => {
 
-    const ArrowBack = React.lazy(() => import('../../../images/content/articles-cases/ArrowBack'));
-
     const { t } = useTranslation();
 
     return(
         <React.Suspense fallback={<Loading/>}>
             <div className="no-page">
                 <div className="container">
-                    <div className="error">z
+                    <div className="error">
                         <p className="error__text">{t (`Uh-oh. Sorry, but there's no such page.`)}</p>
                         <Link to="/" className="error__link">
                             {t (`Return`)}
