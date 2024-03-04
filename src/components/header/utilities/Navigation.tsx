@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import '../../../styles/head/header-utilities/NavBar.scss'
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IRootState } from "store/store";
 import { useDispatch } from "react-redux";
@@ -71,7 +71,7 @@ const Navigation = () => {
                     }} 
                     id="about-me"
                 >
-                    <a href="/">{t (`About me`)}</a>
+                    <Link to="/">{t (`About me`)}</Link>
                 </li>
                 <li onClick={() => { 
                         if (deviceType === `mobile`) handleClick();
@@ -79,7 +79,7 @@ const Navigation = () => {
                     }} 
                     id="trainings"
                 >
-                    <a href="/trainings">{t (`Trainings`)}</a>
+                    <Link to="/trainings">{t (`Trainings`)}</Link>
                 </li>
                 <li onClick={() => { 
                         if (deviceType === `mobile`) handleClick();
@@ -87,7 +87,7 @@ const Navigation = () => {
                     }} 
                     id="articles-cases"
                 >
-                    <a href="/articles-and-cases">{t (`Articles & Case Studies`)}</a>
+                    <Link to="/articles-and-cases">{t (`Articles & Case Studies`)}</Link>
                 </li>
                 <li onClick={() => { 
                         if (deviceType === `mobile`) handleClick();
@@ -95,7 +95,7 @@ const Navigation = () => {
                     }} 
                     id="contacts"
                 >
-                    <a href="/contacts">{t (`Contacts`)}</a>
+                    <Link to="/contacts">{t (`Contacts`)}</Link>
                 </li>
             </ul>
         </nav>
