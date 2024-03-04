@@ -11,6 +11,7 @@ module.exports = {
     output: {
         filename: `[name].[chunkhash:8].js`,
         path: path.resolve(__dirname, `public/`),
+        publicPath: '/',
     },
     resolve: {
         extensions: ['.js', `.tsx`, `.ts`]
@@ -61,7 +62,7 @@ module.exports = {
     optimization: {
         minimize: true,
         splitChunks: {
-            chunks: 'async',
+            chunks: 'all',
             minSize: 20000,
             minRemainingSize: 0,
             minChunks: 1,
@@ -69,11 +70,11 @@ module.exports = {
             maxInitialRequests: 30,
             enforceSizeThreshold: 50000,
             cacheGroups: {
-              defaultVendors: {
-                test: /[\\/]node_modules[\\/]/,
-                priority: -10,
-                reuseExistingChunk: true,
-              },
+                vendor: {
+                    name: "node_vendors",
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: "all",
+                },
               default: {
                 minChunks: 2,
                 priority: -20,
@@ -81,5 +82,7 @@ module.exports = {
               },
             },
         },
+        mergeDuplicateChunks: true,
+        chunkIds: 'named',
     },
 }

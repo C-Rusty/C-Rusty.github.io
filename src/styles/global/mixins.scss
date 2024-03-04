@@ -6,6 +6,8 @@ $gray-secondary-hovered: #3E3B39;
 $gray-secondary-light: #4B4845;
 $gray-secondary-light-ultra: #9A9590;
 
+$secondary-light: #4E4E4E;
+
 $accent: #F5540C;
 $accent-hover: #FD6623;
 $accent-light: #F77C45;
@@ -16,7 +18,6 @@ $tertiary-inactive: #E3E3E3;
 $error: #D30808;
 
 $articles-header: #1D1D1D;
-$tags: #4E4E4E;
 
 @mixin dark {
     background: #181716;

@@ -56,9 +56,25 @@
                     column-gap: .8rem;
                 }
 
+                img {
+                    @media screen and (max-width: 991px) {
+                        height: 50%;
+                    }
+                    @media screen and (max-width: 425px) {
+                        height: auto;
+                    }
+                }
+
                 span {
                     @include Merriweather-24px;
-                    color: $gray-secondary-hovered;
+                    color: $gray-secondary-light;
+
+                    @media screen and (max-width: 425px) {
+                        @include textMobile-18px;
+                    }
+                    @media screen and (max-width: 425px) {
+                        @include textMobile-16px;
+                    }
                 }
 
             }

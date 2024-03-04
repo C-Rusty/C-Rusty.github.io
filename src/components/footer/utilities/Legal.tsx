@@ -33,7 +33,7 @@ const Legal = () => {
                         </div>
                         <div className="paragraph">
                             <p className="paragraph__header">{t (`Introduction`)}</p>
-                            <p className="paragraph__text">{t (`Welcome to [Your Website/Company Name] (we, our, or us). This Privacy and data protection policy (hereinafter – Privacy Policy, Policy) sets out the basis of your personal data processing.`)}</p>
+                            <p className="paragraph__text">{t (`Welcome to the website www.olegchanov.com (we, our, or us). This Privacy and data protection policy (hereinafter – Privacy Policy, Policy) sets out the basis of your personal data processing.`)}</p>
                             <p className="paragraph__text">{t (`This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information. By using our website (“Website”), you agree to the terms outlined in this Privacy Policy.`)}</p>
                         </div>
                         <div className="paragraph">

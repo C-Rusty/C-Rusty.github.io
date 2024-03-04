@@ -1,9 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import photo from '../../../images/content/about-me/oleg-chanov.webp';
-import approachBg from '../../../images/content/about-me/approach.webp';
-import achieve from '../../../images/content/about-me/achieve.webp';
 import '../../../styles/main/about-me.scss';
 import Loading from "./Loading";
 

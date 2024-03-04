@@ -28,6 +28,10 @@
 
             &__back-btn, &__empty {
                 width: 15%;
+
+                @media screen and (max-width: 1200px) {
+                    width: 20%;
+                }
             }
 
             &__empty {
@@ -46,6 +50,8 @@
                 }
                 @media screen and (max-width: 768px) {
                     margin-bottom: 3.2rem;
+
+                    @include textMobile-16px;
                 }
 
                 a {
@@ -58,6 +64,9 @@
                     color: $gray-secondary-light-ultra;
                     transition: all .4s;
 
+                    @media screen and (max-width: 1200px) {
+                        column-gap: .4rem;
+                    }
                     @media screen and (max-width: 991px) {
                        justify-content: center;
                     }
@@ -100,14 +109,14 @@
                 @media screen and (max-width: 475px) {
                     column-gap: 1rem;
                 }
-                @media screen and (max-width: 375px) {
+                @media screen and (max-width: 425px) {
                     flex-wrap: wrap;
                     row-gap: 1rem;
                 }
 
                 span {
                     @include Georgia-20px;
-                    color: $tags;
+                    color: $secondary-light;
                     font-weight: 700;
 
                     @media screen and (max-width: 475px) {
