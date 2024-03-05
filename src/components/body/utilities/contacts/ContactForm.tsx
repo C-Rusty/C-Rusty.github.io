@@ -74,24 +74,24 @@ const ContactForm = () => {
             }
         };
         
-        // fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
-        //     method: `POST`,
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // }).then(response => {
-        //     if (response.ok && response.status === 200) {
-        //         nameInput.current!.value = ``;
-        //         phoneInput.current!.value = ``;
-        //         dispatch(setFormSentStatus(`ok`));
-        //     } else {
-        //         console.log("error");
-        //     };
-        // }).catch(error => {
-        //     console.error("Error:", error);
-        //     dispatch(setFormSentStatus(`error`));
-        // });
+        fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
+            method: `POST`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            if (response.ok && response.status === 200) {
+                nameInput.current!.value = ``;
+                phoneInput.current!.value = ``;
+                dispatch(setFormSentStatus(`ok`));
+            } else {
+                console.log("error");
+            };
+        }).catch(error => {
+            console.error("Error:", error);
+            dispatch(setFormSentStatus(`error`));
+        });
     };
 
     function handleFormErrors () {
