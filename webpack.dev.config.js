@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: `development`,
+    devtool: 'source-map',
     entry: `./src/index.tsx`,
     output: {
         filename: `[name].[chunkhash:8].js`,

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { setFormSentStatus } from "../../../../store/FormSendReducer";
+import { _reCaptchaApiKey } from "../../../../api/ReCaptchaVerification";
 
 const ContactForm = () => {
 
@@ -73,24 +74,24 @@ const ContactForm = () => {
             }
         };
         
-        fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
-            method: `POST`,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(response => {
-            if (response.ok && response.status === 200) {
-                nameInput.current!.value = ``;
-                phoneInput.current!.value = ``;
-                dispatch(setFormSentStatus(`ok`));
-            } else {
-                console.log("error");
-            };
-        }).catch(error => {
-            console.error("Error:", error);
-            dispatch(setFormSentStatus(`error`));
-        });
+        // fetch(`https://api.emailjs.com/api/v1.0/email/send`, {
+        //     method: `POST`,
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // }).then(response => {
+        //     if (response.ok && response.status === 200) {
+        //         nameInput.current!.value = ``;
+        //         phoneInput.current!.value = ``;
+        //         dispatch(setFormSentStatus(`ok`));
+        //     } else {
+        //         console.log("error");
+        //     };
+        // }).catch(error => {
+        //     console.error("Error:", error);
+        //     dispatch(setFormSentStatus(`error`));
+        // });
     };
 
     function handleFormErrors () {
@@ -133,6 +134,21 @@ const ContactForm = () => {
             document.querySelector(`.phone__select-container`)?.classList.remove(`error-border`);
         };
     };
+
+    const insertCaptchaScript = () => {
+        const captchaScript = document.createElement(`script`);
+        captchaScript.src = `https://www.google.com/recaptcha/api.js`;
+        captchaScript.type = `async`;
+        document.head.append(captchaScript);
+    };
+
+    function onSubmit(token: any) {
+        console.log(token);
+    };
+
+    useEffect(() => {
+        insertCaptchaScript();
+    }, []);
 
     return (
         <div className="form-container">
@@ -184,7 +200,12 @@ const ContactForm = () => {
                     </div>
                     <span className="error-text hidden" id="error-text-contacts">{t (`Please fill in`)}&nbsp;{t (`your contacts`)}</span>
                 </label>
-                <button type="submit">{t (`Contact me`)}</button>
+                <button 
+                    type="submit"
+                    data-sitekey={_reCaptchaApiKey}
+                    data-callback='onSubmit'
+                    data-action='submit'
+                >{t (`Contact me`)}</button>
             </form>
         </div>
     );
