@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ViberLogo from "../../../components/footer/utilities/ViberLogo";
 import TelegramLogo from "../../../components/footer/utilities/TelegramLogo";
@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import { IRootState } from "../../../store/store";
 import Loading from "./Loading";
 import ModalNotice from "./contacts/ModalNotice";
-
 const Contacts = () => {
 
     const { t } = useTranslation();

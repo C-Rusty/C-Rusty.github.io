@@ -13,6 +13,7 @@ import ShortPostSkeleton from "./post/ShortPostSkeleton";
 import { postsLoadLimit } from "../../../api/ApiPostConfig";
 import { useTranslation } from "react-i18next";
 import Loading from "./Loading";
+import { checkToken } from "../../../api/ReCaptchaVerification";
 
 const ArticlesAndCases = () => {
 
@@ -30,6 +31,9 @@ const ArticlesAndCases = () => {
     const currentLang = i18n.language;
 
     const getPosts = async (pageLang: string) => {
+        const response = await checkToken();
+        if (response === `error`) throw new Error(`Something wrong with token request`);
+
         const postsData: IPost[] | undefined = await api.getShortPosts(pageLang);
 
         if (postsData) {

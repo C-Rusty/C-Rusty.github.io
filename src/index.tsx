@@ -47,16 +47,16 @@ const App = () => {
     
     return (
         <React.StrictMode>
-            <I18nextProvider i18n={i18next}>
-                <BrowserRouter>
-                    <Provider store={store}>
-                        <Header/>
-                        <Content/>
-                        <LegalDocsModal/>
-                        <Footer/>
-                    </Provider>
-                </BrowserRouter>
-            </I18nextProvider>
+                <I18nextProvider i18n={i18next}>
+                    <BrowserRouter>
+                        <Provider store={store}>
+                            <Header/>
+                            <Content/>
+                            <LegalDocsModal/>
+                            <Footer/>
+                        </Provider>
+                    </BrowserRouter>
+                </I18nextProvider>
         </React.StrictMode>
     );
 };
