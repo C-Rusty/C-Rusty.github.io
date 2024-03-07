@@ -1,1 +1,0 @@
-export const postsLoadLimit: number = 6;

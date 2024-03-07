@@ -62,7 +62,7 @@ const App = () => {
 };
 
 const container = document.getElementById('root');
-if (!container) throw new Error (`#root is not found`);
+if (!container) throw new Error (`container is not found`);
 
 const root = createRoot(container!);
 root.render(<App />);

@@ -85,14 +85,6 @@ const Navigation = () => {
                         if (deviceType === `mobile`) handleClick();
                         scrollToTop();
                     }} 
-                    id="articles-cases"
-                >
-                    <a href="/articles-and-cases">{t (`Articles & Case Studies`)}</a>
-                </li>
-                <li onClick={() => { 
-                        if (deviceType === `mobile`) handleClick();
-                        scrollToTop();
-                    }} 
                     id="contacts"
                 >
                     <a href="/contacts">{t (`Contacts`)}</a>
