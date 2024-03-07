@@ -11,7 +11,6 @@ import { BrowserRouter } from "react-router-dom";
 import Footer from "./footer/Footer";
 import { Provider } from "react-redux";
 import store from "../store/store";
-import LegalDocsModal from "./footer/utilities/Legal";
 
 const resources  = {
     en: {
@@ -21,6 +20,8 @@ const resources  = {
         translation: LangRu
     }
 };
+
+const LegalDocsModal = React.lazy(() => import(`./footer/utilities/Legal`));
 
 const browserLang = navigator.language.split(`-`)[0];
 

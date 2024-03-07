@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { IRootState } from "../../../../store/store";
-import FiltersBar from "./FiltersBar";
 import MobileMenu from "./MobileMenu";
 
 const MobileMenuContainer = () => {
 
-    const buttonClicked = useSelector<IRootState, string>((state) => state.buttonClicked.button);
     const screen: string = useSelector<IRootState, string>((state) => state.deviceType.screen);
-
-    const [openedMenuComponent, setOpenedMenuComponent] = useState<`mobileMenu` | `mobileFilters` | `none`>(`none`);
-
-    useEffect(() => {
-        if (buttonClicked === `mobileMenu`) {
-            setOpenedMenuComponent(`mobileMenu`);
-        } else if (buttonClicked === `mobileFilters`) {
-            setOpenedMenuComponent(`mobileFilters`);
-        };
-    }, [buttonClicked]);
 
     useEffect(() => {
         if (screen === `mobile`) setHiddenMenuPositionBehavior();
@@ -38,18 +26,7 @@ const MobileMenuContainer = () => {
 
     return (
         <div className="mobile-menu">
-            {
-                buttonClicked === `mobileMenu` ? <MobileMenu/>
-                : buttonClicked === `mobileFilters` ? <FiltersBar/>
-                : 
-                    <>
-                        {openedMenuComponent === `mobileMenu` ? 
-                            <MobileMenu/>
-                            :
-                            <FiltersBar/>
-                        }
-                    </>
-            }
+             <MobileMenu/>
         </div>
     );
 };

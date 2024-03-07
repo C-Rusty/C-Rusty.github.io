@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setMobileState } from "../../../store/MenuOpenReducer";
-import { setButton } from "../../../store/ButtonClickReducer";
 import { IRootState } from "../../../store/store";
 import { hideMobileMenu, showMobileMenu } from "../../../store/MobileMenuPositionReducer";
 
@@ -21,7 +20,6 @@ const MobileHamburger = () => {
 
         switch (isMobileMenuOpened) {
             case true:
-                dispatch(setButton(`mobileMenu`));
                 dispatch(showMobileMenu({scrollY: window.scrollY, headerHeight: header!.height, menu: mobileMenu}));
 
                 hamburger?.classList.add(`hamburger-active`);
@@ -30,7 +28,6 @@ const MobileHamburger = () => {
                 document.body.style.overflowY = `hidden`
             break;
             case false: 
-                dispatch(setButton(`none`));
                 dispatch(hideMobileMenu({scrollY: window.scrollY, windowHeight: window.screen.height, headerHeight: header!.height, menu: mobileMenu}));
                 
                 hamburger?.classList.remove(`hamburger-active`);
