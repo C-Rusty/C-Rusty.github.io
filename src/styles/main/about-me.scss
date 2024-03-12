@@ -108,6 +108,7 @@
 
             &__supporting-headline {
                 @include headline;
+                font-size: 3.2rem;
 
                 max-width: 85%;
                 margin-bottom: 3.2rem;
@@ -118,6 +119,9 @@
 
                 @media screen and (max-width: 575px) {
                     margin-bottom: 2.4rem;
+                }
+                @media screen and (max-width: 425px) {
+                    @include headlineMobile-34px;
                 }
             }
 
